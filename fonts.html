@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>字体试衣间 · 余泽锴品牌字体筛选</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@400;700&family=Barlow+Condensed:wght@500;700&family=Oswald:wght@500;600&family=Archivo+Black&family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=EB+Garamond:ital@0;1&family=DM+Sans:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css">
+<style>
+@font-face{font-family:"Smiley Sans";src:url("https://cdn.jsdelivr.net/gh/atelier-anchor/smiley-sans@v2.0.1/dist/SmileySans-Oblique.ttf.woff2") format("woff2");font-display:swap}
+:root{
+  --bg:#0d0c0a;--bg2:#16130f;--card:#1b1712;--ink:#f1eadd;--ink2:#b9ab93;--ink3:#8a7c64;
+  --line:rgba(241,234,221,.12);--accent:#d9a441;--accent2:#ecc77f;--accent-dim:rgba(217,164,65,.12);
+  --ease:cubic-bezier(.22,.9,.28,1);
+}
+[data-theme="light"]{--bg:#f2eee6;--bg2:#ebe5d9;--card:#f8f5ef;--ink:#22201a;--ink2:#48402f;--ink3:#6f6551;--line:rgba(40,34,24,.16);--accent:#96691a;--accent2:#7a5410;--accent-dim:rgba(150,105,26,.12)}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Serif SC","Songti SC","STSong",serif;line-height:1.8;overflow-x:hidden}
+::selection{background:rgba(217,164,65,.35)}
+button{font-family:inherit;background:none;border:none;color:inherit;cursor:pointer}
+a{color:var(--accent2);text-decoration:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(18px) saturate(1.3);border-bottom:1px solid var(--line);padding:16px 5vw;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+header h1{font-size:19px;letter-spacing:.14em;font-weight:600}
+header .rule{width:60px;height:2px;background:repeating-linear-gradient(90deg,var(--accent) 0 6px,transparent 6px 11px)}
+header .tools{margin-left:auto;display:flex;gap:10px;align-items:center}
+header .tools button{border:1px solid var(--line);border-radius:30px;padding:8px 18px;font-size:12px;letter-spacing:.1em;color:var(--ink2);transition:.25s}
+header .tools button:hover{color:var(--accent2);border-color:var(--accent)}
+#themeBtn{width:36px;height:36px;padding:0!important;border-radius:50%!important;display:flex;align-items:center;justify-content:center}
+main{max-width:1200px;margin:0 auto;padding:40px 5vw 140px}
+.note{font-size:12.5px;color:var(--ink3);letter-spacing:.06em;margin-bottom:34px;line-height:1.9}
+.sec{margin:56px 0 20px;display:flex;align-items:baseline;gap:16px}
+.sec .en{font-size:11px;letter-spacing:.4em;color:var(--accent2);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+.sec h2{font-size:clamp(20px,3vw,26px);letter-spacing:.12em;font-weight:600}
+.sec::after{content:"";flex:1;height:1px;background:var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px 20px;position:relative;transition:border-color .3s,transform .45s var(--ease),box-shadow .3s;cursor:pointer}
+.card:hover{border-color:color-mix(in srgb,var(--accent) 45%,transparent);transform:translateY(-4px)}
+.card.picked{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),0 14px 40px rgba(217,164,65,.12)}
+.card .pick{position:absolute;top:14px;right:16px;width:26px;height:26px;border:1.5px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;color:transparent;transition:.25s;font-family:-apple-system,sans-serif}
+.card.picked .pick{background:var(--accent);border-color:var(--accent);color:#1a1407}
+.card h3{font-size:16.5px;letter-spacing:.06em;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding-right:36px}
+.card h3 small{font-size:11px;color:var(--ink3);letter-spacing:.08em;font-weight:400}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px}
+.meta span{font-size:10px;letter-spacing:.14em;color:var(--ink2);border:1px solid var(--line);border-radius:20px;padding:3px 10px;font-family:-apple-system,"PingFang SC",sans-serif}
+.meta span.ok{color:var(--accent2);border-color:rgba(217,164,65,.4)}
+.sample{border-top:1px dashed var(--line);padding-top:14px;display:flex;flex-direction:column;gap:10px;min-height:150px}
+.sample .slogan{font-size:21px;line-height:1.6}
+.sample .works{font-size:15px;color:var(--ink2)}
+.sample .latin{font-size:15px;letter-spacing:.04em;color:var(--ink3)}
+.sample .para{font-size:13.5px;color:var(--ink2);line-height:1.9}
+.dl{font-size:11px;letter-spacing:.08em;color:var(--ink3);margin-top:12px}
+.dl a{border-bottom:1px dotted var(--accent)}
+/* 各字体 family 类 */
+.f-songti{font-family:"Noto Serif SC","Songti SC",serif}
+.f-songti-hei{font-weight:900}
+.f-wenkai{font-family:"LXGW WenKai","Kaiti SC","STKaiti",serif}
+.f-fangsong{font-family:"STFangsong","FangSong",serif}
+.f-chunkai{font-family:"Kaiti SC","STKaiti","LXGW WenKai",serif;font-weight:700}
+.f-mingchao{font-family:"Songti SC","Noto Serif SC",serif}
+.f-smiley{font-family:"Smiley Sans","PingFang SC",sans-serif}
+.f-heiti{font-family:"Noto Sans SC","PingFang SC",sans-serif}
+.f-barlow{font-family:"Barlow Condensed","Oswald",sans-serif;letter-spacing:.08em}
+.f-oswald{font-family:"Oswald",sans-serif;letter-spacing:.1em}
+.f-archivo{font-family:"Archivo Black","Arial Black",sans-serif;letter-spacing:.02em}
+.f-bebas{font-family:"Bebas Neue","Oswald",sans-serif;letter-spacing:.1em}
+.f-cormorant{font-family:"Cormorant Garamond",Georgia,serif;letter-spacing:.03em}
+.f-ebgaramond{font-family:"EB Garamond",Georgia,serif;letter-spacing:.02em}
+.pair{grid-column:1/-1;background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:24px 28px}
+.pair h3{font-size:15px;letter-spacing:.14em;color:var(--accent2);margin-bottom:14px}
+.pair .demo{padding:18px;border:1px dashed var(--line);border-radius:12px;display:flex;flex-direction:column;gap:8px}
+#bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(18px);border-top:1px solid var(--line);padding:14px 5vw;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+#bar .label{font-size:12px;letter-spacing:.2em;color:var(--ink3)}
+#bar .picks{flex:1;font-size:13px;color:var(--accent2);letter-spacing:.04em;min-width:200px}
+#bar button{border:1px solid var(--line);border-radius:30px;padding:9px 22px;font-size:12.5px;letter-spacing:.12em;color:var(--ink);transition:.25s}
+#bar button:hover{border-color:var(--accent);color:var(--accent2)}
+#bar button.primary{background:var(--accent);border-color:var(--accent);color:#1a1407;font-weight:700}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <h1>字体试衣间</h1><div class="rule"></div>
+  <span style="font-size:11.5px;letter-spacing:.2em;color:var(--ink3)">FONT SPECIMEN · 余泽锴品牌</span>
+  <div class="tools">
+    <button id="themeBtn" title="切换深色/浅色">◐</button>
+    <button onclick="clearAll()">清空选择</button>
+  </div>
+</header>
+<main>
+  <p class="note">点击卡片勾选 / 取消。样例文案即品牌真实文案（口号 · 作品名 · 数字格式）。标「本机近似」的字体无稳定免费 CDN，样例用近似系统字体演示，下载后以实际效果为准。全部字体免费可商用。</p>
+
+  <div class="sec"><span class="en">01 · CHINESE SERIF</span><h2>中文 · 衬线 / 文艺</h2></div>
+  <div class="grid" id="g1"></div>
+
+  <div class="sec"><span class="en">02 · CHINESE DISPLAY</span><h2>中文 · 标题 / 海报</h2></div>
+  <div class="grid" id="g2"></div>
+
+  <div class="sec"><span class="en">03 · ENGLISH DISPLAY</span><h2>英文 · DIN / 展示</h2></div>
+  <div class="grid" id="g3"></div>
+
+  <div class="sec"><span class="en">04 · ENGLISH SERIF</span><h2>英文 · 衬线</h2></div>
+  <div class="grid" id="g4"></div>
+
+  <div class="sec"><span class="en">05 · PAIRING</span><h2>推荐组合预览</h2></div>
+  <div class="grid" id="g5"></div>
+</main>
+<div id="bar">
+  <span class="label">已选 <b id="cnt" style="color:var(--accent)">0</b> 款</span>
+  <span class="picks" id="picks">尚未选择 — 点击卡片勾选</span>
+  <button onclick="copyPicks()">复制结果</button>
+</div>
+
+<script>
+var FONTS=[
+ {g:1,id:"songti-hei",name:"思源宋体 Heavy",en:"Source Han Serif / Noto Serif SC",cls:"f-songti f-songti-hei",tags:["衬线","7 字重","正文+封面"],lic:"OFL",dl:"https://github.com/adobe-fonts/source-han-serif/releases",note:"网站在用 · 全能主力"},
+ {g:1,id:"wenkai",name:"霞鹜文楷",en:"LXGW WenKai",cls:"f-wenkai",tags:["楷体","温润","引言"],lic:"OFL",dl:"https://github.com/lxgw/LxgwWenKai/releases",note:"作品自述、文艺海报"},
+ {g:1,id:"fangsong",name:"朱雀仿宋",en:"Zhuque Fangsong",cls:"f-fangsong",tags:["仿宋","瘦长","展签"],lic:"OFL",dl:"https://github.com/TrionesType/zhuque/releases",note:"本机近似预览（STFangsong）"},
+ {g:1,id:"chunkai",name:"演示春风楷",en:"Chunfeng Kai",cls:"f-chunkai",tags:["大楷","气势","封面"],lic:"免费商用",dl:"https://www.keyfont.cn",note:"本机近似预览（Kaiti SC Bold）"},
+ {g:1,id:"mingchao",name:"汇文明朝体",en:"Huiwen Mingchao",cls:"f-mingchao",tags:["老明朝","复古","画册"],lic:"免费商用",dl:"https://www.maoken.com",note:"本机近似预览（Songti SC）"},
+ {g:2,id:"smiley",name:"得意黑",en:"Smiley Sans",cls:"f-smiley",tags:["斜切黑体","运动感","封面大字"],lic:"OFL",dl:"https://github.com/atelier-anchor/smiley-sans/releases",note:"社媒封面、视频字幕"},
+ {g:2,id:"heiti",name:"思源黑体",en:"Source Han Sans",cls:"f-heiti",tags:["中性","信息图"],lic:"OFL",dl:"https://github.com/adobe-fonts/source-han-sans/releases",note:"UI / 图表"},
+ {g:3,id:"barlow",name:"Barlow Condensed",en:"Barlow Condensed",cls:"f-barlow",tags:["最像 DIN","全大写"],lic:"OFL",dl:"https://fonts.google.com/specimen/Barlow+Condensed",note:"YU ZEKAI / 数字首选"},
+ {g:3,id:"oswald",name:"Oswald",en:"Oswald",cls:"f-oswald",tags:["窄高","侧标签"],lic:"OFL",dl:"https://fonts.google.com/specimen/Oswald",note:"网站栈内已有"},
+ {g:3,id:"archivo",name:"Archivo Black",en:"Archivo Black",cls:"f-archivo",tags:["超粗","海报主标"],lic:"OFL",dl:"https://fonts.google.com/specimen/Archivo+Black",note:"PP Neue 平替"},
+ {g:3,id:"bebas",name:"Bebas Neue",en:"Bebas Neue",cls:"f-bebas",tags:["纯大写","年份编号"],lic:"OFL",dl:"https://fonts.google.com/specimen/Bebas+Neue",note:"封面 2020–2026"},
+ {g:4,id:"cormorant",name:"Cormorant Garamond",en:"Cormorant Garamond",cls:"f-cormorant",tags:["高对比","配宋体"],lic:"OFL",dl:"https://fonts.google.com/specimen/Cormorant+Garamond",note:"画册英文首选"},
+ {g:4,id:"ebgaramond",name:"EB Garamond",en:"EB Garamond",cls:"f-ebgaramond",tags:["经典","耐读"],lic:"OFL",dl:"https://fonts.google.com/specimen/EB+Garamond",note:"长文英文"},
+];
+var PAIRS=[
+ {name:"A · 封面公式（推荐）",html:'<div class="slogan f-songti f-songti-hei">回溯间隙</div><div class="latin f-barlow" style="font-size:19px">TRACING THE GAP · 2025 · MIXED MEDIA 350 × 300 CM</div><div class="para f-songti">悬挂的旧玩偶与树脂翻模，围出可穿行的负空间。</div>'},
+ {name:"B · 文艺款",html:'<div class="slogan f-wenkai">以田野为方法，把在地的记忆塑成可触摸的雕塑。</div><div class="works f-fangsong">《回溯间隙》· 综合材料装置 · 2025</div><div class="latin f-cormorant" style="font-style:italic">Tracing the Gap — fieldwork as method</div>'},
+ {name:"C · 海报款",html:'<div class="slogan f-smiley" style="font-size:26px">缝隙之间 2</div><div class="latin f-bebas" style="font-size:20px">BETWEEN GAPS 2 · SILICONE · 90/100</div><div class="para f-heiti">硅胶翻模空间装置，围绕负空间展开。</div>'},
+ {name:"D · 画册款",html:'<div class="slogan f-songti">红海疍家渔民在地实验</div><div class="latin f-ebgaramond" style="font-style:italic">Site-Specific Experiment with the Tankas of Honghai Village</div><div class="para f-songti">多次走访红海村，调研疍家渔民上岸后的生活与社区记忆。</div>'},
+];
+function sampleHTML(){return '<div class="slogan">以田野为方法，把在地的记忆塑成可触摸的雕塑。</div><div class="works">《回溯间隙》· 综合材料装置 · 2025</div><div class="latin">YU ZEKAI · 2020–2026 · 85/100 · 350 × 300 cm</div><div class="para">多次走访红海村，调研疍家渔民上岸后的生活与社区记忆；作品以影像、摄影与装置作出回应，展览在村内公共空间完成。</div>'}
+var picks=new Set();try{picks=new Set(JSON.parse(localStorage.getItem("yz-font-picks")||"[]"))}catch(e){}
+function render(){
+  [1,2,3,4].forEach(function(g){
+    var box=document.getElementById("g"+g);box.innerHTML="";
+    FONTS.filter(function(f){return f.g===g}).forEach(function(f){
+      var d=document.createElement("div");
+      d.className="card"+(picks.has(f.id)?" picked":"");
+      d.innerHTML='<span class="pick">✓</span><h3>'+f.name+'<small>'+f.en+'</small></h3>'
+        +'<div class="meta">'+f.tags.map(function(t){return "<span>"+t+"</span>"}).join("")+'<span class="ok">'+f.lic+'</span><span>'+f.note+'</span></div>'
+        +'<div class="sample '+f.cls+'">'+sampleHTML()+'</div>'
+        +'<div class="dl">下载 · <a href="'+f.dl+'" target="_blank" rel="noopener">'+f.dl.replace("https://","")+'</a></div>';
+      d.onclick=function(e){if(e.target.tagName==="A")return;toggle(f)};
+      box.appendChild(d);
+    });
+  });
+  var g5=document.getElementById("g5");g5.innerHTML="";
+  PAIRS.forEach(function(pr){
+    var d=document.createElement("div");d.className="pair";
+    d.innerHTML="<h3>"+pr.name+"</h3><div class='demo'>"+pr.html+"</div>";
+    g5.appendChild(d);
+  });
+  var names=[...picks].map(function(id){var f=FONTS.find(function(x){return x.id===id});return f?f.name:id});
+  document.getElementById("cnt").textContent=picks.size;
+  document.getElementById("picks").textContent=picks.size?names.join(" · "):"尚未选择 — 点击卡片勾选";
+}
+function toggle(f){picks.has(f.id)?picks.delete(f.id):picks.add(f.id);try{localStorage.setItem("yz-font-picks",JSON.stringify([...picks]))}catch(e){};render()}
+function clearAll(){picks.clear();try{localStorage.removeItem("yz-font-picks")}catch(e){};render()}
+function copyPicks(){
+  var names=[...picks].map(function(id){var f=FONTS.find(function(x){return x.id===id});return f?(f.name+"（"+f.en+"）"):id});
+  var txt=names.length?("已选字体：\n· "+names.join("\n· ")):"尚未选择字体";
+  (navigator.clipboard&&window.isSecureContext?navigator.clipboard.writeText(txt):Promise.reject()).then(function(){flash("已复制 ✓")}).catch(function(){flash(txt.replace(/\n/g," · "))});
+}
+function flash(msg){var el=document.getElementById("picks");var o=el.textContent;el.textContent=msg;setTimeout(function(){render()},1500)}
+/* 主题 */
+var themeBtn=document.getElementById("themeBtn");
+themeBtn.onclick=function(){var h=document.documentElement;h.setAttribute("data-theme",h.getAttribute("data-theme")==="dark"?"light":"dark")};
+render();
+</script>
+</body>
+</html>

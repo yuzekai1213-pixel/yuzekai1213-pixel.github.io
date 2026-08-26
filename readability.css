@@ -1,0 +1,67 @@
+/* ============================================================
+   readability.css · 可读性层（最后加载，安全覆盖页面样式）
+   1) 正文流式字号：clamp 随视口缩放，小屏保底、大屏封顶
+   2) 英文模式：拉丁字距放松 + 字号补偿 + 行高/栏宽优化
+   3) 用户字号档位：导航 A 按钮 → html[data-fs] → --fscale 倍率
+      （1 / 1.12 / 1.25，localStorage 持久化）
+   ============================================================ */
+html[data-fs="lg"]{--fscale:1.12}
+html[data-fs="xl"]{--fscale:1.25}
+html[lang="en"]{--enboost:1.06}
+
+/* ============ 主页 index ============ */
+.hero-inner .bio-main{font-size:calc(clamp(17px,1.15vw + 13.5px,22px) * var(--fscale,1) * var(--enboost,1));line-height:1.75}
+.hero-inner .bio-sub{font-size:calc(clamp(12.5px,.3vw + 11.8px,13.5px) * var(--fscale,1) * var(--enboost,1))}
+.about-text .lead{font-size:calc(clamp(17px,1vw + 13.8px,20px) * var(--fscale,1) * var(--enboost,1));line-height:1.95}
+.about-text p.body{font-size:calc(clamp(14.5px,.45vw + 13px,16.5px) * var(--fscale,1) * var(--enboost,1));line-height:1.9}
+.service-box h3{font-size:calc(clamp(18px,.5vw + 16px,20px) * var(--fscale,1) * var(--enboost,1))}
+.service-box p{font-size:calc(clamp(14px,.35vw + 13px,15.5px) * var(--fscale,1) * var(--enboost,1));line-height:1.9}
+.exp-item h4{font-size:calc(clamp(14.5px,.3vw + 13.6px,16px) * var(--fscale,1) * var(--enboost,1))}
+.exp-item p{font-size:calc(clamp(13px,.35vw + 12.2px,14.5px) * var(--fscale,1) * var(--enboost,1));line-height:1.85}
+.wf-step p{font-size:calc(clamp(13.5px,.3vw + 12.8px,15px) * var(--fscale,1) * var(--enboost,1))}
+.contact-card .v{font-size:calc(clamp(18px,.4vw + 16.6px,20px) * var(--fscale,1) * var(--enboost,1))}
+footer{font-size:calc(clamp(11.5px,.2vw + 11px,12.5px) * var(--fscale,1))}
+
+/* ============ 作品页 works ============ */
+.work-card .w-body .brief{font-size:calc(clamp(13.5px,.35vw + 12.8px,15px) * var(--fscale,1) * var(--enboost,1));line-height:1.9}
+.work-card .w-body .meta{font-size:calc(clamp(11.5px,.2vw + 11px,12.5px) * var(--fscale,1) * var(--enboost,1))}
+.note-card h3{font-size:calc(clamp(16px,.5vw + 14.6px,20px) * var(--fscale,1) * var(--enboost,1))}
+.note-card p{font-size:calc(clamp(13.5px,.35vw + 12.8px,15px) * var(--fscale,1) * var(--enboost,1));line-height:1.9}
+.ex-card h4{font-size:calc(clamp(14.5px,.3vw + 13.6px,15.5px) * var(--fscale,1) * var(--enboost,1))}
+.ex-card p{font-size:calc(clamp(12.5px,.3vw + 11.9px,14px) * var(--fscale,1) * var(--enboost,1));line-height:1.8}
+.m-sec p{font-size:calc(clamp(14.5px,.4vw + 13.4px,16.5px) * var(--fscale,1) * var(--enboost,1));line-height:1.95}
+.m-facts .fact span{font-size:calc(clamp(13.5px,.3vw + 12.8px,15px) * var(--fscale,1) * var(--enboost,1))}
+.note-modal-body p{font-size:calc(clamp(15px,.4vw + 14px,16.5px) * var(--fscale,1) * var(--enboost,1));line-height:1.95}
+.vitem .vcap{font-size:calc(clamp(11px,.2vw + 10.6px,12px) * var(--fscale,1) * var(--enboost,1))}
+
+/* ============ 简历页 resume ============ */
+.cv-head .bio{font-size:calc(clamp(14px,.5vw + 13px,16px) * var(--fscale,1) * var(--enboost,1))}
+.info span{font-size:calc(clamp(14px,.3vw + 13.4px,15.5px) * var(--fscale,1) * var(--enboost,1))}
+.tl .item p{font-size:calc(clamp(13.5px,.35vw + 12.8px,15px) * var(--fscale,1) * var(--enboost,1));line-height:1.85}
+.tl .item h3{font-size:calc(clamp(16px,.4vw + 15px,17.5px) * var(--fscale,1) * var(--enboost,1))}
+.honor h3{font-size:calc(clamp(15px,.35vw + 14.2px,16.5px) * var(--fscale,1) * var(--enboost,1));line-height:1.7}
+.skill h3{font-size:calc(clamp(16px,.4vw + 15px,17.5px) * var(--fscale,1) * var(--enboost,1))}
+.skill .tags span{font-size:calc(clamp(12.5px,.25vw + 12px,13.5px) * var(--fscale,1) * var(--enboost,1))}
+
+/* ============ 英文模式：字距放松（拉丁文不适用 CJK 宽字距） ============ */
+html[lang="en"] p,
+html[lang="en"] .brief,
+html[lang="en"] .v,
+html[lang="en"] .info span,
+html[lang="en"] .skill .tags span,
+html[lang="en"] .m-facts .fact span{letter-spacing:.015em}
+html[lang="en"] h3,
+html[lang="en"] h4{letter-spacing:.02em}
+html[lang="en"] .work-card .w-body h3{letter-spacing:.03em}
+html[lang="en"] .work-card .w-body .meta,
+html[lang="en"] .exp-item .exp-meta,
+html[lang="en"] .note-card .meta{letter-spacing:.06em}
+html[lang="en"] nav .links a{letter-spacing:.08em}
+html[lang="en"] .btn{letter-spacing:.12em}
+html[lang="en"] .btn:hover{letter-spacing:.18em}
+html[lang="en"] footer{letter-spacing:.12em}
+/* 英文行高收紧至拉丁舒适区，长段限宽 */
+html[lang="en"] p{line-height:1.75}
+html[lang="en"] .m-sec p{max-width:66ch}
+html[lang="en"] .note-modal-body p{max-width:64ch}
+html[lang="en"] .about-text p.body{max-width:70ch}
