@@ -131,14 +131,18 @@
 | 《缝隙之间 2》 | "Between Gaps 2" |
 | 《东方造型与自我身份》 | "Eastern Form and Self-Identity" |
 | 红海疍家渔民在地实验 | Site-Specific Experiment with the Tankas of Honghai Village |
-| 《沉》 | "Sunken" |
+| 《浮沉》 | "Floating-Sinking" |
 | 《文人松》 | "Literati Pine" |
 | 《富含冒犯》 | "Rich in Offence" |
-| 《发动机动态雕塑》 | "Engine Kinetic Sculpture" |
+| 《如何追逐速度》（动态雕塑） | "How to Chase Speed" |
 | 疍家 | Tanka |
 | 南海大地艺术节 | Nanhai Land Art Festival |
 | 草叶集艺术空间 | Caoyeji Art Space |
 | 筑梦空间 | Zhumeng Space |
+| 《骨肉皮》 | "Bone, Flesh, Skin" |
+| 《夹角空间的想象》 | "Imagining the Angle" |
+| 《痕迹如河》 | "Traces Like a River" |
+| 《缝隙系列》 | "Gaps Series" |
 
 ---
 
