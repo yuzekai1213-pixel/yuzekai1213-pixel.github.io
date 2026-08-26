@@ -1,0 +1,8 @@
+# 预览与 Demo 文件（不上传到正式站点）
+homepod-demos.html
+yuzekai-design-preview.html
+yuzekai-homepage-preview.html
+
+# 系统文件
+.DS_Store
+Thumbs.db

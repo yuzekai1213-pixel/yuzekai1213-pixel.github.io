@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>余泽锴 · 个人简历 / CV — YU ZEKAI</title>
+<meta name="description" content="余泽锴（YU ZEKAI），雕塑家与在地艺术实践者。广州美术学院雕塑专业，RCA / UCL / UAL MFA 录取。个人简历 / CV 子页面。" />
+<meta name="keywords" content="余泽锴,YU ZEKAI,雕塑家,简历,CV,在地艺术,广州美术学院" />
+<meta name="author" content="余泽锴 YU ZEKAI" />
+<meta name="theme-color" content="#f2eee6" />
+<meta name="robots" content="index,follow" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<!-- ⚠️ 上线前 TODO：将所有文件中的 yuzekai1213.github.io 替换为正式域名 -->
+<link rel="canonical" href="https://yuzekai1213.github.io/resume.html" />
+<meta property="og:type" content="profile" />
+<meta property="og:site_name" content="余泽锴 · YU ZEKAI" />
+<meta property="og:title" content="余泽锴 · 个人简历 / CV" />
+<meta property="og:description" content="余泽锴（YU ZEKAI），雕塑家与在地艺术实践者。广州美术学院雕塑专业，RCA / UCL / UAL MFA 录取。" />
+<meta property="og:image" content="https://yuzekai1213.github.io/assets/2024/%E7%BA%A2%E6%B5%B7%E7%96%8D%E5%AE%B6%E6%B8%94%E6%B0%91%E5%9C%A8%E5%9C%B0%E5%AE%9E%E9%AA%8C/%E7%8E%B0%E5%9C%BA/20250103014028031_0003-disp.jpg" />
+<meta property="og:url" content="https://yuzekai1213.github.io/resume.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="余泽锴 · 个人简历 / CV" />
+<meta name="twitter:description" content="余泽锴（YU ZEKAI），雕塑家与在地艺术实践者。RCA / UCL / UAL MFA 录取。" />
+<meta name="twitter:image" content="https://yuzekai1213.github.io/assets/2024/%E7%BA%A2%E6%B5%B7%E7%96%8D%E5%AE%B6%E6%B8%94%E6%B0%91%E5%9C%A8%E5%9C%B0%E5%AE%9E%E9%AA%8C/%E7%8E%B0%E5%9C%BA/20250103014028031_0003-disp.jpg" />
+<link rel="stylesheet" href="shared.css?v=22">
+<style>
+/* ============================================================
+   个人简历 / CV 子页面 · 本页特有样式（公共基础在 shared.css）
+   深色艺术风 · 暖金 accent · 纸张米色 ink · 双主题
+   ============================================================ */
+body{font-family:"Noto Serif SC","Songti SC","SimSun",serif;line-height:1.85}
+.kicker,.cv-foot .up{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+
+/* ============ 导航（本页：毛玻璃吸顶覆写） ============ */
+nav{padding:0 6vw}
+nav.scrolled{
+  background:color-mix(in srgb,var(--bg) 88%,transparent);
+  -webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);
+  border-bottom-color:var(--line);box-shadow:0 10px 30px rgba(0,0,0,.18);
+}
+nav .logo{display:flex;align-items:center;gap:10px;font-size:16px;letter-spacing:.14em;color:var(--ink);font-weight:600}
+nav .logo small{font-size:11px;color:var(--ink3);letter-spacing:.2em;font-weight:400}
+nav .links a{
+  font-size:12px;letter-spacing:.2em;color:var(--ink2);
+  padding:9px 16px;border-radius:30px;transition:.3s var(--ease);white-space:nowrap;
+}
+nav .links a:hover{color:var(--accent2);background:var(--accent-dim)}
+nav .tools button{font-size:15px;color:var(--ink2);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.3s;border:1px solid var(--line)}
+nav .tools button:hover{color:var(--accent2);border-color:rgba(217,164,65,.5)}
+
+/* ============ 顶部标题 ============ */
+.cv-head{padding:calc(var(--nav-h) + 90px) 8vw 70px;text-align:center}
+.cv-head .kicker{font-size:11px;letter-spacing:.46em;color:var(--accent2);margin-bottom:22px}
+.cv-head h1{font-size:clamp(38px,7vw,72px);letter-spacing:.12em;font-weight:600;line-height:1.2}
+.cv-head h1 .en{display:block;font-size:clamp(16px,2.6vw,24px);letter-spacing:.4em;color:var(--ink3);margin-top:14px;font-weight:400}
+.cv-head .bio{max-width:640px;margin:26px auto 0;font-size:clamp(14px,2vw,16px);color:var(--ink2);line-height:2}
+.cv-head .bio em{color:var(--accent2);font-style:normal}
+
+/* ============ 板块通用 ============ */
+main{max-width:1080px;margin:0 auto;padding:0 6vw 40px}
+.sec{padding:34px 0 54px;border-top:1px solid var(--line)}
+.sec:first-of-type{border-top:none;padding-top:10px}
+.section-head{margin-bottom:36px;display:flex;flex-direction:column;gap:6px}
+.section-head .en{font-size:11px;letter-spacing:.46em;color:var(--accent2)}
+.section-head h2{font-size:clamp(24px,3.6vw,34px);letter-spacing:.14em;font-weight:600}
+.section-head .rule{width:60px;height:2px;background:repeating-linear-gradient(90deg,var(--accent) 0 6px,transparent 6px 11px);margin-top:12px}
+
+/* ============ 基本信息 ============ */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.info{display:flex;justify-content:space-between;align-items:baseline;gap:18px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px 20px;transition:.3s var(--ease)}
+.info:hover{border-color:rgba(217,164,65,.45);transform:translateY(-2px)}
+.info b{font-size:11.5px;letter-spacing:.2em;color:var(--ink3);font-weight:500;white-space:nowrap}
+.info span{font-size:14px;color:var(--ink);text-align:right;word-break:break-all}
+
+/* ============ 时间线 ============ */
+.tl{position:relative;padding-left:26px}
+.tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:1px;background:var(--line2)}
+.tl .item{position:relative;padding:0 0 30px}
+.tl .item:last-child{padding-bottom:4px}
+.tl .item::before{content:"";position:absolute;left:-26px;top:9px;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
+.tl .item .y{display:inline-block;font-size:12px;letter-spacing:.24em;color:var(--accent);border:1px solid rgba(217,164,65,.4);border-radius:30px;padding:3px 12px;margin-bottom:10px;background:var(--accent-dim)}
+.tl .item h3{font-size:17px;letter-spacing:.04em;margin-bottom:4px}
+.tl .item .role{font-size:12px;letter-spacing:.16em;color:var(--accent2);margin-bottom:6px}
+.tl .item .meta{font-size:11px;letter-spacing:.14em;color:var(--ink3);margin-bottom:8px}
+.tl .item p{font-size:13.5px;line-height:1.9;color:var(--ink2)}
+
+/* ============ 荣誉 / 奖牌 ============ */
+.honor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.honor{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;transition:.35s var(--ease)}
+.honor:hover{border-color:rgba(217,164,65,.45);transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.16)}
+.honor .no{font-size:11px;letter-spacing:.3em;color:var(--accent);font-weight:600}
+.honor h3{font-size:15.5px;letter-spacing:.03em;margin:10px 0 6px;line-height:1.6}
+.honor .src{font-size:11.5px;letter-spacing:.12em;color:var(--ink3)}
+
+
+
+
+
+
+
+
+/* ============ 技能 ============ */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.skill{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px 24px 26px;transition:.35s var(--ease)}
+.skill:hover{border-color:rgba(217,164,65,.45);transform:translateY(-3px)}
+.skill .en{font-size:11px;letter-spacing:.3em;color:var(--accent);font-weight:600}
+.skill h3{font-size:17px;letter-spacing:.05em;margin:12px 0 12px}
+.skill .tags{display:flex;flex-wrap:wrap;gap:8px}
+.skill .tags span{font-size:12px;letter-spacing:.06em;color:var(--ink2);border:1px solid var(--line);border-radius:30px;padding:6px 13px;background:var(--bg2);transition:.25s}
+.skill .tags span:hover{color:var(--accent2);border-color:rgba(217,164,65,.45)}
+
+/* ============ 页脚 ============ */
+footer{padding:52px 6vw 64px;text-align:center;color:var(--ink3);font-size:11.5px;letter-spacing:.22em;border-top:1px solid var(--line)}
+footer .up{display:inline-block;margin-top:18px;color:var(--accent2);font-size:12px;letter-spacing:.2em;transition:.3s}
+footer .up:hover{letter-spacing:.3em}
+
+/* ============ 响应式 ============ */
+@media(max-width:900px){
+  .cv-head{padding:calc(var(--nav-h) + 60px) 6vw 54px}
+  main{padding:0 5vw 30px}
+  nav{padding:0 5vw}
+  nav .links a{padding:8px 12px}
+}
+@media(max-width:560px){
+  nav .logo small{display:none}
+  .info{flex-direction:column;gap:4px;align-items:flex-start}
+  .info span{text-align:left;word-break:break-all}
+}
+.cv-foot .vnote{margin-top:8px;font-size:10px;color:var(--ink3);letter-spacing:.1em}
+
+/* ============ 打印 / 导出 PDF（简历页核心场景） ============ */
+@media print{
+  @page{size:A4;margin:14mm}
+  html,body{background:#fff!important;color:#111!important}
+  :root{--fscale:1!important;--enboost:1!important}
+  body{line-height:1.6;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  nav,#preloader,.cursor-dot,.cursor-follow,#scrollbar,footer .up{display:none!important}
+  .cv-head{padding:0 0 24px;text-align:left}
+  .cv-head h1{font-size:30px;letter-spacing:.08em;color:#111}
+  .cv-head h1 .en{color:#555;font-size:15px;margin-top:6px}
+  .cv-head .kicker{font-size:10px;color:#8a6a1f}
+  .cv-head .bio{font-size:12.5px;color:#333;margin-top:12px}
+  main{max-width:none;padding:0}
+  .sec{padding:16px 0 22px;border-top:1px solid #ddd;break-inside:avoid-page}
+  .section-head{margin-bottom:16px}
+  .section-head .en{color:#8a6a1f;font-size:9.5px}
+  .section-head h2{font-size:20px;color:#111}
+  .section-head .rule{display:none}
+  .rv{opacity:1!important;transform:none!important;transition:none!important}
+  .info-grid,.honor-grid,.skills-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+  .info,.honor,.skill{border-color:#ddd;background:#fff;padding:9px 12px;box-shadow:none;transform:none}
+  .info b,.honor .no,.skill .en{color:#8a6a1f}
+  .tl{padding-left:18px}
+  .tl .item{padding-bottom:14px;break-inside:avoid}
+  .tl .item::before{left:-18px;top:7px;width:7px;height:7px;background:#b8860b;box-shadow:none}
+  .tl .item h3{font-size:13.5px;color:#111}
+  .tl .item p{font-size:11.5px;color:#444;line-height:1.65}
+  footer{border-top:1px solid #ddd;color:#777;font-size:9.5px;padding:14px 0 0}
+}
+</style>
+<link rel="stylesheet" href="readability.css?v=22">
+</head>
+<body>
+<script>(function(){try{var h=document.documentElement,s=localStorage.getItem("yz-theme");if(!s){var d=new Date(),m=d.getHours()*60+d.getMinutes();s=(m>=540&&m<1110)?"light":"dark"}h.setAttribute("data-theme",s)}catch(e){}})();</script>
+
+<!-- ============ 导航 ============ -->
+<nav id="nav">
+  <div class="logo"><i></i>余泽锴 <small>YU ZEKAI</small></div>
+  <div class="links">
+    <a href="index.html" data-i18n="r.nav.home">返回主页 HOME</a>
+  </div>
+  <div class="tools">
+    <button id="fsBtn" title="调整字体大小 / Text size" aria-label="调整字体大小 / Text size">A</button>
+    <button id="langBtn" title="切换语言 / Language" aria-label="切换语言 / Language">EN</button>
+    <button id="themeBtn" title="切换深色/浅色" aria-label="切换深色/浅色">◐</button>
+    <button id="printBtn" title="打印 / 导出 PDF" aria-label="打印 / 导出 PDF">⎙</button>
+  </div>
+</nav>
+
+<!-- ============ 顶部标题 ============ -->
+<header class="cv-head">
+  <div class="kicker">SCULPTOR · SITE-SPECIFIC ARTIST</div>
+  <h1>余泽锴<span class="en">YU ZEKAI · CURRICULUM VITAE</span></h1>
+  <p class="bio" data-i18n-html="r.bio"><em>“以田野为方法，把在地的记忆与现场，塑成可触摸的雕塑。”</em><br>雕塑家 · 在地艺术实践者 · 广州美术学院实验雕塑 2020–2025 · 现居广州 / 佛山</p>
+</header>
+
+<main>
+
+  <!-- ============ 基本信息 ============ -->
+  <section class="sec" id="basic">
+    <div class="section-head rv">
+      <div class="en">BASIC INFO</div>
+      <h2 data-i18n="r.h.basic">基本信息</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="info-grid">
+      <div class="info rv zoom"><b>本名 NAME</b><span>余泽锴 · YU ZEKAI</span></div>
+      <div class="info rv zoom"><b>身份 ROLE</b><span data-i18n="r.i.role">雕塑家 / 在地艺术实践者</span></div>
+      <div class="info rv zoom"><b>教育 EDUCATION</b><span data-i18n="r.i.edu">广州美术学院 · 实验雕塑 2020–2025</span></div>
+      <div class="info rv zoom"><b>研究生 OFFER</b><span>RCA / UCL / UAL MFA</span></div>
+      <div class="info rv zoom"><b>方向 FOCUS</b><span data-i18n="r.i.focus">雕塑 / 装置 / 在地艺术 / 策展</span></div>
+      <div class="info rv zoom"><b>地点 LOCATION</b><span data-i18n="r.i.loc">中国 · 广州 / 佛山</span></div>
+      <div class="info rv zoom"><b>邮箱 EMAIL</b><span>525147849@qq.com</span></div>
+      <div class="info rv zoom"><b>电话 / 微信 PHONE · WECHAT</b><span>176 8825 6407</span></div>
+    </div>
+  </section>
+
+  <!-- ============ 教育背景 ============ -->
+  <section class="sec" id="edu">
+    <div class="section-head rv">
+      <div class="en">EDUCATION</div>
+      <h2 data-i18n="r.h.edu">教育背景</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="tl">
+      <div class="item rv">
+        <span class="y">2020.09 – 2025.06</span>
+        <h3 data-i18n="r.e1.t">广州美术学院 · 雕塑与公共艺术学院 · 实验雕塑方向（本科）</h3>
+        <div class="role">SCULPTURE &amp; PUBLIC ART · EXPERIMENTAL SCULPTURE</div>
+        <p data-i18n="r.e1.p">2020 年 9 月入学，接受素描、泥塑人体等造型训练；2023 年进入实验雕塑工作室，深化木雕、石雕、金属铸造与玉材工艺，确立“东方造型与自我身份”创作线索。2025 年 6 月毕业：毕业创作《回溯间隙》获校级优秀毕业创作奖（85 分），毕业论文获 84 分。</p>
+      </div>
+      <div class="item rv">
+        <span class="y">2025–2026</span>
+        <h3 data-i18n="r.e2.t">国际语境 · 研究生新程</h3>
+        <div class="role">POSTGRADUATE · MFA OFFERS</div>
+        <p data-i18n="r.e2.p">凭毕业创作与作品集，获 RCA、UCL、UAL 三校 MFA 录取。</p>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ============ 荣誉与获奖 ============ -->
+  <section class="sec" id="honor">
+    <div class="section-head rv">
+      <div class="en">HONORS &amp; AWARDS</div>
+      <h2 data-i18n="r.h.honor">荣誉与获奖</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="honor-grid">
+      <div class="honor rv zoom"><div class="no">01</div><h3 data-i18n="r.h1">RCA / UCL / UAL 三校 MFA 录取</h3><div class="src">2025–2026 申请季 · HONOR</div></div>
+      <div class="honor rv zoom"><div class="no">02</div><h3 data-i18n="r.h2">校级优秀毕业创作奖（85 分）——《回溯间隙》</h3><div class="src">2025 · GRADUATION WORK</div></div>
+      <div class="honor rv zoom"><div class="no">03</div><h3 data-i18n="r.h3">毕业论文 84 分《去中心化背景下华南沿海地区在地艺术研究》</h3><div class="src">2025 · THESIS</div></div>
+      <div class="honor rv zoom"><div class="no">04</div><h3 data-i18n="r.h4">筑梦空间个展《东方造型与自我身份》 · 展览成绩 85 分</h3><div class="src">2025 · SOLO EXHIBITION</div></div>
+      <div class="honor rv zoom"><div class="no">05</div><h3 data-i18n="r.h5">红海疍家渔民在地实验项目 · 课程成绩 94 分 · 绩点 4.40</h3><div class="src">2024 · SITE-SPECIFIC</div></div>
+      <div class="honor rv zoom"><div class="no">06</div><h3 data-i18n="r.h6">《缝隙之间 2》综合材料空间装置 · 课程成绩 90 分</h3><div class="src">2025 · INSTALLATION</div></div>
+      <div class="honor rv zoom"><div class="no">07</div><h3 data-i18n="r.h7">《沉》木雕 · 入选广州美术学院年度优秀学生作品展（院级）</h3><div class="src">2021 · GROUP SHOW</div></div>
+    </div>
+  </section>
+
+  <!-- ============ 往期展览经历 ============ -->
+  <section class="sec" id="exhibitions">
+    <div class="section-head rv">
+      <div class="en">EXHIBITIONS · OVERVIEW</div>
+      <h2 data-i18n="r.h.ex">往期展览经历</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="tl">
+      <div class="item rv"><span class="y">2026</span><h3 data-i18n="r.x1.t">区域教育学术年会 · 课程成果展</h3><div class="role" data-i18n="r.x1.r">策展人 · CURATOR</div><div class="meta" data-i18n="r.x1.m">第二届中国教育学会区域教育学术年会</div><p data-i18n="r.x1.p">独立策划课程成果展，负责作品选择与展陈。</p></div>
+      <div class="item rv"><span class="y">2025</span><h3 data-i18n="r.x2.t">筑梦空间个展《东方造型与自我身份》</h3><div class="role">个人展览 · SOLO EXHIBITION</div><div class="meta" data-i18n="r.x2.m">筑梦空间</div><p data-i18n="r.x2.p">本科阶段木雕、玉材与雕塑创作，成绩 85 分。</p></div>
+      <div class="item rv"><span class="y">2025</span><h3 data-i18n="r.x3.t">《回溯间隙》毕业创作展</h3><div class="role">毕业创作 · GRADUATION</div><div class="meta" data-i18n="r.x3.m">广州美术学院毕业展</div><p data-i18n="r.x3.p">综合材料装置（约 350 × 300 cm），获校级优秀毕业创作奖。</p></div>
+      <div class="item rv"><span class="y">2024</span><h3 data-i18n="r.x4.t">红海疍家渔民在地实验展览</h3><div class="role">在地展览 · SITE-SPECIFIC</div><div class="meta" data-i18n="r.x4.m">南沙红海村 · 疍家渔村公共空间</div><p data-i18n="r.x4.p">影像、摄影与装置回应疍家渔民的岸上生活，作品留驻现场。</p></div>
+      <div class="item rv"><span class="y">2024</span><h3 data-i18n="r.x5.t">名片 + 日历 装置展览</h3><div class="role">装置展览 · INSTALLATION</div><div class="meta" data-i18n="r.x5.m">展览现场（布展至撤展全程记录）</div><p data-i18n="r.x5.p">手绘名片装裱入框、手写日历铺成长卷，现场完成布展。</p></div>
+      <div class="item rv"><span class="y">2024</span><h3 data-i18n="r.x6.t">草叶集艺术空间 · 在地实验展览</h3><div class="role">在地展览 · EXHIBITION</div><div class="meta" data-i18n="r.x6.m">草叶集艺术空间</div><p data-i18n="r.x6.p">独立完成的在地实验展览，与红海项目同一方法。</p></div>
+      <div class="item rv"><span class="y">2021</span><h3 data-i18n="r.x7.t">《沉》木雕 · 入选年度优秀学生作品展</h3><div class="role">群展 · GROUP SHOW</div><div class="meta" data-i18n="r.x7.m">广州美术学院</div><p data-i18n="r.x7.p">本科最早公开展出的作品之一，整木雕刻。</p></div>
+    </div>
+  </section>
+
+  <!-- ============ 工作与实践经验 ============ -->
+  <section class="sec" id="experience">
+    <div class="section-head rv">
+      <div class="en">EXPERIENCE</div>
+      <h2 data-i18n="r.h.work">工作与实践经验</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="tl">
+      <div class="item rv"><span class="y">2026.02–03</span><h3 data-i18n="r.w1.t">KACA 经典车美学博物馆 · 酒吧项目</h3><div class="role" data-i18n="r.w1.r">商业合作 · 全案策划</div><div class="meta">COMMERCIAL PROJECT</div><p data-i18n="r.w1.p">策划馆内酒吧项目，跟进空间、运营与活动落地。</p></div>
+      <div class="item rv"><span class="y">2026.03–04</span><h3 data-i18n="r.w2.t">演出道具与背景板制作</h3><div class="role" data-i18n="r.w2.r">创意执行 · 舞台制作</div><div class="meta">CREATIVE PRODUCTION</div><p data-i18n="r.w2.p">多次承接演出道具与背景板制作，从设计到落地。</p></div>
+      <div class="item rv"><span class="y">2020.10–2023.09</span><h3 data-i18n="r.w3.t">等里精酿酒肆 · 代理店长</h3><div class="role" data-i18n="r.w3.r">门店运营 · 活动策划</div><div class="meta">SOCIAL PRACTICE</div><p data-i18n="r.w3.p">独立负责门店运营（日均营业额约 1500 元），策划多场品鉴活动。</p></div>
+      <div class="item rv"><span class="y">2021.07–08</span><h3 data-i18n="r.w4.t">戒浪不冲浪俱乐部 · 摄影助理</h3><div class="role" data-i18n="r.w4.r">动态摄影 · 拍摄执行</div><div class="meta">PHOTOGRAPHY</div><p data-i18n="r.w4.p">独立拍摄冲浪客人的动态照片（日选片好评率 90%），协助赛事与服装拍摄。</p></div>
+      <div class="item rv"><span class="y">2020</span><h3 data-i18n="r.w5.t">校园跑腿综合服务平台 · 联合发起人</h3><div class="role" data-i18n="r.w5.r">创业 · 产品与运营</div><div class="meta">ENTREPRENEURSHIP</div><p data-i18n="r.w5.p">组建 10 人团队，运营快递代取、跑腿与智能打印业务。</p></div>
+      <div class="item rv"><span class="y">2020.10–2021.11</span><h3 data-i18n="r.w6.t">深度画室 · 高考美术助教</h3><div class="role" data-i18n="r.w6.r">教学 · 课堂管理</div><div class="meta">TEACHING</div><p data-i18n="r.w6.p">协助教学与课堂管理，多名学生考入央美、广美等美院。</p></div>
+    </div>
+  </section>
+
+  <!-- ============ 技能清单 ============ -->
+  <section class="sec" id="skills">
+    <div class="section-head rv">
+      <div class="en">SKILLS</div>
+      <h2 data-i18n="r.h.skill">技能清单</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill rv zoom">
+        <div class="en">SCULPTURE &amp; MEDIA</div>
+        <h3 data-i18n="r.s1.t">雕塑与材料媒介</h3>
+        <div class="tags">
+          <span data-i18n="r.s1a">木雕</span><span data-i18n="r.s1b">石雕</span><span data-i18n="r.s1c">金属铸造</span><span data-i18n="r.s1d">玉材</span>
+          <span data-i18n="r.s1e">硅胶综合材料</span><span data-i18n="r.s1f">现成品再造</span><span data-i18n="r.s1g">影像 / 摄影</span>
+          <span data-i18n="r.s1h">动态雕塑装置</span><span data-i18n="r.s1i">手绘 / 装裱</span><span data-i18n="r.s1j">超写实圆雕</span>
+        </div>
+      </div>
+      <div class="skill rv zoom">
+        <div class="en">MAKING &amp; CRAFT</div>
+        <h3 data-i18n="r.s2.t">造物与制作工艺</h3>
+        <div class="tags">
+          <span data-i18n="r.s2a">手工改装摩托车</span><span data-i18n="r.s2b">焊接 / 机加工艺</span>
+          <span data-i18n="r.s2c">舞台道具 / 背景板制作</span><span data-i18n="r.s2d">空间装置落地</span>
+        </div>
+      </div>
+      <div class="skill rv zoom">
+        <div class="en">METHOD &amp; PRACTICE</div>
+        <h3 data-i18n="r.s3.t">创作与项目方法</h3>
+        <div class="tags">
+          <span data-i18n="r.s3a">在地艺术（田野调查 / 社区走访 / 在地展览）</span>
+          <span data-i18n="r.s3b">策展与展陈</span><span data-i18n="r.s3c">全案项目策划</span><span data-i18n="r.s3d">门店运营 / 活动策划</span>
+          <span data-i18n="r.s3e">动态摄影 / 拍摄执行</span><span data-i18n="r.s3f">教学与课堂管理</span>
+        </div>
+      </div>
+      <div class="skill rv zoom">
+        <div class="en">LANGUAGE</div>
+        <h3 data-i18n="r.s4.t">语言</h3>
+        <div class="tags">
+          <span data-i18n="r.s4a">中文 · 母语</span>
+          <span data-i18n="r.s4b">英文 · 学术与创作交流（全英文完成 RCA / UCL / UAL 三校 MFA 申请）</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 页脚 ============ -->
+<footer class="cv-foot">
+  <p>© 2026 余泽锴 YU ZEKAI · Sculpture &amp; Site-Specific Art</p>
+  <p class="vnote" data-i18n="r.footer.note">简历 · 基本信息 / 教育背景 / 荣誉与获奖 / 往期展览经历 / 工作与实践经验 / 技能清单</p>
+  <div><a class="up" href="index.html" data-i18n="r.backhome">返回主页 ↑ BACK TO HOME</a></div>
+</footer>
+
+<script src="shared.js?v=22"></script>
+<script>
+/* 简历页 · 公共交互统一由 shared.js 提供 */
+var I18N = {
+  "r.nav.home":{zh:"返回主页 HOME",en:"Home"},
+  "r.bio":{zh:"<em>“以田野为方法，把在地的记忆与现场，塑成可触摸的雕塑。”</em><br>雕塑家 · 在地艺术实践者 · 广州美术学院实验雕塑 2020–2025 · 现居广州 / 佛山",en:"<em>Fieldwork as method — turning local memory and lived sites into tangible sculpture.</em><br>Sculptor · Site-specific art practitioner · GAFA Experimental Sculpture 2020–2025 · Guangzhou / Foshan"},
+  "r.h.basic":{zh:"基本信息",en:"Basic Info"},
+  "r.h.edu":{zh:"教育背景",en:"Education"},
+  "r.h.honor":{zh:"荣誉与获奖",en:"Honors &amp; Awards"},
+  "r.h.ex":{zh:"往期展览经历",en:"Exhibitions &amp; Shows"},
+  "r.h.work":{zh:"工作与实践经验",en:"Work &amp; Practice"},
+  "r.h.skill":{zh:"技能清单",en:"Skills"},
+  "r.footer.note":{zh:"简历 · 基本信息 / 教育背景 / 荣誉与获奖 / 往期展览经历 / 工作与实践经验 / 技能清单",en:"Resume · Basic Info / Education / Honors &amp; Awards / Exhibitions / Work &amp; Practice / Skills"},
+  "r.backhome":{zh:"返回主页 ↑ BACK TO HOME",en:"Back to home ↑"},
+  /* 基本信息 */
+  "r.i.role":{zh:"雕塑家 / 在地艺术实践者",en:"Sculptor / Site-specific art practitioner"},
+  "r.i.edu":{zh:"广州美术学院 · 实验雕塑 2020–2025",en:"GAFA · Experimental Sculpture, 2020–2025"},
+  "r.i.focus":{zh:"雕塑 / 装置 / 在地艺术 / 策展",en:"Sculpture / Installation / Site-specific art / Curation"},
+  "r.i.loc":{zh:"中国 · 广州 / 佛山",en:"Guangzhou / Foshan, China"},
+  /* 教育背景 */
+  "r.e1.t":{zh:"广州美术学院 · 雕塑与公共艺术学院 · 实验雕塑方向（本科）",en:"Guangzhou Academy of Fine Arts · School of Sculpture &amp; Public Art · Experimental Sculpture (BFA)"},
+  "r.e1.p":{zh:"2020 年 9 月入学，接受素描、泥塑人体等造型训练；2023 年进入实验雕塑工作室，深化木雕、石雕、金属铸造与玉材工艺，确立“东方造型与自我身份”创作线索。2025 年 6 月毕业：毕业创作《回溯间隙》获校级优秀毕业创作奖（85 分），毕业论文获 84 分。",
+            en:"Enrolled Sept 2020; foundation training in drawing and clay figure modelling. Joined the Experimental Sculpture studio in 2023, deepening wood, stone, metal casting and jade, and forming the thread of Eastern form and self-identity. Graduated June 2025: graduation work “Tracing the Gap” won the university Outstanding Graduation Work Award (85/100); thesis 84/100."},
+  "r.e2.t":{zh:"国际语境 · 研究生新程",en:"International Context · Postgraduate Chapter"},
+  "r.e2.p":{zh:"凭毕业创作与作品集，获 RCA、UCL、UAL 三校 MFA 录取。",
+            en:"MFA offers from RCA, UCL and UAL, based on the graduation work and portfolio."},
+  /* 荣誉与获奖 */
+  "r.h1":{zh:"RCA / UCL / UAL 三校 MFA 录取",en:"MFA offers from RCA / UCL / UAL"},
+  "r.h2":{zh:"校级优秀毕业创作奖（85 分）——《回溯间隙》",en:"University Outstanding Graduation Work Award (85/100) — “Tracing the Gap”"},
+  "r.h3":{zh:"毕业论文 84 分《去中心化背景下华南沿海地区在地艺术研究》",en:"Graduation thesis 84/100, on decentralised site-specific art along the South China coast"},
+  "r.h4":{zh:"筑梦空间个展《东方造型与自我身份》 · 展览成绩 85 分",en:"Solo show “Eastern Form and Self-Identity”, Zhumeng Space · graded 85/100"},
+  "r.h5":{zh:"红海疍家渔民在地实验项目 · 课程成绩 94 分 · 绩点 4.40",en:"Honghai Tanka site-specific project · course grade 94/100 · GPA 4.40"},
+  "r.h6":{zh:"《缝隙之间 2》综合材料空间装置 · 课程成绩 90 分",en:"“Between Gaps 2” mixed-media spatial installation · course grade 90/100"},
+  "r.h7":{zh:"《沉》木雕 · 入选广州美术学院年度优秀学生作品展（院级）",en:"“Sunken” wood carving · selected for GAFA Annual Outstanding Student Works Exhibition (college level)"},
+  /* 往期展览 */
+  "r.x1.t":{zh:"区域教育学术年会 · 课程成果展",en:"Regional Education Academic Annual Conference · Course Outcomes Exhibition"},
+  "r.x1.r":{zh:"策展人 · CURATOR",en:"Curator · CURATOR"},
+  "r.x1.m":{zh:"第二届中国教育学会区域教育学术年会",en:"2nd Regional Education Academic Annual Conference, China Education Society"},
+  "r.x1.p":{zh:"独立策划课程成果展，负责作品选择与展陈。",en:"Independently curated the course-outcomes show; selected works and display."},
+  "r.x2.t":{zh:"筑梦空间个展《东方造型与自我身份》",en:"Solo Exhibition “Eastern Form and Self-Identity”"},
+  "r.x2.m":{zh:"筑梦空间",en:"Zhumeng Space"},
+  "r.x2.p":{zh:"本科阶段木雕、玉材与雕塑创作，成绩 85 分。",en:"Undergraduate works in wood and jade; 85/100."},
+  "r.x3.t":{zh:"《回溯间隙》毕业创作展",en:"“Tracing the Gap” Graduation Exhibition"},
+  "r.x3.m":{zh:"广州美术学院毕业展",en:"GAFA Graduation Exhibition"},
+  "r.x3.p":{zh:"综合材料装置（约 350 × 300 cm），获校级优秀毕业创作奖。",en:"Mixed-media installation, approx. 350 × 300 cm; university graduation award."},
+  "r.x4.t":{zh:"红海疍家渔民在地实验展览",en:"Honghai Tanka Site-Specific Exhibition"},
+  "r.x4.m":{zh:"南沙红海村 · 疍家渔村公共空间",en:"Honghai Village, Nansha · Public spaces of a Tanka fishing village"},
+  "r.x4.p":{zh:"影像、摄影与装置回应疍家渔民的岸上生活，作品留驻现场。",en:"Video, photography and installation on Tanka life ashore; works remained on site."},
+  "r.x5.t":{zh:"名片 + 日历 装置展览",en:"Name Cards + Calendar Installation Exhibition"},
+  "r.x5.m":{zh:"展览现场（布展至撤展全程记录）",en:"Exhibition venue (documented from install to deinstall)"},
+  "r.x5.p":{zh:"手绘名片装裱入框、手写日历铺成长卷，现场完成布展。",en:"Framed drawn cards and hand-written calendar scrolls; installed on site."},
+  "r.x6.t":{zh:"草叶集艺术空间 · 在地实验展览",en:"Caoyeji Art Space · Site-Specific Experimental Exhibition"},
+  "r.x6.m":{zh:"草叶集艺术空间",en:"Caoyeji Art Space"},
+  "r.x6.p":{zh:"独立完成的在地实验展览，与红海项目同一方法。",en:"Independently realised site-specific exhibition; same method as the Honghai project."},
+  "r.x7.t":{zh:"《沉》木雕 · 入选年度优秀学生作品展",en:"“Sunken” · Annual Outstanding Student Works Exhibition"},
+  "r.x7.m":{zh:"广州美术学院",en:"Guangzhou Academy of Fine Arts"},
+  "r.x7.p":{zh:"本科最早公开展出的作品之一，整木雕刻。",en:"Among the earliest works shown; carved from a single trunk."},
+  /* 工作与实践经验 */
+  "r.w1.t":{zh:"KACA 经典车美学博物馆 · 酒吧项目",en:"KACA Classic Car Aesthetics Museum · Bar Project"},
+  "r.w1.r":{zh:"商业合作 · 全案策划",en:"Commercial Partner · Full Planning"},
+  "r.w1.p":{zh:"策划馆内酒吧项目，跟进空间、运营与活动落地。",en:"Planned the museum's bar project; saw space, operations and events through delivery."},
+  "r.w2.t":{zh:"演出道具与背景板制作",en:"Performance Props &amp; Backdrop Production"},
+  "r.w2.r":{zh:"创意执行 · 舞台制作",en:"Creative Execution · Stage Production"},
+  "r.w2.p":{zh:"多次承接演出道具与背景板制作，从设计到落地。",en:"Stage props and backdrops for multiple shows, from design to delivery."},
+  "r.w3.t":{zh:"等里精酿酒肆 · 代理店长",en:"Dengli Craft Brewery · Acting Manager"},
+  "r.w3.r":{zh:"门店运营 · 活动策划",en:"Store Operations · Event Planning"},
+  "r.w3.p":{zh:"独立负责门店运营（日均营业额约 1500 元），策划多场品鉴活动。",en:"Ran the store independently (≈¥1,500 daily sales) and organised tasting events."},
+  "r.w4.t":{zh:"戒浪不冲浪俱乐部 · 摄影助理",en:"Jielang Surf Club · Photography Assistant"},
+  "r.w4.r":{zh:"动态摄影 · 拍摄执行",en:"Motion Photography · Shoot Execution"},
+  "r.w4.p":{zh:"独立拍摄冲浪客人的动态照片（日选片好评率 90%），协助赛事与服装拍摄。",en:"Shot surfers in action (90% daily selection rate); assisted competition and apparel shoots."},
+  "r.w5.t":{zh:"校园跑腿综合服务平台 · 联合发起人",en:"Campus Errand Platform · Co-Founder"},
+  "r.w5.r":{zh:"创业 · 产品与运营",en:"Entrepreneurship · Product &amp; Operations"},
+  "r.w5.p":{zh:"组建 10 人团队，运营快递代取、跑腿与智能打印业务。",en:"Built a 10-person team running parcel pickup, errands and printing services."},
+  "r.w6.t":{zh:"深度画室 · 高考美术助教",en:"Shendu Art Studio · Art Teaching Assistant"},
+  "r.w6.r":{zh:"教学 · 课堂管理",en:"Teaching · Classroom Management"},
+  "r.w6.p":{zh:"协助教学与课堂管理，多名学生考入央美、广美等美院。",en:"Assisted teaching and classroom management; students admitted to CAFA, GAFA and other academies."},
+  /* 技能 */
+  "r.s1.t":{zh:"雕塑与材料媒介",en:"Sculpture &amp; Media"},
+  "r.s1a":{zh:"木雕",en:"Wood carving"},
+  "r.s1b":{zh:"石雕",en:"Stone carving"},
+  "r.s1c":{zh:"金属铸造",en:"Metal casting"},
+  "r.s1d":{zh:"玉材",en:"Jade working"},
+  "r.s1e":{zh:"硅胶综合材料",en:"Silicone &amp; mixed media"},
+  "r.s1f":{zh:"现成品再造",en:"Found-object remaking"},
+  "r.s1g":{zh:"影像 / 摄影",en:"Video / photography"},
+  "r.s1h":{zh:"动态雕塑装置",en:"Kinetic sculptural installation"},
+  "r.s1i":{zh:"手绘 / 装裱",en:"Drawing / framing"},
+  "r.s1j":{zh:"超写实圆雕",en:"Hyperrealistic figure"},
+  "r.s2.t":{zh:"造物与制作工艺",en:"Making &amp; Craft"},
+  "r.s2a":{zh:"手工改装摩托车",en:"Hand-built motorcycles"},
+  "r.s2b":{zh:"焊接 / 机加工艺",en:"Welding / machining"},
+  "r.s2c":{zh:"舞台道具 / 背景板制作",en:"Stage props / backdrops"},
+  "r.s2d":{zh:"空间装置落地",en:"Spatial installation delivery"},
+  "r.s3.t":{zh:"创作与项目方法",en:"Method &amp; Practice"},
+  "r.s3a":{zh:"在地艺术（田野调查 / 社区走访 / 在地展览）",en:"Site-specific art (fieldwork / community visits / on-site shows)"},
+  "r.s3b":{zh:"策展与展陈",en:"Curation &amp; exhibition design"},
+  "r.s3c":{zh:"全案项目策划",en:"End-to-end project planning"},
+  "r.s3d":{zh:"门店运营 / 活动策划",en:"Store operations / event planning"},
+  "r.s3e":{zh:"动态摄影 / 拍摄执行",en:"Motion photography / shoot execution"},
+  "r.s3f":{zh:"教学与课堂管理",en:"Teaching &amp; classroom management"},
+  "r.s4.t":{zh:"语言",en:"Languages"},
+  "r.s4a":{zh:"中文 · 母语",en:"Chinese · native"},
+  "r.s4b":{zh:"英文 · 学术与创作交流（全英文完成 RCA / UCL / UAL 三校 MFA 申请）",en:"English · academic and creative communication (entire RCA / UCL / UAL MFA applications written in English)"}
+};
+function applyLang(){
+  document.documentElement.lang = YZ.getLang()==="zh" ? "zh-CN" : "en";
+  document.querySelectorAll("[data-i18n]").forEach(function(el){
+    var k=el.getAttribute("data-i18n"); if(I18N[k]) el.textContent=I18N[k][YZ.getLang()];
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach(function(el){
+    var k=el.getAttribute("data-i18n-html"); if(I18N[k]) el.innerHTML=I18N[k][YZ.getLang()];
+  });
+}
+/* 初始化：各模块独立容错 */
+YZ.safe(function(){YZ.bindLang(applyLang)});
+YZ.safe(function(){YZ.bindFontSize()});
+YZ.safe(function(){YZ.initReveal()});
+YZ.safe(function(){YZ.initNav([])});
+YZ.safe(YZ.bindTheme);
+YZ.safe(function(){document.getElementById("printBtn").addEventListener("click",function(){window.print()})});
+</script>
+</body>
+</html>
