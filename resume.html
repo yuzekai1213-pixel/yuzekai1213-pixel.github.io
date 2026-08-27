@@ -49,11 +49,11 @@ nav .links a{
 nav .links a:hover{color:var(--accent2);background:var(--accent-dim)}
 nav .tools button{font-size:15px;color:var(--ink2);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.3s;border:1px solid var(--line)}
 nav .tools button:hover{color:var(--accent2);border-color:rgba(217,164,65,.5)}
-/* 导出简历 CTA：区别于普通图标按钮，突出引导 */
+/* 导出简历按钮：纯图标，与其它工具按钮同尺寸，金色强调以示可点 */
 nav .tools button.print-cta{
-  width:auto;height:36px;border-radius:30px;padding:0 13px 0 12px;gap:6px;
+  width:38px;height:38px;border-radius:50%;padding:0;gap:0;
   color:var(--accent2);border-color:rgba(217,164,65,.5);background:var(--accent-dim);
-  font-size:11.5px;letter-spacing:.08em;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:15px;letter-spacing:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
   font-weight:500;white-space:nowrap;
 }
 nav .tools button.print-cta:hover{color:var(--ink);border-color:rgba(217,164,65,.9);background:rgba(217,164,65,.22);transform:translateY(-1px)}
@@ -139,8 +139,7 @@ footer .up:hover{letter-spacing:.3em}
   nav .logo{flex:0 1 auto;min-width:0;white-space:nowrap}
   #fsBtn{display:none}
   nav .tools{gap:8px}
-  nav .tools button.print-cta{font-size:0;padding:0;width:38px;height:38px;border-radius:50%;gap:0;background:var(--accent);border-color:var(--accent);color:#1a1407}
-  nav .tools button.print-cta .pc-ic{margin:0}
+  nav .tools button.print-cta{background:var(--accent);border-color:var(--accent);color:#1a1407}
 }
 @media(max-width:560px){
   nav .logo small{display:none}
@@ -196,9 +195,8 @@ footer .up:hover{letter-spacing:.3em}
     <button id="themeBtn" title="切换深色/浅色" aria-label="切换深色/浅色">◐</button>
     <button id="printBtn" class="print-cta" title="导出 / 打印个人简历 PDF" aria-label="导出 / 打印个人简历 PDF">
       <span class="pc-ic" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><rect x="4" y="14" width="16" height="6" rx="2"/></svg>
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><rect x="4" y="14" width="16" height="6" rx="2"/></svg>
       </span>
-      导出PDF
     </button>
   </div>
 </nav>
