@@ -11,7 +11,7 @@
 |---|---|
 | 中文名 | 余泽锴 |
 | 英文名 | YU ZEKAI（全大写，字间距拉开使用） |
-| 身份 | 雕塑家 / 在地艺术实践者 · Sculptor / Site-specific art practitioner |
+| 身份 | 雕塑家 / 艺术家 · Sculptor / Artist |
 | 教育 | 广州美术学院 实验雕塑 2020–2025（BFA）；RCA / UCL / UAL 三校 MFA 录取 |
 | 常驻 | 广州 / 佛山（英文 Guangzhou / Foshan） |
 | 联系 | 525147849@qq.com · 176 8825 6407（显示格式带空格，拨号用 17688256407） |

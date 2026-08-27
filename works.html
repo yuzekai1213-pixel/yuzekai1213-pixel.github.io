@@ -819,6 +819,7 @@ var IMG = {
     {t:A+"2023/作品集早期阶段/金属铸造/3acff901e91820a2d6001f0a2eac375-thumb.jpg",s:A+"2023/作品集早期阶段/金属铸造/3acff901e91820a2d6001f0a2eac375-disp.jpg",o:A+"2023/作品集早期阶段/金属铸造/3acff901e91820a2d6001f0a2eac375.jpg", a:"材料实验 · 金属铸造 02"}
   ],
   eng: [
+    {t:A+"2022/发动机动态雕塑/图片/IMG_4695-thumb.jpg",s:A+"2022/发动机动态雕塑/图片/IMG_4695-disp.jpg",o:A+"2022/发动机动态雕塑/图片/IMG_4695.JPG", a:"发动机动态雕塑 · 主图"},
     {t:A+"2022/发动机动态雕塑/图片/IMG_4575-thumb.jpg",s:A+"2022/发动机动态雕塑/图片/IMG_4575-disp.jpg",o:A+"2022/发动机动态雕塑/图片/IMG_4575.JPG", a:"发动机动态雕塑 · 作品 01"},
     {t:A+"2022/发动机动态雕塑/图片/IMG_4576-thumb.jpg",s:A+"2022/发动机动态雕塑/图片/IMG_4576-disp.jpg",o:A+"2022/发动机动态雕塑/图片/IMG_4576.JPG", a:"发动机动态雕塑 · 作品 02"},
     {t:A+"2022/发动机动态雕塑/图片/IMG_4577-thumb.jpg",s:A+"2022/发动机动态雕塑/图片/IMG_4577-disp.jpg",o:A+"2022/发动机动态雕塑/图片/IMG_4577.JPG", a:"发动机动态雕塑 · 作品 03"},
@@ -830,8 +831,7 @@ var IMG = {
     {t:A+"2022/发动机动态雕塑/图片/IMG_4584-thumb.jpg",s:A+"2022/发动机动态雕塑/图片/IMG_4584-disp.jpg",o:A+"2022/发动机动态雕塑/图片/IMG_4584.JPG", a:"发动机动态雕塑 · 作品 09"},
     {t:A+"2022/发动机动态雕塑/图片/IMG_4586-thumb.jpg",s:A+"2022/发动机动态雕塑/图片/IMG_4586-disp.jpg",o:A+"2022/发动机动态雕塑/图片/IMG_4586.JPG", a:"发动机动态雕塑 · 作品 10"},
     {t:A+"2022/发动机动态雕塑/图片/IMG_4588-thumb.jpg",s:A+"2022/发动机动态雕塑/图片/IMG_4588-disp.jpg",o:A+"2022/发动机动态雕塑/图片/IMG_4588.JPG", a:"发动机动态雕塑 · 作品 11"},
-    {t:A+"2022/发动机动态雕塑/图片/IMG_4589-thumb.jpg",s:A+"2022/发动机动态雕塑/图片/IMG_4589-disp.jpg",o:A+"2022/发动机动态雕塑/图片/IMG_4589.JPG", a:"发动机动态雕塑 · 作品 12"},
-    {t:A+"2022/发动机动态雕塑/图片/IMG_4695-thumb.jpg",s:A+"2022/发动机动态雕塑/图片/IMG_4695-disp.jpg",o:A+"2022/发动机动态雕塑/图片/IMG_4695.JPG", a:"发动机动态雕塑 · 作品 13"}
+    {t:A+"2022/发动机动态雕塑/图片/IMG_4589-thumb.jpg",s:A+"2022/发动机动态雕塑/图片/IMG_4589-disp.jpg",o:A+"2022/发动机动态雕塑/图片/IMG_4589.JPG", a:"发动机动态雕塑 · 作品 12"}
   ],
   mf: [
     {t:A+"2021/富含冒犯/过程/展示草稿 (1)-thumb.jpg",s:A+"2021/富含冒犯/过程/展示草稿 (1)-disp.jpg",o:A+"2021/富含冒犯/过程/展示草稿 (1).jpg", a:"富含冒犯 · 方案草稿 01"},
@@ -958,7 +958,8 @@ var DATA = {
               en:"Starting from memory of home — family, land, rural change — interview recordings and footage respond to how urbanisation drains villages of people, land and belonging, continuing the artist's long attention to change along the South China coast and the perception of memory."},
        concept:{zh:"乡村在褪色，记忆还在。用访谈与旧物，把漂走的故乡一点一点打捞回来。",
                 en:"The village fades; the memory stays. Interview and found objects salvage a drifting hometown, piece by piece."},
-       groups:[{name:{zh:"一 · 作品现场", en:"I · Installation views"}, imgs:IMG.hg}]},
+       main:{s:IMG.hg[0].s, a:IMG.hg[0].a},
+       site:{name:{zh:"一 · 作品现场", en:"I · Installation views"}, imgs:IMG.hg}},
       {type:"note", num:"03", title:{zh:"毕业论文 · 84 分", en:"Graduation Thesis · 84/100"}, meta:{zh:"2025 · 学术写作 · THESIS", en:"2025 · Academic Writing · THESIS"},
        brief:{zh:"毕业论文以南海大地艺术节为案例，研究华南沿海的在地艺术，获 84 分。",
               en:"Thesis on site-specific art along the South China coast, case study: the Nanhai Land Art Festival. 84/100."},
@@ -974,7 +975,8 @@ var DATA = {
               en:"Held at Zhumeng Space: wood and jade works made through traditional form language across the undergraduate years. 85/100."},
        concept:{zh:"借传统造型反观自身：在既有形制里，找属于当代个人的位置。",
                 en:"Traditional forms read against oneself — looking for an individual place inside inherited shapes."},
-       groups:[{name:{zh:"一 · 展览现场", en:"I · Exhibition views"}, imgs:IMG.dzS},{name:{zh:"二 · 细节", en:"II · Details"}, imgs:IMG.dzD},{name:{zh:"三 · 展出作品", en:"III · Exhibited works"}, imgs:IMG.dzW},{name:{zh:"四 · 前期准备", en:"IV · Preparatory studies"}, imgs:IMG.dzP}]},
+       main:{s:IMG.dzS[0].s, a:IMG.dzS[0].a},
+       site:{name:{zh:"一 · 展览现场", en:"I · Exhibition views"}, imgs:IMG.dzS}},
       {type:"work", title:{zh:"《缝隙之间 2》 · 综合材料空间装置", en:"“Between Gaps 2” · Mixed-media Spatial Installation"},
        meta:{zh:"2025 · 硅胶/综合材料 · 空间装置 · INSTALLATION", en:"2025 · Silicone / mixed media · Spatial installation · INSTALLATION"},
        cover:IMG.fxSite[0].s, tag:{zh:"空间装置 · INSTALLATION", en:"INSTALLATION"},
@@ -985,14 +987,16 @@ var DATA = {
               en:"Silicone casts take the gaps between old timber and red brick; set with sand and biomorphic material into an archaeological-section-like field. What is missing becomes touchable."},
        concept:{zh:"缝隙不是空缺，是被实体围出来的在场。作品让材料之间的“缝”成为主体。",
                 en:"A gap is not nothing — it is presence enclosed by solid. Here the seam between materials is the work."},
-       groups:[{name:{zh:"一 · 展览现场", en:"I · Views"}, imgs:IMG.fxSite},{name:{zh:"二 · 细节", en:"II · Details"}, imgs:IMG.fxDet},{name:{zh:"三 · 制作过程", en:"III · Process"}, imgs:IMG.fxMake}],
+       main:{s:IMG.fxSite[0].s, a:IMG.fxSite[0].a},
+       site:{name:{zh:"一 · 展览现场", en:"I · Views"}, imgs:IMG.fxSite},
        videos:[{src:A+"2025/缝隙之间2/视频/工作状况.mp4", poster:A+"2025/缝隙之间2/视频/工作状况.jpg", title:{zh:"缝隙之间 2 · 现场工作状况", en:"Between Gaps 2 · Working on site"}}]},
       {type:"work", title:{zh:"快速反应系列", en:"Quick Reaction Series"}, meta:{zh:"2025.05 · 综合材料 / 影像 · SERIES", en:"2025.05 · Mixed media / video · SERIES"}, cover:IMG.fast[0].s, tag:{zh:"创作系列 · SERIES", en:"SERIES"},
         brief:{zh:"以“快速反应”为主题的创作系列，含影像与现场记录。（一句话想法待补）", en:"A series on the theme of “quick reaction,” with video and on-site documentation. (one-line concept to be confirmed)"},
         facts:[["年份 YEAR",{zh:"2025.05",en:"2025.05"}],["媒介 MEDIUM",{zh:"综合材料 / 影像",en:"Mixed media / video"}],["形式 FORMAT",{zh:"创作系列",en:"Work series"}]],
         about:{zh:"快速反应系列。（请补充：作品是什么、怎么做、一个核心想法。）", en:"Quick Reaction Series. (Please confirm: what it is, how it was made, one key idea.)"},
         concept:{zh:"（一句话想法待你补充）", en:"(One-line concept to be added by the artist)"},
-         groups:[{name:{zh:"精选", en:"Selected"}, imgs:IMG.fast}]}
+         main:{s:IMG.fast[0].s, a:IMG.fast[0].a},
+       site:{name:{zh:"精选", en:"Selected"}, imgs:IMG.fast}}
     ]},
     {year:"2024", label:{zh:"在地实践 · 展览年", en:"SITE-SPECIFIC & EXHIBITION"}, items:[
       {type:"work", title:{zh:"红海疍家渔民在地实验项目", en:"Site-Specific Experiment with the Tankas of Honghai Village"},
@@ -1005,7 +1009,8 @@ var DATA = {
               en:"Repeated visits entered daily life through fieldwork, interviews, sound and image recordings — a participatory practice around the fishing community, coastal life and land / water memory, yielding video, sound and installation works, with findings kept up in reviews."},
        concept:{zh:"上岸之后，身份与记忆放在哪里？作品捕捉渔民日常里正在消失的痕迹：船、水、网，以及劳作的节奏。",
                 en:"After coming ashore, where do identity and memory sit? The work follows traces disappearing from daily life — boats, water, nets, the rhythm of work."},
-       groups:[{name:{zh:"现场与细节图集", en:"Views & details"}, imgs:IMG.hh}],
+       main:{s:IMG.hh[0].s, a:IMG.hh[0].a},
+       site:{name:{zh:"现场与细节图集", en:"Views & details"}, imgs:IMG.hh},
        videos:[{src:A+"2024/红海疍家渔民在地实验/视频/IMG_9926.mp4", poster:A+"2024/红海疍家渔民在地实验/视频/IMG_9926.jpg", title:{zh:"红海项目 · 展览现场 9926", en:"Honghai Project · Exhibition view 9926"}},{src:A+"2024/红海疍家渔民在地实验/视频/IMG_5983.mp4", poster:A+"2024/红海疍家渔民在地实验/视频/IMG_5983.jpg", title:{zh:"红海疍家 · 渔港日常 5983", en:"Tanka Life · Harbour days 5983"}}]},
       {type:"work", title:{zh:"如何自我介绍之身份名片 · 名片与日历", en:"How to Introduce Yourself: Identity Name Cards & Calendar"},
        meta:{zh:"2024.11–12 · 装裱装置 / 长卷装置 · INSTALLATION", en:"2024.11–12 · Framed installation / scroll installation · INSTALLATION"},
@@ -1017,20 +1022,23 @@ var DATA = {
               en:"The name-card plan began as a test: faking a résumé to probe how identity relates to pay. Six identities were named, then printed as 600 signed, numbered cards and used in life — social identity given form, and shown to be iterative and performed; framed cards and two films. The calendar hand-writes numbers and symbols along strips, unrolling like time itself."},
        concept:{zh:"名片是身份的最小单位，日历是时间的最小刻度。两者放大并置，看现代人如何自我锚定。",
                 en:"A name card is the smallest unit of identity; a calendar, the smallest unit of time. Enlarged and set side by side, they ask how we anchor ourselves."},
-       groups:[{name:{zh:"一 · 名片装置", en:"I · Name-card installation"}, imgs:IMG.card},{name:{zh:"二 · 日历长卷装置", en:"II · Calendar scroll installation"}, imgs:IMG.cal},{name:{zh:"三 · 布展过程", en:"III · Installing"}, imgs:IMG.inst}],
+       main:{s:IMG.card[0].s, a:IMG.card[0].a},
+       site:{name:{zh:"一 · 名片装置", en:"I · Name-card installation"}, imgs:IMG.card},
        videos:[{src:A+"2024/名片日历装置展/视频/IMG_9718.mp4", poster:A+"2024/名片日历装置展/视频/IMG_9718.jpg", title:{zh:"名片 · 展览现场 9718", en:"Name Cards · Exhibition view 9718"}}]},
       {type:"work", title:{zh:"骨肉皮", en:"Bone, Flesh, Skin"}, meta:{zh:"2024.02–03 · 芭蕉叶 / 透明鱼线 · 装置 · INSTALLATION", en:"2024.02–03 · Banana leaves / fishing line · Installation · INSTALLATION"}, cover:IMG.bone[0].s, tag:{zh:"装置 · INSTALLATION", en:"INSTALLATION"},
         brief:{zh:"以芭蕉叶与透明鱼线完成的装置，保留植物本身的生长特点与生命力。", en:"An installation of banana leaves and fishing line that keeps the plants' own growth and vitality."},
         facts:[["年份 YEAR",{zh:"2024.02–03",en:"2024.02–03"}],["媒介 MEDIUM",{zh:"芭蕉叶 / 透明鱼线",en:"Banana leaves / fishing line"}],["形式 FORMAT",{zh:"装置",en:"Installation"}],["尺寸 SIZE",{zh:"200 × 40 cm",en:"200 × 40 cm"}]],
         about:{zh:"机缘巧合获得大量芭蕉叶后，被其宽大叶片传达的生命力、包裹与保护感打动。以原有材料配合简单加工重组造型，保留植物随时间的生长与变化，也是对南方常见经济作物及其背后乡土经验的具象表达。", en:"A chance surplus of banana leaves led to this: the vitality, wrapping and protection the broad leaves carry. Kept simple and close to the material, the piece holds how plants grow and change over time — a concrete expression of a common southern crop and the rural experience behind it."},
         concept:{zh:"叶片的包裹与保护，本身就是主题；让材料只做最少的加工，交给时间。", en:"Wrapping and protection are the subject — minimal handling, the rest left to time."},
-        groups:[{name:{zh:"精选", en:"Selected"}, imgs:IMG.bone}]},
+        main:{s:IMG.bone[0].s, a:IMG.bone[0].a},
+       site:{name:{zh:"精选", en:"Selected"}, imgs:IMG.bone}},
       {type:"work", title:{zh:"夹角空间的想象", en:"Imagining the Angle"}, meta:{zh:"2024.09 · 摄影 / 手骨模型 · 空间研究 · SPACE STUDY", en:"2024.09 · Photography / skeletal hand model · Space study · SPACE STUDY"}, cover:IMG.angle[0].s, tag:{zh:"空间研究 · SPACE STUDY", en:"SPACE STUDY"},
         brief:{zh:"一次小规模空间实验：把可见与未见空间的“夹角”用一双手骨模型活化。", en:"A small spatial experiment: a hand-bone model activates the “angle” between seen and unseen space."},
         facts:[["年份 YEAR",{zh:"2024.09",en:"2024.09"}],["媒介 MEDIUM",{zh:"摄影 / 手骨模型",en:"Photography / skeletal hand model"}],["形式 FORMAT",{zh:"尺寸可变",en:"Dimensions variable"}],["主题 THEME",{zh:"空间感知",en:"Spatial perception"}]],
         about:{zh:"将可见空间与未见空间想象出一个“夹角”，把一双手骨模型贴在转角处，摆出不同手势并拍摄；数量足够多时并置呈现，暗示一个不存在的空间，探索物件如何激活空间与观者的感知。", en:"An “angle” is imagined between visible and unseen space; a pair of skeletal hands is posed at a corner and photographed. Enough poses side by side suggest a space that isn't there — how objects quicken a place and the viewer's perception."},
         concept:{zh:"物件不是填满空间，而是让空间被人看见。", en:"Objects don't fill space — they make it visible."},
-         groups:[{name:{zh:"精选", en:"Selected"}, imgs:IMG.angle}]},
+         main:{s:IMG.angle[0].s, a:IMG.angle[0].a},
+       site:{name:{zh:"精选", en:"Selected"}, imgs:IMG.angle}},
       {type:"work", title:{zh:"《文人松》 · 超写实雕塑", en:"“Literati Pine” · Hyperrealistic Sculpture"},
         meta:{zh:"2024 · 硅胶 / 毛发 · HYPERREALISTIC", en:"2024 · Silicone & hair · HYPERREALISTIC"},
         cover:IMG.wmMain[0].s, tag:{zh:"超写实雕塑 · HYPERREALISTIC", en:"HYPERREALISTIC"},
@@ -1041,7 +1049,8 @@ var DATA = {
               en:"Reading penjing logic — shaping over years, varied tools, even reversing growth — the literati pine becomes a tree-body: joints simulated, muscles inverted, the familiar made strange. It asks whether forcing plants into pleasing shapes is itself a violation, a quiet domination."},
        concept:{zh:"逼真的硅胶让“被修剪成喜欢的样子”显得更刺眼——审美有时是一种温柔的暴力。",
                 en:"Lifelike silicone sharpens the point: being pruned into a pleasing shape is a soft violence."},
-        groups:[{name:{zh:"一 · 模型细节", en:"I · Model detail"}, imgs:IMG.wmMain},{name:{zh:"二 · 制作过程与细节", en:"II · Making process & details"}, imgs:IMG.wmP},{name:{zh:"三 · 展览现场", en:"III · Exhibition views"}, imgs:IMG.wmE}]},
+        main:{s:IMG.wmE[0].s, a:IMG.wmE[0].a},
+       site:{name:{zh:"二 · 展览现场", en:"II · Exhibition views"}, imgs:IMG.wmE}},
       {type:"work", title:{zh:"《如何追逐速度》 · 动态雕塑", en:"“How to Chase Speed” · Kinetic Sculpture"},
        meta:{zh:"2024.04–05 · 现成品改装动态雕塑 · KINETIC SCULPTURE", en:"2024.04–05 · Found-object kinetic sculpture · KINETIC SCULPTURE"},
        cover:IMG.eng[0].s, tag:{zh:"动态雕塑 · KINETIC", en:"KINETIC"},
@@ -1052,7 +1061,8 @@ var DATA = {
               en:"Five reworked parts: an engine-driven chainring rocking a rear wheel, a drip-bottle fuel feed, a flickering headlight, an upside-down intermittent traffic light, a motorcycle-suspension leg that trembles with the engine. In the spirit of Tinguely, it probes the thrill of meaningless acts and bodily risk, and the relation between body and machine."},
        concept:{zh:"骑着去追速度，却被机械拖回原地——无意义的行为与危险并存，人跟机器的关系在抖动里现形。",
                 en:"Chasing speed on a machine that pulls you back: pointless acts alongside real danger, the human-machine relation jolted into view."},
-       groups:[{name:{zh:"一 · 作品图片", en:"I · Works"}, imgs:IMG.eng}],
+       main:{s:IMG.eng[0].s, a:IMG.eng[0].a},
+       site:{name:{zh:"一 · 作品图片", en:"I · Works"}, imgs:IMG.eng},
        videos:[{src:A+"2022/发动机动态雕塑/视频/IMG_4590.mp4", poster:A+"2022/发动机动态雕塑/视频/IMG_4590.jpg", title:{zh:"动态雕塑 · 运行 4590", en:"Kinetic Sculpture · Running 4590"}},{src:A+"2022/发动机动态雕塑/视频/IMG_4692.mp4", poster:A+"2022/发动机动态雕塑/视频/IMG_4692.jpg", title:{zh:"动态雕塑 · 运行 4692", en:"Kinetic Sculpture · Running 4692"}}]},
       {type:"note", num:"04", title:{zh:"《痕迹如河》 · 拓印行为", en:"“Traces Like a River” · Rubbing Performance"}, meta:{zh:"2024.1–12 · 行为 / 拓印 / 影像 · BEHAVIOUR & RUBBING", en:"2024.1–12 · Performance / rubbing / video · PERFORMANCE & RUBBING"},
        brief:{zh:"对家乡老房一条因下沉形成的大裂缝进行完整拓印，以拓印保留乡村记忆。图片素材待补。",
@@ -1071,7 +1081,8 @@ var DATA = {
               en:"From 2023: systematic material study, several course and personal works, and the first assembly of the portfolio around the thread of Eastern form and self-identity."},
        concept:{zh:"这一阶段的价值在试错：每一次手与材料的相遇，后来都汇进作品集的线索里。",
                 en:"The value of this phase was trial and error — every meeting of hand and material later fed the portfolio's thread."},
-        groups:[{name:{zh:"一 · 装置现场", en:"I · Installation views"}, imgs:IMG.erS},{name:{zh:"二 · 装置细节", en:"II · Details"}, imgs:IMG.erD},{name:{zh:"三 · 小稿研究", en:"III · Maquette studies"}, imgs:IMG.erK},{name:{zh:"四 · 金属铸造", en:"IV · Metal casting"}, imgs:IMG.erC}]},
+        main:{s:IMG.erS[0].s, a:IMG.erS[0].a},
+       site:{name:{zh:"一 · 装置现场", en:"I · Installation views"}, imgs:IMG.erS}},
       {type:"note", num:"05", title:{zh:"泥塑人体（泥塑6）", en:"Clay Figure Study (Claysculpt 6)"}, meta:{zh:"2023.2–5 · 泥塑人体 · FIGURE", en:"2023.2–5 · Clay figure · FIGURE"},
        brief:{zh:"1.2 倍男胸像、1 米男人体站姿、60cm 女人体坐姿；由被动描摹转向主动研习。",
               en:"1.2× male bust, 1 m standing male, 60 cm seated female — from copying to active study."},
@@ -1094,7 +1105,8 @@ var DATA = {
               en:"An end-of-course work on offence, with kinetic parts and an on-site display plan — discomfort and curiosity counted as part of the form."},
        concept:{zh:"秩序与冒犯、机器与身体——张力即主题。",
                 en:"Order versus offence, machine versus body — the tension is the subject."},
-        groups:[{name:{zh:"一 · 方案草稿", en:"I · Proposal sketches"}, imgs:IMG.mf}]},
+        main:{s:IMG.mf[0].s, a:IMG.mf[0].a},
+       site:{name:{zh:"一 · 方案草稿", en:"I · Proposal sketches"}, imgs:IMG.mf}},
       {type:"note", num:"07", title:{zh:"泥塑浮雕（泥塑4）", en:"Clay Relief (Claysculpt 4)"}, meta:{zh:"2022.5–6.2 · 泥塑 · 浮雕 · RELIEF", en:"2022.5–6.2 · Clay relief · RELIEF"},
        brief:{zh:"学习浮雕造型语言与压缩空间的表现，作者称之为最“费脑筋”的课程。",
               en:"Relief language and compressed space — the course the artist calls the most “taxing on the mind.”"},
@@ -1162,7 +1174,8 @@ var DATA = {
               en:"Carved from a single mass of wood, grain, cuts and weathering all join the theme — the wood floats and sinks as we do."},
        concept:{zh:"木头的沉与浮，都是时间与手的痕迹。",
                 en:"How the wood floats and sinks — traces of time and hand."},
-       groups:[{name:{zh:"一 · 作品", en:"I · Works"}, imgs:IMG.cw},{name:{zh:"二 · 细节", en:"II · Details"}, imgs:IMG.cd},{name:{zh:"三 · 展览记录", en:"III · Exhibition records"}, imgs:IMG.ce}],
+       main:{s:IMG.cw[0].s, a:IMG.cw[0].a},
+       site:{name:{zh:"一 · 作品", en:"I · Works"}, imgs:IMG.cw},
        videos:[{src:A+"2021/沉木雕/视频/IMG_8887.mp4", poster:A+"2021/沉木雕/视频/IMG_8887.jpg", title:{zh:"木雕 · 环境 8887", en:"Wood Carving · Surroundings 8887"}},{src:A+"2021/沉木雕/视频/IMG_8891.mp4", poster:A+"2021/沉木雕/视频/IMG_8891.jpg", title:{zh:"木雕 · 环境 8891", en:"Wood Carving · Surroundings 8891"}}]}
     ]},
     {year:"2020", label:{zh:"起点 · 入门", en:"BEGINNING"}, items:[
@@ -1367,15 +1380,16 @@ function bindDrag(row){
   function openWork(ni,ii){
     var w=DATA.timeline[ni].items[ii];
     if(!w||w.type!=="work")return;
-    var g=w.groups.map(function(gr){return {name:gr.name,imgs:gr.imgs}});
+    var g=(w.site?[{name:w.site.name,imgs:w.site.imgs}]:[]);
     document.getElementById("mTitle").innerHTML=tt(w.title)+"<small>"+tt(w.meta)+"</small>";
-    var h="<div class='m-hero'><img src='"+w.cover+"' alt='"+tt(w.title)+"' loading='lazy'><span class='m-cap'>"+tt(w.title)+" · "+tt(w.meta).split("·")[0].trim()+"</span><span class='watermark'>© 余泽锴 YU ZEKAI</span></div>";
+    /* 封面 → 完整主图(main 大图) → 现场图集(site) */
+    var h="<div class='m-hero'><img src='"+w.main.s+"' alt='"+w.main.a+"' loading='lazy'><span class='m-cap'>"+tt(w.title)+" · "+tt(w.meta).split("·")[0].trim()+"</span><span class='watermark'>© 余泽锴 YU ZEKAI</span></div>";
     h+="<div class='m-facts'>"+w.facts.map(function(f){return "<div class='fact'><b>"+f[0]+"</b><span>"+tt(f[1])+"</span></div>"}).join("")+"</div>";
     h+="<div class='m-sec'><h4>"+L("作品简介 · ABOUT","ABOUT THE WORK")+"</h4><p><strong>"+tt(w.title)+"</strong>"+tt(w.about).replace(/^./,"")+"</p></div>";
     h+="<div class='m-sec'><h4>"+L("创作思路 · CONCEPT","CONCEPT")+"</h4><p>"+tt(w.concept)+"</p></div>";
     var galIdx=0,galArr=[];
     g.forEach(function(gr,gi){
-      h+="<div class='g-sub'>"+tt(gr.name)+"</div><div class='gallery' data-g='"+gi+"'><div class='g-main' data-zoom><img src='"+gr.imgs[0].s+"' alt='"+gr.imgs[0].a+"' loading='lazy' decoding='async'><span class='g-zoom-hint'>"+L("点击放大 · 缩放","Click to zoom")+"</span><span class='watermark'>© 余泽锴 YU ZEKAI</span></div><div class='g-thumbs'>"+gr.imgs.map(function(im,i){return "<div class='th"+(i===0?" active":"")+"' data-i='"+i+"'><img src='"+im.t+"' alt='"+im.a+"' loading='lazy' decoding='async'></div>"}).join("")+"</div></div>";
+      h+="<div class='g-sub'>"+L("展览现场图集 ON-SITE","ON-SITE GALLERY")+" · "+tt(gr.name)+"</div><div class='gallery' data-g='"+gi+"'><div class='g-main' data-zoom><img src='"+gr.imgs[0].s+"' alt='"+gr.imgs[0].a+"' loading='lazy' decoding='async'><span class='g-zoom-hint'>"+L("点击放大 · 缩放","Click to zoom")+"</span><span class='watermark'>© 余泽锴 YU ZEKAI</span></div><div class='g-thumbs'>"+gr.imgs.map(function(im,i){return "<div class='th"+(i===0?" active":"")+"' data-i='"+i+"'><img src='"+im.t+"' alt='"+im.a+"' loading='lazy' decoding='async'></div>"}).join("")+"</div></div>";
     });
     if(w.videos){
       h+="<div class='g-sub'>"+L("影像记录 · VIDEO","VIDEO DOCUMENTATION")+"</div>";
