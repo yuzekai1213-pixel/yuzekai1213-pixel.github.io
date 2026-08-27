@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>余泽锴 · 个人简历 / CV — YU ZEKAI</title>
-<meta name="description" content="余泽锴（YU ZEKAI），雕塑家与在地艺术实践者。广州美术学院雕塑专业，RCA / UCL / UAL MFA 录取。个人简历 / CV 子页面。" />
+<meta name="description" content="余泽锴（YU ZEKAI），雕塑家与艺术家。广州美术学院雕塑系本科毕业。个人简历 / CV 子页面。" />
 <meta name="keywords" content="余泽锴,YU ZEKAI,雕塑家,简历,CV,在地艺术,广州美术学院" />
 <meta name="author" content="余泽锴 YU ZEKAI" />
 <meta name="theme-color" content="#f2eee6" />
@@ -17,12 +17,12 @@
 <meta property="og:type" content="profile" />
 <meta property="og:site_name" content="余泽锴 · YU ZEKAI" />
 <meta property="og:title" content="余泽锴 · 个人简历 / CV" />
-<meta property="og:description" content="余泽锴（YU ZEKAI），雕塑家与在地艺术实践者。广州美术学院雕塑专业，RCA / UCL / UAL MFA 录取。" />
+<meta property="og:description" content="余泽锴（YU ZEKAI），雕塑家与艺术家。广州美术学院雕塑系本科毕业。" />
 <meta property="og:image" content="https://yuzekai1213-pixel.github.io/assets/2024/%E7%BA%A2%E6%B5%B7%E7%96%8D%E5%AE%B6%E6%B8%94%E6%B0%91%E5%9C%A8%E5%9C%B0%E5%AE%9E%E9%AA%8C/%E7%8E%B0%E5%9C%BA/20250103014028031_0003-disp.jpg" />
 <meta property="og:url" content="https://yuzekai1213-pixel.github.io/resume.html" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="余泽锴 · 个人简历 / CV" />
-<meta name="twitter:description" content="余泽锴（YU ZEKAI），雕塑家与在地艺术实践者。RCA / UCL / UAL MFA 录取。" />
+<meta name="twitter:description" content="余泽锴（YU ZEKAI），雕塑家与艺术家。广州美术学院雕塑系本科毕业。" />
 <meta name="twitter:image" content="https://yuzekai1213-pixel.github.io/assets/2024/%E7%BA%A2%E6%B5%B7%E7%96%8D%E5%AE%B6%E6%B8%94%E6%B0%91%E5%9C%A8%E5%9C%B0%E5%AE%9E%E9%AA%8C/%E7%8E%B0%E5%9C%BA/20250103014028031_0003-disp.jpg" />
 <link rel="stylesheet" href="shared.css?v=22">
 <style>
@@ -49,6 +49,15 @@ nav .links a{
 nav .links a:hover{color:var(--accent2);background:var(--accent-dim)}
 nav .tools button{font-size:15px;color:var(--ink2);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.3s;border:1px solid var(--line)}
 nav .tools button:hover{color:var(--accent2);border-color:rgba(217,164,65,.5)}
+/* 导出简历 CTA：区别于普通图标按钮，突出引导 */
+nav .tools button.print-cta{
+  width:auto;height:38px;border-radius:30px;padding:0 16px;gap:7px;
+  color:var(--accent2);border-color:rgba(217,164,65,.5);background:var(--accent-dim);
+  font-size:12px;letter-spacing:.14em;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  font-weight:500;white-space:nowrap;
+}
+nav .tools button.print-cta:hover{color:var(--ink);border-color:rgba(217,164,65,.9);background:rgba(217,164,65,.22);transform:translateY(-1px)}
+nav .tools button.print-cta .pc-ic{display:inline-flex;align-items:center;justify-content:center}
 
 /* ============ 顶部标题 ============ */
 .cv-head{padding:calc(var(--nav-h) + 90px) 8vw 70px;text-align:center}
@@ -123,6 +132,16 @@ footer .up:hover{letter-spacing:.3em}
   nav{padding:0 5vw}
   nav .links a{padding:8px 12px}
 }
+@media(max-width:640px){
+  nav{padding:0 4vw}
+  nav .links{display:none}
+  nav .logo small{display:none}
+  nav .logo{flex:0 1 auto;min-width:0;white-space:nowrap}
+  #fsBtn{display:none}
+  nav .tools{gap:8px}
+  nav .tools button.print-cta{font-size:0;padding:0;width:38px;height:38px;border-radius:50%;gap:0;background:var(--accent);border-color:var(--accent);color:#1a1407}
+  nav .tools button.print-cta .pc-ic{margin:0}
+}
 @media(max-width:560px){
   nav .logo small{display:none}
   .info{flex-direction:column;gap:4px;align-items:flex-start}
@@ -175,7 +194,12 @@ footer .up:hover{letter-spacing:.3em}
     <button id="fsBtn" title="调整字体大小 / Text size" aria-label="调整字体大小 / Text size">A</button>
     <button id="langBtn" title="切换语言 / Language" aria-label="切换语言 / Language">EN</button>
     <button id="themeBtn" title="切换深色/浅色" aria-label="切换深色/浅色">◐</button>
-    <button id="printBtn" title="打印 / 导出 PDF" aria-label="打印 / 导出 PDF">⎙</button>
+    <button id="printBtn" class="print-cta" title="导出 / 打印个人简历 PDF" aria-label="导出 / 打印个人简历 PDF">
+      <span class="pc-ic" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><rect x="4" y="14" width="16" height="6" rx="2"/></svg>
+      </span>
+      导出简历 PDF
+    </button>
   </div>
 </nav>
 
@@ -183,7 +207,7 @@ footer .up:hover{letter-spacing:.3em}
 <header class="cv-head">
   <div class="kicker">SCULPTOR · SITE-SPECIFIC ARTIST</div>
   <h1>余泽锴<span class="en">YU ZEKAI · CURRICULUM VITAE</span></h1>
-  <p class="bio" data-i18n-html="r.bio"><em>“以田野为方法，把在地的记忆与现场，塑成可触摸的雕塑。”</em><br>雕塑家 · 在地艺术实践者 · 广州美术学院实验雕塑 2020–2025 · 现居广州 / 佛山</p>
+  <p class="bio" data-i18n-html="r.bio"><em>“以田野为方法，把在地的记忆与现场，塑成可触摸的雕塑。”</em><br>雕塑家 · 艺术家 · 广州美术学院实验雕塑 2020–2025 · 现居广州 / 佛山</p>
 </header>
 
 <main>
@@ -197,9 +221,8 @@ footer .up:hover{letter-spacing:.3em}
     </div>
     <div class="info-grid">
       <div class="info rv zoom"><b>本名 NAME</b><span>余泽锴 · YU ZEKAI</span></div>
-      <div class="info rv zoom"><b>身份 ROLE</b><span data-i18n="r.i.role">雕塑家 / 在地艺术实践者</span></div>
-      <div class="info rv zoom"><b>教育 EDUCATION</b><span data-i18n="r.i.edu">广州美术学院 · 实验雕塑 2020–2025</span></div>
-      <div class="info rv zoom"><b>研究生 OFFER</b><span>RCA / UCL / UAL MFA</span></div>
+      <div class="info rv zoom"><b>身份 ROLE</b><span data-i18n="r.i.role">雕塑家 / 艺术家</span></div>
+      <div class="info rv zoom"><b>学历 / 毕业院校 EDUCATION</b><span data-i18n="r.i.edu">本科 · 广州美术学院雕塑系</span></div>
       <div class="info rv zoom"><b>方向 FOCUS</b><span data-i18n="r.i.focus">雕塑 / 装置 / 在地艺术 / 策展</span></div>
       <div class="info rv zoom"><b>地点 LOCATION</b><span data-i18n="r.i.loc">中国 · 广州 / 佛山</span></div>
       <div class="info rv zoom"><b>邮箱 EMAIL</b><span>525147849@qq.com</span></div>
@@ -221,12 +244,6 @@ footer .up:hover{letter-spacing:.3em}
         <div class="role">SCULPTURE &amp; PUBLIC ART · EXPERIMENTAL SCULPTURE</div>
         <p data-i18n="r.e1.p">2020 年 9 月入学，接受素描、泥塑人体等造型训练；2023 年进入实验雕塑工作室，深化木雕、石雕、金属铸造与玉材工艺，确立“东方造型与自我身份”创作线索。2025 年 6 月毕业：毕业创作《回溯间隙》获校级优秀毕业创作奖（85 分），毕业论文获 84 分。</p>
       </div>
-      <div class="item rv">
-        <span class="y">2025–2026</span>
-        <h3 data-i18n="r.e2.t">国际语境 · 研究生新程</h3>
-        <div class="role">POSTGRADUATE · MFA OFFERS</div>
-        <p data-i18n="r.e2.p">凭毕业创作与作品集，获 RCA、UCL、UAL 三校 MFA 录取。</p>
-      </div>
     </div>
   </section>
 
@@ -239,13 +256,12 @@ footer .up:hover{letter-spacing:.3em}
       <div class="rule"></div>
     </div>
     <div class="honor-grid">
-      <div class="honor rv zoom"><div class="no">01</div><h3 data-i18n="r.h1">RCA / UCL / UAL 三校 MFA 录取</h3><div class="src">2025–2026 申请季 · HONOR</div></div>
-      <div class="honor rv zoom"><div class="no">02</div><h3 data-i18n="r.h2">校级优秀毕业创作奖（85 分）——《回溯间隙》</h3><div class="src">2025 · GRADUATION WORK</div></div>
-      <div class="honor rv zoom"><div class="no">03</div><h3 data-i18n="r.h3">毕业论文 84 分《去中心化背景下华南沿海地区在地艺术的文化建设作用研究》</h3><div class="src">2025 · THESIS</div></div>
-      <div class="honor rv zoom"><div class="no">04</div><h3 data-i18n="r.h4">筑梦空间个展《东方造型与自我身份》 · 展览成绩 85 分</h3><div class="src">2025 · SOLO EXHIBITION</div></div>
-      <div class="honor rv zoom"><div class="no">05</div><h3 data-i18n="r.h5">红海疍家渔民在地实验项目 · 课程成绩 94 分 · 绩点 4.40</h3><div class="src">2024 · SITE-SPECIFIC</div></div>
-      <div class="honor rv zoom"><div class="no">06</div><h3 data-i18n="r.h6">《缝隙之间 2》综合材料空间装置 · 课程成绩 90 分</h3><div class="src">2025 · INSTALLATION</div></div>
-      <div class="honor rv zoom"><div class="no">07</div><h3 data-i18n="r.h7">《浮沉》木雕 · 广州美术学院木雕作品展</h3><div class="src">2021 · GROUP SHOW</div></div>
+      <div class="honor rv zoom"><div class="no">01</div><h3 data-i18n="r.h2">校级优秀毕业创作奖（85 分）——《回溯间隙》</h3><div class="src">2025 · GRADUATION WORK</div></div>
+      <div class="honor rv zoom"><div class="no">02</div><h3 data-i18n="r.h3">毕业论文 84 分《去中心化背景下华南沿海地区在地艺术的文化建设作用研究》</h3><div class="src">2025 · THESIS</div></div>
+      <div class="honor rv zoom"><div class="no">03</div><h3 data-i18n="r.h4">筑梦空间个展《东方造型与自我身份》 · 展览成绩 85 分</h3><div class="src">2025 · SOLO EXHIBITION</div></div>
+      <div class="honor rv zoom"><div class="no">04</div><h3 data-i18n="r.h5">红海疍家渔民在地实验项目 · 课程成绩 94 分 · 绩点 4.40</h3><div class="src">2024 · SITE-SPECIFIC</div></div>
+      <div class="honor rv zoom"><div class="no">05</div><h3 data-i18n="r.h6">《缝隙之间 2》综合材料空间装置 · 课程成绩 90 分</h3><div class="src">2025 · INSTALLATION</div></div>
+      <div class="honor rv zoom"><div class="no">06</div><h3 data-i18n="r.h7">《浮沉》木雕 · 广州美术学院木雕作品展</h3><div class="src">2021 · GROUP SHOW</div></div>
     </div>
   </section>
 
@@ -324,7 +340,7 @@ footer .up:hover{letter-spacing:.3em}
         <h3 data-i18n="r.s4.t">语言</h3>
         <div class="tags">
           <span data-i18n="r.s4a">中文 · 母语</span>
-          <span data-i18n="r.s4b">英文 · 学术与创作交流（全英文完成 RCA / UCL / UAL 三校 MFA 申请）</span>
+          <span data-i18n="r.s4b">英文 · 学术与创作交流</span>
         </div>
       </div>
     </div>
@@ -344,7 +360,7 @@ footer .up:hover{letter-spacing:.3em}
 /* 简历页 · 公共交互统一由 shared.js 提供 */
 var I18N = {
   "r.nav.home":{zh:"返回主页 HOME",en:"Home"},
-  "r.bio":{zh:"<em>“以田野为方法，把在地的记忆与现场，塑成可触摸的雕塑。”</em><br>雕塑家 · 在地艺术实践者 · 广州美术学院实验雕塑 2020–2025 · 现居广州 / 佛山",en:"<em>Fieldwork as method — turning local memory and lived sites into tangible sculpture.</em><br>Sculptor · Site-specific art practitioner · GAFA Experimental Sculpture 2020–2025 · Guangzhou / Foshan"},
+  "r.bio":{zh:"<em>“以田野为方法，把在地的记忆与现场，塑成可触摸的雕塑。”</em><br>雕塑家 · 艺术家 · 广州美术学院实验雕塑 2020–2025 · 现居广州 / 佛山",en:"<em>Fieldwork as method — turning local memory and lived sites into tangible sculpture.</em><br>Sculptor · Artist · GAFA Experimental Sculpture 2020–2025 · Guangzhou / Foshan"},
   "r.h.basic":{zh:"基本信息",en:"Basic Info"},
   "r.h.edu":{zh:"教育背景",en:"Education"},
   "r.h.honor":{zh:"荣誉与获奖",en:"Honors &amp; Awards"},
@@ -354,19 +370,15 @@ var I18N = {
   "r.footer.note":{zh:"简历 · 基本信息 / 教育背景 / 荣誉与获奖 / 往期展览经历 / 工作与实践经验 / 技能清单",en:"Resume · Basic Info / Education / Honors &amp; Awards / Exhibitions / Work &amp; Practice / Skills"},
   "r.backhome":{zh:"返回主页 ↑ BACK TO HOME",en:"Back to home ↑"},
   /* 基本信息 */
-  "r.i.role":{zh:"雕塑家 / 在地艺术实践者",en:"Sculptor / Site-specific art practitioner"},
-  "r.i.edu":{zh:"广州美术学院 · 实验雕塑 2020–2025",en:"GAFA · Experimental Sculpture, 2020–2025"},
+  "r.i.role":{zh:"雕塑家 / 艺术家",en:"Sculptor / Artist"},
+  "r.i.edu":{zh:"本科 · 广州美术学院雕塑系",en:"BFA · GAFA Sculpture Department"},
   "r.i.focus":{zh:"雕塑 / 装置 / 在地艺术 / 策展",en:"Sculpture / Installation / Site-specific art / Curation"},
   "r.i.loc":{zh:"中国 · 广州 / 佛山",en:"Guangzhou / Foshan, China"},
   /* 教育背景 */
   "r.e1.t":{zh:"广州美术学院 · 雕塑与公共艺术学院 · 实验雕塑方向（本科）",en:"Guangzhou Academy of Fine Arts · School of Sculpture &amp; Public Art · Experimental Sculpture (BFA)"},
   "r.e1.p":{zh:"2020 年 9 月入学，接受素描、泥塑人体等造型训练；2023 年进入实验雕塑工作室，深化木雕、石雕、金属铸造与玉材工艺，确立“东方造型与自我身份”创作线索。2025 年 6 月毕业：毕业创作《回溯间隙》获校级优秀毕业创作奖（85 分），毕业论文获 84 分。",
             en:"Enrolled Sept 2020; foundation training in drawing and clay figure modelling. Joined the Experimental Sculpture studio in 2023, deepening wood, stone, metal casting and jade, and forming the thread of Eastern form and self-identity. Graduated June 2025: graduation work “Tracing the Gap” won the university Outstanding Graduation Work Award (85/100); thesis 84/100."},
-  "r.e2.t":{zh:"国际语境 · 研究生新程",en:"International Context · Postgraduate Chapter"},
-  "r.e2.p":{zh:"凭毕业创作与作品集，获 RCA、UCL、UAL 三校 MFA 录取。",
-            en:"MFA offers from RCA, UCL and UAL, based on the graduation work and portfolio."},
   /* 荣誉与获奖 */
-  "r.h1":{zh:"RCA / UCL / UAL 三校 MFA 录取",en:"MFA offers from RCA / UCL / UAL"},
   "r.h2":{zh:"校级优秀毕业创作奖（85 分）——《回溯间隙》",en:"University Outstanding Graduation Work Award (85/100) — “Tracing the Gap”"},
   "r.h3":{zh:"毕业论文 84 分《去中心化背景下华南沿海地区在地艺术的文化建设作用研究》",en:"Graduation thesis 84/100, “The Cultural-Construction Role of Site-Specific Art along the South China Coast under Decentralisation”"},
   "r.h4":{zh:"筑梦空间个展《东方造型与自我身份》 · 展览成绩 85 分",en:"Solo show “Eastern Form and Self-Identity”, Zhumeng Space · graded 85/100"},
@@ -444,7 +456,7 @@ var I18N = {
   "r.s3f":{zh:"教学与课堂管理",en:"Teaching &amp; classroom management"},
   "r.s4.t":{zh:"语言",en:"Languages"},
   "r.s4a":{zh:"中文 · 母语",en:"Chinese · native"},
-  "r.s4b":{zh:"英文 · 学术与创作交流（全英文完成 RCA / UCL / UAL 三校 MFA 申请）",en:"English · academic and creative communication (entire RCA / UCL / UAL MFA applications written in English)"}
+  "r.s4b":{zh:"英文 · 学术与创作交流",en:"English · academic and creative communication"}
 };
 function applyLang(){
   document.documentElement.lang = YZ.getLang()==="zh" ? "zh-CN" : "en";
