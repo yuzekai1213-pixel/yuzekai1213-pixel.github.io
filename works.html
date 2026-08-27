@@ -133,7 +133,7 @@ section{max-width:1200px;margin:0 auto;padding:110px 6vw}
 .tl-node .year-label small{font-size:12px;letter-spacing:.32em}
 .tl-node .year-label{display:flex;align-items:flex-end;gap:22px;margin:0 0 30px 0}
 .tl-node .year-label small{color:var(--ink3);font-size:12px;letter-spacing:.3em}
-.tl-body{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 20px;align-items:start}
+.tl-body{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 20px;align-items:stretch}
 .tl-body .note-card{grid-column:1/-1}
 
 /* v17 · 往期展览时间线（紧凑版，共享左轴风格） */
@@ -192,7 +192,7 @@ section{max-width:1200px;margin:0 auto;padding:110px 6vw}
 .work-card:hover .shine{opacity:1}
 /* v16 · 苹果毛玻璃质感：底层磨砂玻璃背景(hover 放大) + 上层清晰圆角图(边缘高斯模糊羽化) + 底部信息条 */
 .work-card .w-cover{
-  position:relative;height:clamp(320px,52vw,600px);overflow:hidden;
+  position:relative;aspect-ratio:4/3;overflow:hidden;
   border-radius:var(--radius);background:#0c0b09;
 }
 /* 底层：磨砂苹果玻璃质感背景，hover 时逐渐放大 */

@@ -10,3 +10,11 @@ Thumbs.db
 # 个人文档（不公开）
 *.doc
 *.docx
+
+# 图片原图不入库（线上只用 -thumb/-disp 档；原图 o: 不加载）
+assets/**/*.jpg
+assets/**/*.jpeg
+assets/**/*.png
+!assets/**/*-thumb.jpg
+!assets/**/*-disp.jpg
+

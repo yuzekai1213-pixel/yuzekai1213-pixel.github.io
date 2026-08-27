@@ -15,6 +15,7 @@
 | 教育 | 广州美术学院 实验雕塑 2020–2025（BFA）；RCA / UCL / UAL 三校 MFA 录取 |
 | 常驻 | 广州 / 佛山（英文 Guangzhou / Foshan） |
 | 联系 | 525147849@qq.com · 176 8825 6407（显示格式带空格，拨号用 17688256407） |
+| 社交 | 哔哩哔哩 https://space.bilibili.com/256215655 · 小红书 https://www.xiaohongshu.com/user/profile/60f426e2000000002002fa6b · GitHub https://github.com/yuzekai1213-pixel |
 
 **口号（Slogan，双语固定，勿改写）：**
 - 中：`以田野为方法，把在地的记忆与现场，塑成可触摸的雕塑。`

@@ -1,5 +1,5 @@
-# ⚠️ 上线前 TODO：将 yuzekai1213-pixel.github.io 替换为正式域名（全站共 5 处文件）
+# yuzekai.art · robots
 User-agent: *
 Allow: /
 
-Sitemap: https://yuzekai1213-pixel.github.io/sitemap.xml
+Sitemap: https://yuzekai.art/sitemap.xml
