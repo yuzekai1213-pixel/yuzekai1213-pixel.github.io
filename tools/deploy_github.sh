@@ -31,7 +31,7 @@ if [ "$CHANGED" -eq 0 ]; then
 else
   git add -A
   git commit -q -m "自动部署：更新网站内容与排版 $(date '+%Y-%m-%d %H:%M')" || log "提交失败"
-  log "推送中（分支 $BRANCH）..."
+  log "推送中 -> branch: main"
   if git push origin "$BRANCH" 2>&1 | tee -a "$LOG"; then
     log "推送成功 ✔"
   else
