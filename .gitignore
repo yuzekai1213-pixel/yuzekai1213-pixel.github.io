@@ -18,3 +18,7 @@ assets/**/*.png
 !assets/**/*-thumb.jpg
 !assets/**/*-disp.jpg
 
+# 本地工具脚本（不部署到线上）
+发布.command
+启动预览.command
+

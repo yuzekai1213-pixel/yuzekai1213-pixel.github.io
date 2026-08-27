@@ -890,6 +890,12 @@ var IMG = {
     {t:A+"2024/文人松/细节/NO_FUSION_1213_001-thumb.jpg",s:A+"2024/文人松/细节/NO_FUSION_1213_001-disp.jpg",o:A+"2024/文人松/细节/NO_FUSION_1213_001.JPEG", a:"文人松 · 成品细节 01"},
     {t:A+"2024/文人松/细节/NO_FUSION_1213_010-thumb.jpg",s:A+"2024/文人松/细节/NO_FUSION_1213_010-disp.jpg",o:A+"2024/文人松/细节/NO_FUSION_1213_010.JPEG", a:"文人松 · 成品细节 02"}
   ],
+  wmE: [
+    {t:A+"2025/文人松/展览/IMG_0907-thumb.jpg",s:A+"2025/文人松/展览/IMG_0907-disp.jpg",o:A+"2025/文人松/展览/IMG_0907.jpeg", a:"文人松 · 展览现场 01"},
+    {t:A+"2025/文人松/展览/IMG_0909-thumb.jpg",s:A+"2025/文人松/展览/IMG_0909-disp.jpg",o:A+"2025/文人松/展览/IMG_0909.jpeg", a:"文人松 · 展览现场 02"},
+    {t:A+"2025/文人松/展览/IMG_0913-thumb.jpg",s:A+"2025/文人松/展览/IMG_0913-disp.jpg",o:A+"2025/文人松/展览/IMG_0913.jpeg", a:"文人松 · 展览现场 03"},
+    {t:A+"2025/文人松/展览/NO_FUSION_0325_002-thumb.jpg",s:A+"2025/文人松/展览/NO_FUSION_0325_002-disp.jpg",o:A+"2025/文人松/展览/NO_FUSION_0325_002.png", a:"文人松 · 展览现场 04"}
+  ],
 };
 
 var DATA = {
@@ -951,7 +957,18 @@ var DATA = {
         facts:[["年份 YEAR",{zh:"2025.05",en:"2025.05"}],["媒介 MEDIUM",{zh:"综合材料 / 影像",en:"Mixed media / video"}],["形式 FORMAT",{zh:"创作系列",en:"Work series"}]],
         about:{zh:"快速反应系列。（请补充：作品是什么、怎么做、一个核心想法。）", en:"Quick Reaction Series. (Please confirm: what it is, how it was made, one key idea.)"},
         concept:{zh:"（一句话想法待你补充）", en:"(One-line concept to be added by the artist)"},
-        groups:[{name:{zh:"精选", en:"Selected"}, imgs:IMG.fast}]},
+         groups:[{name:{zh:"精选", en:"Selected"}, imgs:IMG.fast}]},
+      {type:"work", title:{zh:"《文人松》 · 超写实雕塑", en:"“Literati Pine” · Hyperrealistic Sculpture"},
+        meta:{zh:"2025 · 硅胶 / 毛发 · HYPERREALISTIC", en:"2025 · Silicone & hair · HYPERREALISTIC"},
+        cover:IMG.wmMain[0].s, tag:{zh:"超写实雕塑 · HYPERREALISTIC", en:"HYPERREALISTIC"},
+        brief:{zh:"以硅胶与毛发完成的超写实雕塑，把盆景“文人松”重构为树状人体。",
+               en:"A hyperrealistic sculpture in silicone and hair, rewriting the penjing “literati pine” as a tree-bodied figure."},
+        facts:[["年份 YEAR",{zh:"2025",en:"2025"}],["媒介 MEDIUM",{zh:"硅胶 / 毛发",en:"Silicone / hair"}],["尺寸 SIZE",{zh:"40 × 28 × 60 cm",en:"40 × 28 × 60 cm"}],["展览 EXHIBITION",{zh:"超写实课程展",en:"Hyperrealistic Course Exhibition"}],["主题 THEME",{zh:"文人 · 树状人体 · 盆景",en:"Literati · Tree-body · Penjing"}]],
+       about:{zh:"研究盆景以年为单位塑造形体、运用多样工具、甚至逆转生长规律的造像逻辑，将“文人松”重构为树状人体：模拟人体关节的同时逆转肌肉结构，把熟悉的东西陌生化。作品追问：把植物改造成人喜欢的样子，是否也是违背自然、对无声群体的奴役？",
+              en:"Reading penjing logic — shaping over years, varied tools, even reversing growth — the literati pine becomes a tree-body: joints simulated, muscles inverted, the familiar made strange. It asks whether forcing plants into pleasing shapes is itself a violation, a quiet domination."},
+       concept:{zh:"逼真的硅胶让“被修剪成喜欢的样子”显得更刺眼——审美有时是一种温柔的暴力。",
+                en:"Lifelike silicone sharpens the point: being pruned into a pleasing shape is a soft violence."},
+        groups:[{name:{zh:"一 · 模型细节", en:"I · Model detail"}, imgs:IMG.wmMain},{name:{zh:"二 · 制作过程与细节", en:"II · Making process & details"}, imgs:IMG.wmP},{name:{zh:"三 · 展览现场", en:"III · Exhibition views"}, imgs:IMG.wmE}]},
     ]},
     {year:"2024", label:{zh:"在地实践 · 展览年", en:"SITE-SPECIFIC & EXHIBITION"}, items:[
       {type:"work", title:{zh:"红海疍家渔民在地实验项目", en:"Site-Specific Experiment with the Tankas of Honghai Village"},
@@ -989,18 +1006,7 @@ var DATA = {
         facts:[["年份 YEAR",{zh:"2024.09",en:"2024.09"}],["媒介 MEDIUM",{zh:"摄影 / 手骨模型",en:"Photography / skeletal hand model"}],["形式 FORMAT",{zh:"尺寸可变",en:"Dimensions variable"}],["主题 THEME",{zh:"空间感知",en:"Spatial perception"}]],
         about:{zh:"将可见空间与未见空间想象出一个“夹角”，把一双手骨模型贴在转角处，摆出不同手势并拍摄；数量足够多时并置呈现，暗示一个不存在的空间，探索物件如何激活空间与观者的感知。", en:"An “angle” is imagined between visible and unseen space; a pair of skeletal hands is posed at a corner and photographed. Enough poses side by side suggest a space that isn't there — how objects quicken a place and the viewer's perception."},
         concept:{zh:"物件不是填满空间，而是让空间被人看见。", en:"Objects don't fill space — they make it visible."},
-        groups:[{name:{zh:"精选", en:"Selected"}, imgs:IMG.angle}]},
-      {type:"work", title:{zh:"《文人松》 · 超写实雕塑", en:"“Literati Pine” · Hyperrealistic Sculpture"},
-       meta:{zh:"2024.10–11 · 硅胶 / 毛发 · HYPERREALISTIC", en:"2024.10–11 · Silicone & hair · HYPERREALISTIC"},
-       cover:IMG.wmMain[0].s, tag:{zh:"超写实雕塑 · HYPERREALISTIC", en:"HYPERREALISTIC"},
-       brief:{zh:"以硅胶与毛发完成的超写实雕塑，把盆景“文人松”重构为树状人体。",
-              en:"A hyperrealistic sculpture in silicone and hair, rewriting the penjing “literati pine” as a tree-bodied figure."},
-       facts:[["年份 YEAR",{zh:"2024.10–11",en:"2024.10–11"}],["媒介 MEDIUM",{zh:"硅胶 / 毛发",en:"Silicone / hair"}],["尺寸 SIZE",{zh:"40 × 28 × 60 cm",en:"40 × 28 × 60 cm"}],["主题 THEME",{zh:"文人 · 树状人体 · 盆景",en:"Literati · Tree-body · Penjing"}]],
-       about:{zh:"研究盆景以年为单位塑造形体、运用多样工具、甚至逆转生长规律的造像逻辑，将“文人松”重构为树状人体：模拟人体关节的同时逆转肌肉结构，把熟悉的东西陌生化。作品追问：把植物改造成人喜欢的样子，是否也是违背自然、对无声群体的奴役？",
-              en:"Reading penjing logic — shaping over years, varied tools, even reversing growth — the literati pine becomes a tree-body: joints simulated, muscles inverted, the familiar made strange. It asks whether forcing plants into pleasing shapes is itself a violation, a quiet domination."},
-       concept:{zh:"逼真的硅胶让“被修剪成喜欢的样子”显得更刺眼——审美有时是一种温柔的暴力。",
-                en:"Lifelike silicone sharpens the point: being pruned into a pleasing shape is a soft violence."},
-       groups:[{name:{zh:"一 · 模型细节", en:"I · Model detail"}, imgs:IMG.wmMain},{name:{zh:"二 · 制作过程与细节", en:"II · Making process & details"}, imgs:IMG.wmP}]},
+         groups:[{name:{zh:"精选", en:"Selected"}, imgs:IMG.angle}]},
     ]},
     {year:"2023", label:{zh:"作品集早期", en:"EARLY PORTFOLIO"}, items:[
       {type:"work", title:{zh:"作品集早期阶段 · 材料与造型积累", en:"Early Portfolio Phase · Material & Form Studies"},
