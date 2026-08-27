@@ -327,7 +327,7 @@ section{max-width:1200px;margin:0 auto;padding:110px 6vw}
   <div><a class="up" href="#hero" data-i18n="back.top">返回顶部 ↑ BACK TO TOP</a></div>
 </footer>
 
-<script src="shared.js?v=22"></script>
+<script src="shared.js?v=23"></script>
 <script>
 /* ============================================================
    主页数据（公共交互统一由 shared.js 提供）
@@ -359,7 +359,7 @@ var DATA = {
   contact: [
     {k:{zh:"EMAIL · 邮箱", en:"EMAIL"}, v:"525147849@qq.com", copy:"525147849@qq.com", acts:[{t:{zh:"发送邮件", en:"Email"}, href:"mailto:525147849@qq.com"},{t:{zh:"复制邮箱", en:"Copy"}, copy:"525147849@qq.com"}],
      sub:{k:{zh:"PHONE / WECHAT · 电话 / 微信", en:"PHONE / WECHAT"}, v:"176 8825 6407", copy:"17688256407", acts:[{t:{zh:"拨打电话", en:"Call"}, href:"tel:17688256407"},{t:{zh:"复制电话", en:"Copy"}, copy:"17688256407"}]}},
-    {k:{zh:"SOCIAL · 社交媒体", en:"SOCIAL MEDIA"}, v:{zh:"微博 / 小红书 / GitHub（链接待补充）", en:"Weibo / RED / GitHub (links TBA)"}, acts:[{t:{zh:"微博", en:"Weibo"}, href:"#"},{t:{zh:"小红书", en:"RED"}, href:"https://www.xiaohongshu.com/user/profile/60f426e2000000002002fa6b"},{t:{zh:"GitHub", en:"GitHub"}, href:"#"}]},
+    {k:{zh:"SOCIAL · 社交媒体", en:"SOCIAL MEDIA"}, v:{zh:"哔哩哔哩 / 小红书 · GitHub 待补充", en:"Bilibili / RED · GitHub (TBA)"}, acts:[{t:{zh:"哔哩哔哩", en:"Bilibili"}, href:"https://space.bilibili.com/256215655"},{t:{zh:"小红书", en:"RED"}, href:"https://www.xiaohongshu.com/user/profile/60f426e2000000002002fa6b"},{t:{zh:"GitHub", en:"GitHub"}, href:"#"}]},
     {k:{zh:"LOCATION · 常驻", en:"LOCATION"}, v:{zh:"中国 · 广州 / 佛山", en:"Guangzhou / Foshan, China"}, copy:"中国 · 广州 / 佛山", acts:[{t:{zh:"复制地址", en:"Copy"}, copy:"中国 · 广州 / 佛山"}]}
   ]
 };
@@ -389,7 +389,7 @@ var DATA = {
 function renderContact(){
   var g=document.getElementById("contactGrid");if(!g)return;
   function acts(ar){return (ar||[]).map(function(a){
-    if(a.href)return "<a href='"+a.href+"'>"+tt(a.t)+"</a>";
+    if(a.href)return "<a href='"+a.href+"'"+(a.href.indexOf("http")===0?" target='_blank' rel='noopener'":"")+">"+tt(a.t)+"</a>";
     return "<button data-copy='"+a.copy+"' data-label='"+tt(a.t)+"'>"+tt(a.t)+"</button>";
   }).join("")}
   g.innerHTML=DATA.contact.map(function(c,i){
