@@ -119,7 +119,7 @@ section{max-width:1200px;margin:0 auto;padding:110px 6vw}
   content:"";position:absolute;left:13px;top:0;bottom:0;width:1px;
   background:linear-gradient(180deg,var(--accent),var(--line) 12%,var(--line) 86%,transparent);
 }
-.tl-node{position:relative;margin-bottom:74px}
+.tl-node{position:relative;margin-bottom:50px}
 .tl-node:last-child{margin-bottom:0}
 .tl-node .dot{
   position:absolute;left:-44px;top:6px;width:28px;height:28px;border-radius:50%;
@@ -133,7 +133,8 @@ section{max-width:1200px;margin:0 auto;padding:110px 6vw}
 .tl-node .year-label small{font-size:12px;letter-spacing:.32em}
 .tl-node .year-label{display:flex;align-items:flex-end;gap:22px;margin:0 0 30px 0}
 .tl-node .year-label small{color:var(--ink3);font-size:12px;letter-spacing:.3em}
-.tl-body{display:grid;gap:22px}
+.tl-body{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 20px;align-items:start}
+.tl-body .note-card{grid-column:1/-1}
 
 /* v17 · 往期展览时间线（紧凑版，共享左轴风格） */
 .exhibit{position:relative;padding-left:34px;margin:0 0 72px}
@@ -160,8 +161,8 @@ section{max-width:1200px;margin:0 auto;padding:110px 6vw}
 
 /* v17 · 作品时间线「文件夹式」管理：年份折叠 */
 .tl-node.fold .tl-body{display:none}
-.tl-node .tl-head{display:flex;align-items:baseline;gap:22px;margin:0 0 30px 0}
-.tl-node .tl-head .y{font-size:clamp(52px,9vw,128px);letter-spacing:.06em;color:var(--accent);font-weight:600;line-height:1;text-shadow:0 2px 30px rgba(217,164,65,.18)}
+.tl-node .tl-head{display:flex;align-items:baseline;gap:16px;margin:0 0 20px 0}
+.tl-node .tl-head .y{font-size:clamp(38px,6vw,64px);letter-spacing:.06em;color:var(--accent);font-weight:600;line-height:1;text-shadow:0 2px 30px rgba(217,164,65,.18)}
 .tl-node .tl-head small{color:var(--ink3);font-size:12px;letter-spacing:.3em}
 .tl-node .tl-fold{
   margin-left:auto;display:inline-flex;align-items:center;gap:8px;cursor:pointer;user-select:none;
@@ -243,6 +244,26 @@ section{max-width:1200px;margin:0 auto;padding:110px 6vw}
   background:none;border:0;padding:0;transition:gap .3s var(--ease);
 }
 .work-card .open-modal:hover{gap:14px}
+/* 精简作品小卡片 · 3 列一排 · 小封面 + 名称/材质/尺寸 */
+.mini-card{
+  position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;cursor:pointer;transition:transform .35s var(--ease),border-color .35s var(--ease),box-shadow .35s var(--ease);
+  display:flex;flex-direction:column;
+}
+.mini-card:hover{transform:translateY(-4px);border-color:rgba(217,164,65,.5);box-shadow:var(--shadow)}
+.mini-card .mc-cover{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--bg2)}
+.mini-card .mc-cover .glass-hi{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 55%,rgba(13,12,10,.25))}
+.mini-card .mc-cover img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.mini-card:hover .mc-cover img{transform:scale(1.07)}
+.mini-card .mc-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:7px;flex:1}
+.mini-card .mc-body h3{font-size:clamp(15px,1.6vw,17px);letter-spacing:.06em;line-height:1.5;color:var(--ink)}
+.mini-card .mc-meta{font-size:12px;letter-spacing:.04em;color:var(--ink3);line-height:1.7}
+.mini-card .mc-meta::before{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:2px}
+.mini-card .open-modal{margin-top:auto;padding-top:12px;display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.14em;color:var(--accent2);background:none;border:0;transition:gap .3s var(--ease)}
+.mini-card .open-modal:hover{gap:14px}
+.mini-card.flash{animation:cardFlash 1.6s var(--ease)}
+[data-theme="light"] .mini-card{background:var(--card)}
+[data-theme="light"] .mini-card .mc-body h3{color:var(--ink)}
 /* 无图 / 经历卡片 */
 .note-card{
   position:relative;background:transparent;border:0;border-radius:0;
@@ -395,10 +416,15 @@ section{max-width:1200px;margin:0 auto;padding:110px 6vw}
   .lb-zoom{right:20px;top:82px}
   .lb-prev{left:8px}.lb-next{right:8px}
   .lb-caption{padding:12px 46px 8px}
+  .tl-body{grid-template-columns:repeat(2,1fr)}
+  .tl-body .note-card{grid-column:1/-1}
 }
 @media(max-width:560px){
   .modal-panel .m-scroll{padding:20px}
   .modal-panel .m-hero{height:220px}
+  .tl-body{grid-template-columns:1fr;gap:14px}
+  .tl-body .note-card{grid-column:1/-1}
+  .mini-card .mc-body h3{font-size:16px}
 }
 
 /* ============ 年份下作品二级条目索引 (v5) ============ */
@@ -472,8 +498,8 @@ section{max-width:1200px;margin:0 auto;padding:110px 6vw}
   <div class="logo"><i></i>余泽锴 <small>YU ZEKAI</small></div>
   <div class="links" id="navLinks">
     <a href="index.html" data-i18n="w.nav.home">返回主页 HOME</a>
-    <a href="#portfolio" data-sec="portfolio" data-i18n="w.nav.tl">时间线 TIMELINE</a>
     <a href="#exhibitions" data-sec="exhibitions" data-i18n="w.nav.ex">展览 EXHIBITIONS</a>
+    <a href="#portfolio" data-sec="portfolio" data-i18n="w.nav.tl">时间线 TIMELINE</a>
   </div>
   <div class="tools">
     <button id="fsBtn" title="调整字体大小 / Text size" aria-label="调整字体大小 / Text size">A</button>
@@ -837,6 +863,13 @@ var IMG = {
     {t:A+"2024/夹角空间/精选/IMG_7657-thumb.jpg",s:A+"2024/夹角空间/精选/IMG_7657-disp.jpg",o:A+"2024/夹角空间/精选/IMG_7657.JPG", a:"夹角空间 · 精选 07"},
     {t:A+"2024/夹角空间/精选/IMG_7658-thumb.jpg",s:A+"2024/夹角空间/精选/IMG_7658-disp.jpg",o:A+"2024/夹角空间/精选/IMG_7658.JPG", a:"夹角空间 · 精选 08"},
   ],
+  fast: [
+    {t:A+"2025/快速反应系列/精选/878764315116db4f66caaadbb9ce3c70-thumb.jpg",s:A+"2025/快速反应系列/精选/878764315116db4f66caaadbb9ce3c70-disp.jpg",o:A+"2025/快速反应系列/精选/878764315116db4f66caaadbb9ce3c70.jpg", a:"快速反应系列 · 精选 01"},
+    {t:A+"2025/快速反应系列/精选/IMG_1499-thumb.jpg",s:A+"2025/快速反应系列/精选/IMG_1499-disp.jpg",o:A+"2025/快速反应系列/精选/IMG_1499.jpeg", a:"快速反应系列 · 精选 02"},
+    {t:A+"2025/快速反应系列/精选/IMG_1510-thumb.jpg",s:A+"2025/快速反应系列/精选/IMG_1510-disp.jpg",o:A+"2025/快速反应系列/精选/IMG_1510.jpeg", a:"快速反应系列 · 精选 03"},
+    {t:A+"2025/快速反应系列/精选/IMG_1511-thumb.jpg",s:A+"2025/快速反应系列/精选/IMG_1511-disp.jpg",o:A+"2025/快速反应系列/精选/IMG_1511.jpeg", a:"快速反应系列 · 精选 04"},
+    {t:A+"2025/快速反应系列/精选/IMG_1512-thumb.jpg",s:A+"2025/快速反应系列/精选/IMG_1512-disp.jpg",o:A+"2025/快速反应系列/精选/IMG_1512.jpeg", a:"快速反应系列 · 精选 05"},
+  ],
   wmD: [
     {t:A+"2024/文人松/细节/NO_FUSION_1213_001-thumb.jpg",s:A+"2024/文人松/细节/NO_FUSION_1213_001-disp.jpg",o:A+"2024/文人松/细节/NO_FUSION_1213_001.JPEG", a:"文人松 · 细节 01"},
     {t:A+"2024/文人松/细节/NO_FUSION_1213_003-thumb.jpg",s:A+"2024/文人松/细节/NO_FUSION_1213_003-disp.jpg",o:A+"2024/文人松/细节/NO_FUSION_1213_003.JPEG", a:"文人松 · 细节 02"},
@@ -904,7 +937,13 @@ var DATA = {
        concept:{zh:"缝隙不是空缺，是被实体围出来的在场。作品让材料之间的“缝”成为主体。",
                 en:"A gap is not nothing — it is presence enclosed by solid. Here the seam between materials is the work."},
        groups:[{name:{zh:"一 · 展览现场", en:"I · Views"}, imgs:IMG.fxSite},{name:{zh:"二 · 细节", en:"II · Details"}, imgs:IMG.fxDet},{name:{zh:"三 · 制作过程", en:"III · Process"}, imgs:IMG.fxMake}],
-       videos:[{src:A+"2025/缝隙之间2/视频/工作状况.mp4", poster:A+"2025/缝隙之间2/视频/工作状况.jpg", title:{zh:"缝隙之间 2 · 现场工作状况", en:"Between Gaps 2 · Working on site"}}]}
+       videos:[{src:A+"2025/缝隙之间2/视频/工作状况.mp4", poster:A+"2025/缝隙之间2/视频/工作状况.jpg", title:{zh:"缝隙之间 2 · 现场工作状况", en:"Between Gaps 2 · Working on site"}}]},
+      {type:"work", title:{zh:"快速反应系列", en:"Quick Reaction Series"}, meta:{zh:"2025.05 · 综合材料 / 影像 · SERIES", en:"2025.05 · Mixed media / video · SERIES"}, cover:IMG.fast[0].s, tag:{zh:"创作系列 · SERIES", en:"SERIES"},
+        brief:{zh:"以“快速反应”为主题的创作系列，含影像与现场记录。（一句话想法待补）", en:"A series on the theme of “quick reaction,” with video and on-site documentation. (one-line concept to be confirmed)"},
+        facts:[["年份 YEAR",{zh:"2025.05",en:"2025.05"}],["媒介 MEDIUM",{zh:"综合材料 / 影像",en:"Mixed media / video"}],["形式 FORMAT",{zh:"创作系列",en:"Work series"}]],
+        about:{zh:"快速反应系列。（请补充：作品是什么、怎么做、一个核心想法。）", en:"Quick Reaction Series. (Please confirm: what it is, how it was made, one key idea.)"},
+        concept:{zh:"（一句话想法待你补充）", en:"(One-line concept to be added by the artist)"},
+        groups:[{name:{zh:"精选", en:"Selected"}, imgs:IMG.fast}]},
     ]},
     {year:"2024", label:{zh:"在地实践 · 展览年", en:"SITE-SPECIFIC & EXHIBITION"}, items:[
       {type:"work", title:{zh:"红海疍家渔民在地实验项目", en:"Site-Specific Experiment with the Tankas of Honghai Village"},
@@ -1063,10 +1102,18 @@ var DATA = {
       html+="</div><div class='tl-body stagger'>";
       node.items.forEach(function(it,ii){
         if(it.type==="work"){
-          html+="<article class='work-card rv zoom' id='wk-"+ni+"-"+ii+"' data-wy='"+ni+"' data-wi='"+ii+"'><div class='shine'></div>"
-            +"<div class='w-cover'><img class='w-bg' src='"+it.cover+"' alt='' aria-hidden='true' loading='lazy'><span class='w-glass'></span><img class='w-fg' src='"+it.cover+"' alt='"+tt(it.title)+"' loading='lazy'>"
-            +"<div class='w-body'><span class='cover-tag'>"+tt(it.tag)+"</span><h3>"+tt(it.title)+"</h3><span class='meta'>"+tt(it.meta)+"</span><p class='brief'>"+tt(it.brief)+"</p>"
-            +"<button class='open-modal'>"+L("查看作品详情","View details")+" <span>→</span></button></div></div></article>";
+          var sz="",mt="";
+          (it.facts||[]).forEach(function(f){
+            var lab=String(f[0]).toLowerCase();
+            if(lab.indexOf("尺寸")>-1||lab.indexOf("size")>-1) sz=tt(f[1]);
+            if(lab.indexOf("媒介")>-1||lab.indexOf("material")>-1||lab.indexOf("medium")>-1) mt=tt(f[1]);
+          });
+          html+="<article class='mini-card rv zoom' id='wk-"+ni+"-"+ii+"' data-wy='"+ni+"' data-wi='"+ii+"'>"
+            +"<div class='mc-cover'><img src='"+it.cover+"' alt='"+tt(it.title)+"' loading='lazy'></div>"
+            +"<div class='mc-body'><h3>"+tt(it.title)+"</h3>"
+            +(mt?"<span class='mc-meta'>材质 · "+mt+"</span>":"")
+            +(sz?"<span class='mc-meta'>尺寸 · "+sz+"</span>":"")
+            +"<button class='open-modal'>"+L("查看详情","Details")+" <span>→</span></button></div></article>";
         }else{
           html+="<article class='note-card rv zoom' id='nt-"+ni+"-"+ii+"' data-ny='"+ni+"' data-ni='"+ii+"'><span class='nc-num'>"+it.num+"</span><div><h3>"+tt(it.title)+"</h3><span class='meta'>"+tt(it.meta)+"</span><p>"+tt(it.brief)+"</p></div><span class='w-tag'>"+L("文字详述","Full story")+"</span></article>";
         }
@@ -1075,13 +1122,13 @@ var DATA = {
     });
     tl.innerHTML=html;
 
-    /* v17 · 往期展览时间线渲染 */
+    /* v17 · 往期展览时间线（精简缩略版，一页整理完整） */
     var h="";
     DATA.exhibitions.forEach(function(ey){
-      h+="<div class='ex-node'><div class='dot'></div><div class='ex-y'>"+ey.year+" · "+tt(ey.label)+"</div><div class='ex-grid'>";
+      h+="<div class='ex-node'><div class='ex-y'>"+ey.year+" · "+tt(ey.label)+"</div><div class='ex-grid'>";
       ey.items.forEach(function(it){
         var ref=it.ref?" data-ref='"+it.ref+"'":"";
-        h+="<div class='ex-card rv zoom'"+ref+"><span class='ex-role'>"+tt(it.role)+"</span><h4>"+tt(it.title)+"</h4><span class='ex-place'>"+tt(it.place)+"</span><p>"+tt(it.d)+"</p>"+(it.ref?"<span class='ex-go'>"+L("查看作品","View work")+" →</span>":"")+"</div>";
+        h+="<div class='ex-card rv'"+ref+"><span class='ex-role'>"+tt(it.role)+"</span><h4>"+tt(it.title)+"</h4><span class='ex-place'>"+tt(it.place)+"</span>"+(it.ref?"<span class='ex-go'>"+L("查看作品","View work")+" →</span>":"")+"</div>";
       });
       h+="</div></div>";
     });
@@ -1116,7 +1163,7 @@ var DATA = {
         setTimeout(function(){el.classList.remove("flash")},1600);
       });
     });
-    document.querySelectorAll(".work-card").forEach(function(card){
+    document.querySelectorAll(".mini-card").forEach(function(card){
       card.addEventListener("click",function(){openWork(+card.getAttribute("data-wy"),+card.getAttribute("data-wi"))});
     });
     document.querySelectorAll(".note-card").forEach(function(card){
