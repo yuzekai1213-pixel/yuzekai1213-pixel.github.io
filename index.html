@@ -116,15 +116,15 @@ section{max-width:1200px;margin:0 auto;padding:110px 6vw}
 .about-text p.body{color:var(--ink2);margin-top:18px;font-size:14.5px;max-width:760px}
 
 /* v17 · 工作经验总览 */
-.experience{margin:0 0 10px}
-.exp-grid{display:grid;gap:26px}
+.experience{margin:0 auto;padding:80px 6vw}
+.exp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:22px;align-items:start}
 .exp-node{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);overflow:hidden;transition:border-color .3s}
 .exp-node:hover{border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
-.exp-node .exp-head{display:flex;align-items:baseline;gap:16px;padding:16px 22px 0}
-.exp-node .exp-head .exp-y{font-size:clamp(24px,3.4vw,34px);color:var(--accent);font-weight:400;letter-spacing:.04em;line-height:1}
-.exp-node .exp-head .exp-label{font-size:11px;letter-spacing:.3em;color:var(--ink3)}
-.exp-node .exp-body{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;padding:18px 22px 22px}
-.exp-item{position:relative;border:1px solid var(--line);border-radius:12px;padding:15px 16px;background:color-mix(in srgb,var(--bg) 55%,transparent);transition:border-color .3s,transform .3s}
+.exp-node .exp-head{display:flex;align-items:baseline;gap:16px;padding:14px 20px 0}
+.exp-node .exp-head .exp-y{font-size:clamp(20px,2.6vw,28px);color:var(--accent);font-weight:400;letter-spacing:.04em;line-height:1}
+.exp-node .exp-head .exp-label{font-size:10.5px;letter-spacing:.26em;color:var(--ink3)}
+.exp-node .exp-body{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;padding:14px 18px 18px}
+.exp-item{position:relative;border:1px solid var(--line);border-radius:12px;padding:13px 15px;background:color-mix(in srgb,var(--bg) 55%,transparent);transition:border-color .3s,transform .3s}
 .exp-item:hover{border-color:color-mix(in srgb,var(--accent) 45%,transparent);transform:translateY(-2px)}
 .exp-item .exp-meta{display:block;font-size:9.5px;letter-spacing:.2em;color:var(--accent2);margin-bottom:7px}
 .exp-item h4{font-size:14.5px;letter-spacing:.04em;margin-bottom:4px}
@@ -143,14 +143,19 @@ section{max-width:1200px;margin:0 auto;padding:110px 6vw}
 .contact-card::after{content:"";position:absolute;inset:0;background:radial-gradient(300px circle at var(--mx,50%) var(--my,50%),rgba(236,199,127,.1),transparent 50%);opacity:0;transition:opacity .3s;pointer-events:none}
 .contact-card:hover::after{opacity:1}
 .contact-card:hover{border-color:rgba(217,164,65,.5);transform:translateY(-5px);box-shadow:var(--shadow)}
-.contact-card .k{font-size:11px;letter-spacing:.3em;color:var(--ink3)}
+.contact-card .k{font-size:11px;letter-spacing:.22em;color:var(--ink3)}
 .contact-card .v{font-size:19px;color:var(--ink);word-break:break-all;letter-spacing:.02em}
 .contact-card .act{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+/* 纵向排布（社交媒体等动作列表） */
+.contact-card .act.vert{flex-direction:column;align-items:stretch}
+.contact-card .act.vert a,.contact-card .act.vert button{text-align:center;width:100%;white-space:nowrap}
 .contact-card .act button,.contact-card .act a{
   font-size:12px;letter-spacing:.14em;color:var(--accent2);border:1px solid rgba(217,164,65,.4);background:none;border-radius:30px;padding:8px 18px;cursor:pointer;transition:.25s;font-family:inherit;
 }
 .contact-card .act button:hover,.contact-card .act a:hover{background:var(--accent-dim);transform:translateY(-2px)}
-.contact-card .c-sub{margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+.contact-card .c-sub{display:flex;flex-direction:column;gap:10px;margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}
+.contact-card .c-sub .k{font-size:10.5px}
+.contact-card .c-sub .v{font-size:clamp(16px,.4vw + 14.6px,18px);white-space:nowrap;letter-spacing:.05em;word-break:normal}
 
 /* ============ 响应式 ============ */
 
@@ -177,6 +182,35 @@ section{max-width:1200px;margin:0 auto;padding:110px 6vw}
 .wf-step .n{font-size:12px;letter-spacing:.3em;color:var(--accent)}
 .wf-step h4{font-size:16px;letter-spacing:.05em;margin:14px 0 8px}
 .wf-step p{font-size:13.5px;line-height:1.8;color:var(--ink3)}
+
+/* ============ 商业案例（横向拖拽画廊） ============ */
+.case-label{display:flex;align-items:baseline;gap:14px;margin:36px 0 14px}
+.case-label .en{font-size:10.5px;letter-spacing:.4em;color:var(--accent2);white-space:nowrap}
+.case-label h3{font-size:clamp(16px,2vw,20px);letter-spacing:.1em;font-weight:600;white-space:nowrap}
+.case-label::after{content:"";flex:1;height:1px;background:var(--line)}
+.case-row{display:flex;gap:16px;overflow-x:auto;padding:6px 2px 20px;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:rgba(217,164,65,.4) transparent;cursor:grab}
+.case-row.drag{cursor:grabbing;scroll-snap-type:none}
+.case-row::-webkit-scrollbar{height:6px}
+.case-row::-webkit-scrollbar-thumb{background:rgba(217,164,65,.4);border-radius:3px}
+.case-row::-webkit-scrollbar-track{background:var(--line)}
+.case{flex:0 0 300px;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:border-color .3s,transform .45s var(--ease);will-change:transform}
+.case:hover{border-color:rgba(217,164,65,.45);transform:translateY(-4px)}
+.case img{width:100%;height:200px;object-fit:cover;display:block}
+.case .c-body{padding:14px 16px 16px}
+.case .c-meta{font-size:10px;letter-spacing:.2em;color:var(--accent2);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+.case h4{font-size:15px;letter-spacing:.06em;margin-top:6px}
+.case p{font-size:12.5px;color:var(--ink2);line-height:1.7;margin-top:6px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+.case-hint{margin-top:4px;font-size:10.5px;color:var(--ink3);letter-spacing:.14em}
+.case-intro{margin:14px 0 18px;max-width:760px;font-size:14.5px;line-height:1.9;color:var(--ink2);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+.cases-cta-top{margin-bottom:14px}
+.cases-cta-bottom{margin-top:26px;text-align:center;padding-top:26px;border-top:1px solid var(--line)}
+.cases-cta-top a,.cases-cta-bottom a{
+  display:inline-flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.24em;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  color:var(--accent2);border:1px solid var(--line2);border-radius:40px;padding:12px 26px;transition:.35s var(--ease);text-decoration:none;
+}
+.cases-cta-top a:hover,.cases-cta-bottom a:hover{color:var(--ink);border-color:rgba(217,164,65,.55);transform:translateY(-2px)}
+@keyframes caseCtaPulse{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@media(max-width:560px){.case{flex:0 0 78vw}}
 @media(max-width:900px){
   .services{padding:90px 6vw}
   .wf-steps{grid-template-columns:1fr}
@@ -297,9 +331,9 @@ section{max-width:1200px;margin:0 auto;padding:110px 6vw}
       </div>
     </div>
   </section>
-</main>
 
-  <!-- ============ 工作经验（v17）：与作品时间线完全独立的经历总结 ============ -->
+  <!-- ============ 商业案例（横向拖拽画廊） ============ -->
+  <!-- ============ 工作经验：与作品时间线完全独立的经历总结 ============ -->
   <section class="experience" id="experience">
     <div class="section-head rv">
       <div class="en">EXPERIENCE · PROFESSIONAL</div>
@@ -308,6 +342,27 @@ section{max-width:1200px;margin:0 auto;padding:110px 6vw}
     </div>
     <div class="exp-grid" id="expTl"></div>
   </section>
+
+  <!-- ============ 商业案例（横向拖拽画廊） ============ -->
+  <section class="services" id="cases">
+    <div class="services-inner">
+      <div class="section-head rv">
+        <div class="en">CASES · COMMERCIAL</div>
+        <h2 data-i18n="cs.head">商业案例</h2>
+        <div class="rule"></div>
+      </div>
+      <p class="case-intro rv" data-i18n="cs.intro">把手与材料的能力投向真实需求：空间装置、演出道具、手工机车、定制造物与布展落地。以下为代表性商业项目集锦，完整内容请移步作品集统一展示。</p>
+      <div class="cases-cta-top rv">
+        <a class="btn solid" href="works.html" data-i18n="cs.ctaTop">前往作品集查看完整案例 →</a>
+      </div>
+      <p class="case-hint rv">← 拖动 / 滚动查看更多 →</p>
+      <div id="caseGroups"></div>
+      <div class="cases-cta-bottom rv">
+        <a class="btn" href="works.html" data-i18n="cs.ctaBottom">查看作品集全部案例（作品集页）→</a>
+      </div>
+    </div>
+  </section>
+</main>
 
 <!-- ============ 联系 ============ -->
 <div class="contact" id="contact">
@@ -323,7 +378,7 @@ section{max-width:1200px;margin:0 auto;padding:110px 6vw}
 
 <footer>
   © 2026 余泽锴 YU ZEKAI · Sculpture &amp; Site-Specific Art
-  <div class="vnote" data-i18n="footer.note">主页 · 精简版：关于 / 服务与承接 / 工作经验 / 联系方式 · 作品集详见独立作品页 works.html</div>
+  <div class="vnote" data-i18n="footer.note">主页 · 精简版：关于 / 服务与承接 / 商业案例 / 工作经验 / 联系方式 · 作品集详见独立作品页 works.html</div>
   <div><a class="up" href="#hero" data-i18n="back.top">返回顶部 ↑ BACK TO TOP</a></div>
 </footer>
 
@@ -359,7 +414,7 @@ var DATA = {
   contact: [
     {k:{zh:"EMAIL · 邮箱", en:"EMAIL"}, v:"525147849@qq.com", copy:"525147849@qq.com", acts:[{t:{zh:"发送邮件", en:"Email"}, href:"mailto:525147849@qq.com"},{t:{zh:"复制邮箱", en:"Copy"}, copy:"525147849@qq.com"}],
      sub:{k:{zh:"PHONE / WECHAT · 电话 / 微信", en:"PHONE / WECHAT"}, v:"176 8825 6407", copy:"17688256407", acts:[{t:{zh:"拨打电话", en:"Call"}, href:"tel:17688256407"},{t:{zh:"复制电话", en:"Copy"}, copy:"17688256407"}]}},
-    {k:{zh:"SOCIAL · 社交媒体", en:"SOCIAL MEDIA"}, v:{zh:"哔哩哔哩 / 小红书 · GitHub 待补充", en:"Bilibili / RED · GitHub (TBA)"}, acts:[{t:{zh:"哔哩哔哩", en:"Bilibili"}, href:"https://space.bilibili.com/256215655"},{t:{zh:"小红书", en:"RED"}, href:"https://www.xiaohongshu.com/user/profile/60f426e2000000002002fa6b"},{t:{zh:"GitHub", en:"GitHub"}, href:"#"}]},
+    {k:{zh:"SOCIAL · 社交媒体", en:"SOCIAL MEDIA"}, v:{zh:"哔哩哔哩 / 小红书 / GitHub", en:"Bilibili / RED / GitHub"}, vertical:true, acts:[{t:{zh:"哔哩哔哩", en:"Bilibili"}, href:"https://space.bilibili.com/256215655"},{t:{zh:"小红书", en:"RED"}, href:"https://www.xiaohongshu.com/user/profile/60f426e2000000002002fa6b"},{t:{zh:"GitHub", en:"GitHub"}, href:"https://github.com/yuzekai1213-pixel"}]},
     {k:{zh:"LOCATION · 常驻", en:"LOCATION"}, v:{zh:"中国 · 广州 / 佛山", en:"Guangzhou / Foshan, China"}, copy:"中国 · 广州 / 佛山", acts:[{t:{zh:"复制地址", en:"Copy"}, copy:"中国 · 广州 / 佛山"}]}
   ]
 };
@@ -386,6 +441,46 @@ var DATA = {
 /* ============================================================
    渲染：联系方式
    ============================================================ */
+/* 商业案例（横向拖拽画廊） */
+var CASES = [
+  {zh:"台灯定制", en:"Lamps", items:[
+    {t:"2025.12 · 定制落地灯", h:"台灯定制", n:"定制落地灯，从结构到成品交付。", img:"assets/案例/台灯/25-12台灯定制/精选/DSC03489-disp.jpg"},
+    {t:"2026.05 · 品牌合作", h:"麦当劳台灯定制", n:"为品牌定制的主题台灯，地面、灯具整体制作。", img:"assets/案例/台灯/26-5麦当劳台灯定制/精选/DSC03678-disp.jpg"}
+  ]},
+  {zh:"摩托车定制", en:"Motorcycles", items:[
+    {t:"2026.04 · 整车改装", h:"摩托车整车定制", n:"整车改装，造型、结构与机加工全程落地。", img:"assets/案例/机车/26-4摩托车整车定制/精选/Gemini_Generated_Image_948t12948t12948t-disp.jpg"},
+    {t:"2025.10 · 复古定制", h:"摩托车头灯定制", n:"复古头灯定制，兼顾造型与照明功能。", img:"assets/案例/机车/25-10摩托车头灯定制/精选/3c6bc80141fc8b03af80f7f71a44f114-disp.jpg"},
+    {t:"2026.06 · 效果呈现", h:"摩托车定制效果", n:"定制效果呈现与现场拍摄记录。", img:"assets/案例/机车/26-6摩托车定制效果/精选/20260526-DSC03800-disp.jpg"}
+  ]},
+  {zh:"舞台布景道具", en:"Stage Sets & Props", items:[
+    {t:"2025.02 · 假山石景", h:"舞台假山背景", n:"舞台假山石景搭建，模拟自然山体。", img:"assets/案例/舞台布景/25-2舞台假山背景/精选/8e777d664cc52ed7bed5d660629d9cd6-disp.jpg"},
+    {t:"2026.04 · 道具制作", h:"舞台道具制作", n:"为演出制作道具，从图纸到现场置景。", img:"assets/案例/舞台布景/26-4舞台道具制作/精选/IMG_3907-disp.jpg"}
+  ]},
+  {zh:"版画与布展", en:"Print & Installation", items:[
+    {t:"2026.03 · 版画定制", h:"版画定制", n:"定制版画，分版、套色到完成。", img:"assets/案例/版画布展/26-3版画定制/精选/DSC03642-disp.jpg"},
+    {t:"2026.05 · 展览落地", h:"画展展览布展", n:"画展布展，作品悬挂、灯光与现场统筹。", img:"assets/案例/版画布展/26-5画展展览布展/精选/IMG_4191-disp.jpg"}
+  ]}
+];
+function renderCases(){
+  var box=document.getElementById("caseGroups");if(!box)return;
+  var L=YZ.getLang();
+  box.innerHTML=CASES.map(function(g){
+    return "<div class='case-label'><span class='en'>"+((L==="en")?g.en:g.zh.toUpperCase())+"</span><h3>"+((L==="en")?g.zh:g.zh)+"</h3></div>"
+      +"<div class='case-row'>"+g.items.map(function(it){
+        return "<div class='case'><img src='"+it.img+"' alt='"+it.h+" · "+it.t+"' loading='lazy' decoding='async'><div class='c-body'><span class='c-meta'>"+it.t+"</span><h4>"+it.h+"</h4><p>"+it.n+"</p></div></div>";
+      }).join("")+"</div>";
+  }).join("");
+  box.querySelectorAll(".case-row").forEach(bindDrag);
+}
+function bindDrag(row){
+  if(row.dataset.drag)return;row.dataset.drag="1";
+  var down=false,sx=0,sl=0;
+  row.addEventListener("pointerdown",function(e){down=true;sx=e.clientX;sl=row.scrollLeft;row.classList.add("drag");try{row.setPointerCapture(e.pointerId)}catch(_){}});
+  row.addEventListener("pointermove",function(e){if(!down)return;row.scrollLeft=sl-(e.clientX-sx)});
+  function up(){down=false;row.classList.remove("drag")}
+  row.addEventListener("pointerup",up);row.addEventListener("pointercancel",up);row.addEventListener("pointerleave",up);
+}
+
 function renderContact(){
   var g=document.getElementById("contactGrid");if(!g)return;
   function acts(ar){return (ar||[]).map(function(a){
@@ -393,7 +488,7 @@ function renderContact(){
     return "<button data-copy='"+a.copy+"' data-label='"+tt(a.t)+"'>"+tt(a.t)+"</button>";
   }).join("")}
   g.innerHTML=DATA.contact.map(function(c,i){
-    var h="<div class='contact-card rv zoom' data-idx='"+i+"'><span class='k'>"+tt(c.k)+"</span><span class='v'>"+tt(c.v)+"</span><div class='act'>"+acts(c.acts)+"</div>";
+    var h="<div class='contact-card rv zoom"+(c.vertical?" card-social":"")+"' data-idx='"+i+"'><span class='k'>"+tt(c.k)+"</span><span class='v'>"+tt(c.v)+"</span><div class='act"+(c.vertical?" vert":"")+"'>"+acts(c.acts)+"</div>";
     if(c.sub){h+="<div class='c-sub'><span class='k'>"+tt(c.sub.k)+"</span><span class='v'>"+tt(c.sub.v)+"</span><div class='act'>"+acts(c.sub.acts)+"</div></div>"}
     h+="</div>";
     return h;
@@ -451,7 +546,11 @@ var I18N = {
   "exp.head":{zh:"工作经验",en:"Experience"},
   "ct.head":{zh:"联系我",en:"Contact"},
   "back.top":{zh:"返回顶部 ↑ BACK TO TOP",en:"Back to top ↑"},
-  "footer.note":{zh:"主页 · 精简版：关于 / 服务与承接 / 工作经验 / 联系方式 · 作品集详见独立作品页 works.html",en:"Homepage · streamlined: About / Services / Experience / Contact · Portfolio on works.html"}
+  "footer.note":{zh:"主页 · 精简版：关于 / 服务与承接 / 商业案例 / 工作经验 / 联系方式 · 作品集详见独立作品页 works.html",en:"Homepage · streamlined: About / Services / Cases / Experience / Contact · Portfolio on works.html"},
+  "cs.head":{zh:"商业案例",en:"Commercial Cases"},
+  "cs.intro":{zh:"把手与材料的能力投向真实需求：空间装置、演出道具、手工机车、定制造物与布展落地。以下为代表性商业项目集锦，完整内容请移步作品集统一展示。",en:"Turning craft with hand and material to real needs: spatial installation, performance props, hand-built motorcycles, bespoke objects and exhibition installs. Below is a selection; see the portfolio page for the full set."},
+  "cs.ctaTop":{zh:"前往作品集查看完整案例 →",en:"See full cases on the portfolio page →"},
+  "cs.ctaBottom":{zh:"查看作品集全部案例（作品集页）→",en:"View all cases on the portfolio page →"}
 };
 function applyLang(){
   document.documentElement.lang = YZ.getLang()==="zh" ? "zh-CN" : "en";
@@ -461,7 +560,7 @@ function applyLang(){
   document.querySelectorAll("[data-i18n-html]").forEach(function(el){
     var k=el.getAttribute("data-i18n-html"); if(I18N[k]) el.innerHTML=I18N[k][YZ.getLang()];
   });
-  renderExp(); renderContact(); bindCardTilt();
+  renderExp(); renderContact(); bindCardTilt(); if(typeof renderCases==="function")renderCases();
   if(window.__io){document.querySelectorAll(".rv:not(.in),.stagger:not(.in)").forEach(function(el){window.__io.observe(el)})}
 }
 /* 初始化（顺序：先渲染内容，再绑定公共交互） */
