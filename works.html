@@ -470,6 +470,29 @@ section{max-width:1200px;margin:0 auto;padding:110px 6vw}
 [data-theme="light"] .lb-stage img.lb-img{
   box-shadow:0 40px 120px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.8),0 0 40px rgba(143,100,16,.15),inset 0 0 22px rgba(255,255,255,.35);
 }
+
+/* ============ 商业案例（横向拖拽画廊） ============ */
+.cases{border-top:1px solid var(--line);padding-top:110px}
+.case-intro{margin:14px 0 6px;max-width:760px;font-size:14.5px;line-height:1.9;color:var(--ink2);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+.case-hint{margin-top:14px;font-size:10.5px;color:var(--ink3);letter-spacing:.14em}
+.case-label{display:flex;align-items:baseline;gap:14px;margin:36px 0 14px}
+.case-label .en{font-size:10.5px;letter-spacing:.4em;color:var(--accent2);white-space:nowrap}
+.case-label h3{font-size:clamp(16px,2vw,20px);letter-spacing:.1em;font-weight:600;white-space:nowrap}
+.case-label::after{content:"";flex:1;height:1px;background:var(--line)}
+.case-row{display:flex;gap:16px;overflow-x:auto;padding:6px 2px 20px;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:rgba(217,164,65,.4) transparent;cursor:grab}
+.case-row.drag{cursor:grabbing;scroll-snap-type:none}
+.case-row::-webkit-scrollbar{height:6px}
+.case-row::-webkit-scrollbar-thumb{background:rgba(217,164,65,.4);border-radius:3px}
+.case-row::-webkit-scrollbar-track{background:var(--line)}
+.case{flex:0 0 300px;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:border-color .3s,transform .45s var(--ease);will-change:transform}
+.case:hover{border-color:rgba(217,164,65,.45);transform:translateY(-4px)}
+.case img{width:100%;height:200px;object-fit:cover;display:block}
+.case .c-body{padding:14px 16px 16px}
+.case .c-meta{font-size:10px;letter-spacing:.2em;color:var(--accent2);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+.case h4{font-size:15px;letter-spacing:.06em;margin-top:6px}
+.case p{font-size:12.5px;color:var(--ink2);line-height:1.7;margin-top:6px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+@media(max-width:560px){.case{flex:0 0 78vw}}
+@media(max-width:900px){.cases{padding:90px 6vw}}
 </style>
 <link rel="stylesheet" href="readability.css?v=22">
 </head>
@@ -545,6 +568,18 @@ section{max-width:1200px;margin:0 auto;padding:110px 6vw}
       <div class="rule"></div>
     </div>
     <div class="timeline" id="timeline"></div>
+  </section>
+
+  <!-- ============ 商业案例（横向拖拽画廊） ============ -->
+  <section id="cases" class="cases">
+    <div class="section-head rv">
+      <div class="en">CASES · COMMERCIAL</div>
+      <h2 data-i18n="c.head">商业案例</h2>
+      <div class="rule"></div>
+    </div>
+    <p class="case-intro rv" data-i18n="c.intro">把手与材料的能力投向真实需求：空间装置、演出道具、手工机车、定制造物与布展落地。</p>
+    <p class="case-hint rv">← 拖动 / 滚动查看更多 →</p>
+    <div id="caseGroups"></div>
   </section>
 
 </main>
@@ -927,8 +962,8 @@ var DATA = {
       {type:"note", num:"03", title:{zh:"毕业论文 · 84 分", en:"Graduation Thesis · 84/100"}, meta:{zh:"2025 · 学术写作 · THESIS", en:"2025 · Academic Writing · THESIS"},
        brief:{zh:"毕业论文以南海大地艺术节为案例，研究华南沿海的在地艺术，获 84 分。",
               en:"Thesis on site-specific art along the South China coast, case study: the Nanhai Land Art Festival. 84/100."},
-       body:{zh:"《去中心化背景下华南沿海地区在地艺术研究——以南海大地艺术节为例》，84 分。",
-             en:"Full title: “Site-Specific Art along the South China Coast under Decentralisation — the Nanhai Land Art Festival as a Case.” 84/100."}},
+       body:{zh:"《去中心化背景下华南沿海地区在地艺术的文化建设作用研究——以南海大地艺术节为例》，84 分。",
+             en:"Full title: “The Cultural-Construction Role of Site-Specific Art along the South China Coast under Decentralisation — the Nanhai Land Art Festival as a Case.” 84/100."}},
       {type:"work", title:{zh:"筑梦空间个展《东方造型与自我身份》", en:"Solo Exhibition “Eastern Form and Self-Identity”"},
        meta:{zh:"2025 · 个人展览 · SOLO EXHIBITION", en:"2025 · Solo exhibition · SOLO EXHIBITION"},
        cover:IMG.dzS[0].s, tag:{zh:"个人展览 · SOLO EXHIBITION", en:"SOLO EXHIBITION"},
@@ -957,18 +992,7 @@ var DATA = {
         facts:[["年份 YEAR",{zh:"2025.05",en:"2025.05"}],["媒介 MEDIUM",{zh:"综合材料 / 影像",en:"Mixed media / video"}],["形式 FORMAT",{zh:"创作系列",en:"Work series"}]],
         about:{zh:"快速反应系列。（请补充：作品是什么、怎么做、一个核心想法。）", en:"Quick Reaction Series. (Please confirm: what it is, how it was made, one key idea.)"},
         concept:{zh:"（一句话想法待你补充）", en:"(One-line concept to be added by the artist)"},
-         groups:[{name:{zh:"精选", en:"Selected"}, imgs:IMG.fast}]},
-      {type:"work", title:{zh:"《文人松》 · 超写实雕塑", en:"“Literati Pine” · Hyperrealistic Sculpture"},
-        meta:{zh:"2025 · 硅胶 / 毛发 · HYPERREALISTIC", en:"2025 · Silicone & hair · HYPERREALISTIC"},
-        cover:IMG.wmMain[0].s, tag:{zh:"超写实雕塑 · HYPERREALISTIC", en:"HYPERREALISTIC"},
-        brief:{zh:"以硅胶与毛发完成的超写实雕塑，把盆景“文人松”重构为树状人体。",
-               en:"A hyperrealistic sculpture in silicone and hair, rewriting the penjing “literati pine” as a tree-bodied figure."},
-        facts:[["年份 YEAR",{zh:"2025",en:"2025"}],["媒介 MEDIUM",{zh:"硅胶 / 毛发",en:"Silicone / hair"}],["尺寸 SIZE",{zh:"40 × 28 × 60 cm",en:"40 × 28 × 60 cm"}],["展览 EXHIBITION",{zh:"超写实课程展",en:"Hyperrealistic Course Exhibition"}],["主题 THEME",{zh:"文人 · 树状人体 · 盆景",en:"Literati · Tree-body · Penjing"}]],
-       about:{zh:"研究盆景以年为单位塑造形体、运用多样工具、甚至逆转生长规律的造像逻辑，将“文人松”重构为树状人体：模拟人体关节的同时逆转肌肉结构，把熟悉的东西陌生化。作品追问：把植物改造成人喜欢的样子，是否也是违背自然、对无声群体的奴役？",
-              en:"Reading penjing logic — shaping over years, varied tools, even reversing growth — the literati pine becomes a tree-body: joints simulated, muscles inverted, the familiar made strange. It asks whether forcing plants into pleasing shapes is itself a violation, a quiet domination."},
-       concept:{zh:"逼真的硅胶让“被修剪成喜欢的样子”显得更刺眼——审美有时是一种温柔的暴力。",
-                en:"Lifelike silicone sharpens the point: being pruned into a pleasing shape is a soft violence."},
-        groups:[{name:{zh:"一 · 模型细节", en:"I · Model detail"}, imgs:IMG.wmMain},{name:{zh:"二 · 制作过程与细节", en:"II · Making process & details"}, imgs:IMG.wmP},{name:{zh:"三 · 展览现场", en:"III · Exhibition views"}, imgs:IMG.wmE}]},
+         groups:[{name:{zh:"精选", en:"Selected"}, imgs:IMG.fast}]}
     ]},
     {year:"2024", label:{zh:"在地实践 · 展览年", en:"SITE-SPECIFIC & EXHIBITION"}, items:[
       {type:"work", title:{zh:"红海疍家渔民在地实验项目", en:"Site-Specific Experiment with the Tankas of Honghai Village"},
@@ -1007,21 +1031,17 @@ var DATA = {
         about:{zh:"将可见空间与未见空间想象出一个“夹角”，把一双手骨模型贴在转角处，摆出不同手势并拍摄；数量足够多时并置呈现，暗示一个不存在的空间，探索物件如何激活空间与观者的感知。", en:"An “angle” is imagined between visible and unseen space; a pair of skeletal hands is posed at a corner and photographed. Enough poses side by side suggest a space that isn't there — how objects quicken a place and the viewer's perception."},
         concept:{zh:"物件不是填满空间，而是让空间被人看见。", en:"Objects don't fill space — they make it visible."},
          groups:[{name:{zh:"精选", en:"Selected"}, imgs:IMG.angle}]},
-    ]},
-    {year:"2023", label:{zh:"作品集早期", en:"EARLY PORTFOLIO"}, items:[
-      {type:"work", title:{zh:"作品集早期阶段 · 材料与造型积累", en:"Early Portfolio Phase · Material & Form Studies"},
-       meta:{zh:"2023 · 木雕 / 石雕 / 金属铸造 / 玉材 · MATERIAL STUDY", en:"2023 · Wood / stone / metal casting / jade · MATERIAL STUDY"},
-       cover:IMG.erS[0].s, tag:{zh:"材料研究 · MATERIAL STUDY", en:"MATERIAL STUDY"},
-       brief:{zh:"进入实验雕塑工作室，深化木雕、石雕、金属铸造与玉材工艺，整理 2020 年以来的早期作品。",
-              en:"Entered the Experimental Sculpture studio; deepened wood, stone, metal casting and jade techniques; sorted early works since 2020."},
-       facts:[["年份 YEAR",{zh:"2023",en:"2023"}],["媒介 MEDIUM",{zh:"装置 / 金属铸造 / 纸本",en:"Installation / metal casting / paper"}],["形式 FORMAT",{zh:"作品积累",en:"Ongoing body of works"}],["内容 CONTENT",{zh:"材料与造型实验",en:"Material & form experiments"}]],
-       about:{zh:"2023 年起系统深化各材料工艺，完成多件课程与个人创作，并整理早期作品形成作品集雏形，确立“东方造型与自我身份”的创作线索。",
-              en:"From 2023: systematic material study, several course and personal works, and the first assembly of the portfolio around the thread of Eastern form and self-identity."},
-       concept:{zh:"这一阶段的价值在试错：每一次手与材料的相遇，后来都汇进作品集的线索里。",
-                en:"The value of this phase was trial and error — every meeting of hand and material later fed the portfolio's thread."},
-       groups:[{name:{zh:"一 · 装置现场", en:"I · Installation views"}, imgs:IMG.erS},{name:{zh:"二 · 装置细节", en:"II · Details"}, imgs:IMG.erD},{name:{zh:"三 · 小稿研究", en:"III · Maquette studies"}, imgs:IMG.erK},{name:{zh:"四 · 金属铸造", en:"IV · Metal casting"}, imgs:IMG.erC}]}
-    ]},
-    {year:"2022", label:{zh:"机械 · 动态", en:"KINETIC & MECHANICS"}, items:[
+      {type:"work", title:{zh:"《文人松》 · 超写实雕塑", en:"“Literati Pine” · Hyperrealistic Sculpture"},
+        meta:{zh:"2024 · 硅胶 / 毛发 · HYPERREALISTIC", en:"2024 · Silicone & hair · HYPERREALISTIC"},
+        cover:IMG.wmMain[0].s, tag:{zh:"超写实雕塑 · HYPERREALISTIC", en:"HYPERREALISTIC"},
+        brief:{zh:"以硅胶与毛发完成的超写实雕塑，把盆景“文人松”重构为树状人体。",
+               en:"A hyperrealistic sculpture in silicone and hair, rewriting the penjing “literati pine” as a tree-bodied figure."},
+        facts:[["年份 YEAR",{zh:"2024",en:"2024"}],["媒介 MEDIUM",{zh:"硅胶 / 毛发",en:"Silicone / hair"}],["尺寸 SIZE",{zh:"40 × 28 × 60 cm",en:"40 × 28 × 60 cm"}],["展览 EXHIBITION",{zh:"超写实课程展",en:"Hyperrealistic Course Exhibition"}],["主题 THEME",{zh:"文人 · 树状人体 · 盆景",en:"Literati · Tree-body · Penjing"}]],
+       about:{zh:"研究盆景以年为单位塑造形体、运用多样工具、甚至逆转生长规律的造像逻辑，将“文人松”重构为树状人体：模拟人体关节的同时逆转肌肉结构，把熟悉的东西陌生化。作品追问：把植物改造成人喜欢的样子，是否也是违背自然、对无声群体的奴役？",
+              en:"Reading penjing logic — shaping over years, varied tools, even reversing growth — the literati pine becomes a tree-body: joints simulated, muscles inverted, the familiar made strange. It asks whether forcing plants into pleasing shapes is itself a violation, a quiet domination."},
+       concept:{zh:"逼真的硅胶让“被修剪成喜欢的样子”显得更刺眼——审美有时是一种温柔的暴力。",
+                en:"Lifelike silicone sharpens the point: being pruned into a pleasing shape is a soft violence."},
+        groups:[{name:{zh:"一 · 模型细节", en:"I · Model detail"}, imgs:IMG.wmMain},{name:{zh:"二 · 制作过程与细节", en:"II · Making process & details"}, imgs:IMG.wmP},{name:{zh:"三 · 展览现场", en:"III · Exhibition views"}, imgs:IMG.wmE}]},
       {type:"work", title:{zh:"《如何追逐速度》 · 动态雕塑", en:"“How to Chase Speed” · Kinetic Sculpture"},
        meta:{zh:"2024.04–05 · 现成品改装动态雕塑 · KINETIC SCULPTURE", en:"2024.04–05 · Found-object kinetic sculpture · KINETIC SCULPTURE"},
        cover:IMG.eng[0].s, tag:{zh:"动态雕塑 · KINETIC", en:"KINETIC"},
@@ -1034,8 +1054,36 @@ var DATA = {
                 en:"Chasing speed on a machine that pulls you back: pointless acts alongside real danger, the human-machine relation jolted into view."},
        groups:[{name:{zh:"一 · 作品图片", en:"I · Works"}, imgs:IMG.eng}],
        videos:[{src:A+"2022/发动机动态雕塑/视频/IMG_4590.mp4", poster:A+"2022/发动机动态雕塑/视频/IMG_4590.jpg", title:{zh:"动态雕塑 · 运行 4590", en:"Kinetic Sculpture · Running 4590"}},{src:A+"2022/发动机动态雕塑/视频/IMG_4692.mp4", poster:A+"2022/发动机动态雕塑/视频/IMG_4692.jpg", title:{zh:"动态雕塑 · 运行 4692", en:"Kinetic Sculpture · Running 4692"}}]},
+      {type:"note", num:"04", title:{zh:"《痕迹如河》 · 拓印行为", en:"“Traces Like a River” · Rubbing Performance"}, meta:{zh:"2024.1–12 · 行为 / 拓印 / 影像 · BEHAVIOUR & RUBBING", en:"2024.1–12 · Performance / rubbing / video · PERFORMANCE & RUBBING"},
+       brief:{zh:"对家乡老房一条因下沉形成的大裂缝进行完整拓印，以拓印保留乡村记忆。图片素材待补。",
+              en:"Full rubbing of a crack from subsidence in the artist's old family house, keeping village memory. Photos to be added."},
+       body:{zh:"“缝隙与痕迹”中“痕迹”部分的深入，分四个阶段：大量尝试建筑表面痕迹的拓印版画拼接；在家乡老房子发起完整拓印行为，对一条因房屋下沉形成的大裂缝进行完整拓印；自费购买饮料请街坊协助，在老房与新房完成两次小型展出；最后在展览空间重构这条裂缝并播放工作影像。以拓印保留乡村记忆，回应快速现代化下乡村变迁与被边缘化的人和事。（拓印 4m×2m 裂缝；版画单张 35×35 cm 共 11 张；原图素材待补。）",
+            en:"Deeper work within the “rubbing” strand of the Gaps & Traces project. In four stages: assembling rubbings of building-surface traces; a full rubbing of a crack running through the subsiding old family house; two small shows at the old and new houses, buying drinks to invite neighbours' help; finally reconstructing the crack in an exhibition space and playing the working film. Rubbing keeps village memory against rapid modernisation and those it leaves at the margin. (Rubbed crack 4×2 m; 11 prints at 35×35 cm; source images to be added.)"}}
     ]},
-    {year:"2021", label:{zh:"初涉 · 在场", en:"FIRST PRESENCE"}, items:[
+    {year:"2023", label:{zh:"作品集早期", en:"EARLY PORTFOLIO"}, items:[
+      {type:"work", title:{zh:"作品集早期阶段 · 材料与造型积累", en:"Early Portfolio Phase · Material & Form Studies"},
+       meta:{zh:"2023 · 木雕 / 石雕 / 金属铸造 / 玉材 · MATERIAL STUDY", en:"2023 · Wood / stone / metal casting / jade · MATERIAL STUDY"},
+       cover:IMG.erS[0].s, tag:{zh:"材料研究 · MATERIAL STUDY", en:"MATERIAL STUDY"},
+       brief:{zh:"进入实验雕塑工作室，深化木雕、石雕、金属铸造与玉材工艺，整理 2020 年以来的早期作品。",
+              en:"Entered the Experimental Sculpture studio; deepened wood, stone, metal casting and jade techniques; sorted early works since 2020."},
+       facts:[["年份 YEAR",{zh:"2023",en:"2023"}],["媒介 MEDIUM",{zh:"装置 / 金属铸造 / 纸本",en:"Installation / metal casting / paper"}],["形式 FORMAT",{zh:"作品积累",en:"Ongoing body of works"}],["内容 CONTENT",{zh:"材料与造型实验",en:"Material & form experiments"}]],
+       about:{zh:"2023 年起系统深化各材料工艺，完成多件课程与个人创作，并整理早期作品形成作品集雏形，确立“东方造型与自我身份”的创作线索。",
+              en:"From 2023: systematic material study, several course and personal works, and the first assembly of the portfolio around the thread of Eastern form and self-identity."},
+       concept:{zh:"这一阶段的价值在试错：每一次手与材料的相遇，后来都汇进作品集的线索里。",
+                en:"The value of this phase was trial and error — every meeting of hand and material later fed the portfolio's thread."},
+        groups:[{name:{zh:"一 · 装置现场", en:"I · Installation views"}, imgs:IMG.erS},{name:{zh:"二 · 装置细节", en:"II · Details"}, imgs:IMG.erD},{name:{zh:"三 · 小稿研究", en:"III · Maquette studies"}, imgs:IMG.erK},{name:{zh:"四 · 金属铸造", en:"IV · Metal casting"}, imgs:IMG.erC}]},
+      {type:"note", num:"05", title:{zh:"泥塑人体（泥塑6）", en:"Clay Figure Study (Claysculpt 6)"}, meta:{zh:"2023.2–5 · 泥塑人体 · FIGURE", en:"2023.2–5 · Clay figure · FIGURE"},
+       brief:{zh:"1.2 倍男胸像、1 米男人体站姿、60cm 女人体坐姿；由被动描摹转向主动研习。",
+              en:"1.2× male bust, 1 m standing male, 60 cm seated female — from copying to active study."},
+       body:{zh:"泥塑基础研习最深入的学期：完成 1.2 倍男人胸像、1 米男人体站姿、60cm 女人体坐姿；由被动描摹转向主动研习与临摹。",
+            en:"The deepest term of clay study: 1.2× male bust, 1 m standing male, 60 cm seated female; moving from passive copying to active study."}},
+      {type:"note", num:"06", title:{zh:"传统雕塑下乡考察", en:"Traditional Sculpture Field Trip"}, meta:{zh:"2023.5.12–6.2 · 在地考察 · FIELDTRIP", en:"2023.5.12–6.2 · Field trip · FIELDTRIP"},
+       brief:{zh:"下乡实地考察传统雕塑与民间艺术现场，以摄影系统记录。",
+              en:"On-site study of traditional sculpture and folk art, documented in photographs."},
+       body:{zh:"随课程下乡实地考察传统雕塑与民间艺术现场，以摄影系统记录过程、环境与民间造型素材，为传统与在地创作积累一手资料。",
+            en:"Field study of traditional sculpture and folk craft; systematic photo documentation for later traditional and site-specific work."}}
+    ]},
+    {year:"2022", label:{zh:"机械 · 动态", en:"KINETIC & MECHANICS"}, items:[
       {type:"work", title:{zh:"《富含冒犯》 · 动态装置", en:"“Rich in Offence” · Kinetic Installation"},
        meta:{zh:"2022.10–11 · 空间造型基础课程 · 综合材料（含电动/动态部件）· KINETIC INSTALLATION", en:"2022.10–11 · Spatial form foundation course · Mixed media (electric / kinetic parts) · KINETIC INSTALLATION"},
        cover:IMG.mf[0].s, tag:{zh:"动态装置 · KINETIC", en:"KINETIC"},
@@ -1046,7 +1094,64 @@ var DATA = {
               en:"An end-of-course work on offence, with kinetic parts and an on-site display plan — discomfort and curiosity counted as part of the form."},
        concept:{zh:"秩序与冒犯、机器与身体——张力即主题。",
                 en:"Order versus offence, machine versus body — the tension is the subject."},
-       groups:[{name:{zh:"一 · 方案草稿", en:"I · Proposal sketches"}, imgs:IMG.mf}]},
+        groups:[{name:{zh:"一 · 方案草稿", en:"I · Proposal sketches"}, imgs:IMG.mf}]},
+      {type:"note", num:"07", title:{zh:"泥塑浮雕（泥塑4）", en:"Clay Relief (Claysculpt 4)"}, meta:{zh:"2022.5–6.2 · 泥塑 · 浮雕 · RELIEF", en:"2022.5–6.2 · Clay relief · RELIEF"},
+       brief:{zh:"学习浮雕造型语言与压缩空间的表现，作者称之为最“费脑筋”的课程。",
+              en:"Relief language and compressed space — the course the artist calls the most “taxing on the mind.”"},
+       body:{zh:"学习浮雕造型语言与压缩空间的表现方法，完成多件浮雕习作；作者自述这是最“费脑筋”的课程（《浮雕总结表》）。",
+            en:"Relief language and compressed space; a series of clay relief studies. The artist recalls it as the most mentally demanding course."}},
+      {type:"note", num:"08", title:{zh:"泥塑创作（泥塑5）", en:"Clay Study (Claysculpt 5)"}, meta:{zh:"2022.10 · 泥塑 · 创作 · CLAY", en:"2022.10 · Clay · CLAY"},
+       brief:{zh:"延续泥塑训练，在造型基础上开展独立创作，完成系列泥塑作品。",
+              en:"Continuing clay study, moving from found practice into independent work."},
+       body:{zh:"延续此前泥塑训练，在造型基础上开展独立创作，完成系列泥塑作品（《泥塑5总结表》）。",
+            en:"Building on prior clay training, independent works formed on top of the basic language."}},
+      {type:"note", num:"09", title:{zh:"丝网印刷与呈现方式", en:"Screen Printing & Presentation"}, meta:{zh:"2022.12 · 版画 · 分版套色 · PRINTMAKING", en:"2022.12 · Printmaking · PRINTMAKING"},
+       brief:{zh:"分版套色工艺：名画分版《呐喊》、兔年贺卡、练习马与自由创作。",
+              en:"Colour separations: a split-registration Munch “Scream,” Year of the Rabbit cards, horse study and free work."},
+       body:{zh:"学习分版套色工艺，完成《呐喊》名画分版、兔年贺卡、马与自由创作等丝网版画。",
+            en:"Learning split-registration colour; screenprints including a Munch “Scream” reproduction, Year-of-the-Rabbit cards, a horse study and free pieces."}},
+      {type:"note", num:"10", title:{zh:"石雕", en:"Stone Carving"}, meta:{zh:"2022 · 石雕 · 硬质材料 · STONE", en:"2022 · Stone · STONE"},
+       brief:{zh:"硬质材料减法雕刻实践，完成《妥协的产物》等习作。",
+              en:"Subtractive carving in hard stone — studies such as “The Product of Compromise.”"},
+       body:{zh:"以石材进行减法雕刻，完成《妥协的产物》等习作，学习硬质材料的造型语言与工艺。",
+            en:"Subtractive stone carving, yielding “The Product of Compromise” and other studies; language and craft of a hard material."}},
+      {type:"note", num:"11", title:{zh:"玉材料创作", en:"Jade Material Study"}, meta:{zh:"2022 · 玉石 · 雕刻 · JADE", en:"2022 · Jade · JADE"},
+       brief:{zh:"以玉石材料进行雕刻与造型实验，探索硬质玉石的加工可能。",
+              en:"Carving and form experiments in jade, probing what a hard translucent mineral allows."},
+       body:{zh:"以玉石材料雕刻与造型实验，完成系列玉材料作品，探索硬质玉石材料的加工与造型可能。",
+            en:"Carved and moulded jade; a body of jade works exploring the reach of hard jade."}},
+      {type:"note", num:"12", title:{zh:"数字雕塑进阶", en:"Advanced Digital Sculpture"}, meta:{zh:"2022 · 数字建模 · 参数化 · DIGITAL", en:"2022 · Digital modelling · DIGITAL"},
+       brief:{zh:"参数化建模、数字雕刻与节点动画（含甜甜圈系列与节点动画练习）。",
+              en:"Parametric modelling, digital carving and node animation (donut series and node-animation exercises)."},
+       body:{zh:"在数字雕塑基础上学习参数化建模与数字雕刻，产出参数化模型与渲染展板，含节点动画练习与甜甜圈系列实验。",
+            en:"Parametric modelling and digital carving after the foundational digital course; parametric models, render boards, node animation and a donut series."}},
+      {type:"note", num:"13", title:{zh:"校园跑腿（创新创业）", en:"Campus Errand Platform (Innovation & Entrepreneurship)"}, meta:{zh:"2022 · 创业 · 商业计划 · ENTERPRISE", en:"2022 · Entrepreneurial project · ENTERPRISE"},
+       brief:{zh:"创新创业课程项目：校园跑腿创业计划、团队组建与项目 logo 设计。",
+              en:"An innovation & entrepreneurship course project: a campus errand plan, team and logo."},
+       body:{zh:"创新创业课程项目“校园跑腿”，围绕校园配送需求完成创业计划书、团队组建与项目 logo 设计。",
+            en:"A campus errand startup — business plan, team formation and a project logo for delivery on campus."}}
+    ]},
+    {year:"2021", label:{zh:"初涉 · 在场", en:"FIRST PRESENCE"}, items:[
+      {type:"note", num:"14", title:{zh:"泥塑课程（泥塑2）", en:"Clay Study (Claysculpt 2)"}, meta:{zh:"2021.5 · 泥塑 · 造型 · CLAY", en:"2021.5 · Clay · CLAY"},
+       brief:{zh:"泥塑进阶课程系列习作，在人体／造型塑造上进一步深入。",
+              en:"Advanced clay studies, deepening into figure and form."},
+       body:{zh:"泥塑进阶课程系列习作，延续泥塑基础训练，在人体／造型塑造上进一步深入。",
+            en:"Advanced clay studies carrying on the foundation work in figure and form."}},
+      {type:"note", num:"15", title:{zh:"金属铸造", en:"Metal Casting"}, meta:{zh:"2021.12 · 金属 · 铸造工艺 · CASTING", en:"2021.12 · Metal casting · CASTING"},
+       brief:{zh:"学习失蜡／砂型等铸造工艺流程，完成金属铸造习作。",
+              en:"Lost-wax and sand casting processes; finished metal cast studies."},
+       body:{zh:"学习失蜡／砂型等铸造工艺流程，完成金属铸造习作。",
+            en:"Casting through lost-wax and sand processes; a series of metal cast studies."}},
+      {type:"note", num:"16", title:{zh:"金属焊接", en:"Metal Welding"}, meta:{zh:"2021.12 · 金属 · 焊接工艺 · WELDING", en:"2021.12 · Metal welding · WELDING"},
+       brief:{zh:"以焊接工艺进行金属雕塑与构造实验，学习金属连接与结构语言。",
+              en:"Welded metal sculpture and construction — connections and structure."},
+       body:{zh:"以焊接工艺进行金属雕塑与构造实验，学习金属材料的连接与结构语言。",
+            en:"Welded metal sculpture and assemblage, learning juncture and structure in metal."}},
+      {type:"note", num:"17", title:{zh:"数字雕塑基础", en:"Digital Sculpture Foundations"}, meta:{zh:"2021 · 数字建模（ZBrush）· DIGITAL", en:"2021 · ZBrush modelling · DIGITAL"},
+       brief:{zh:"ZBrush 数字雕刻入门，完成数字雕塑模型与渲染习作。",
+              en:"ZBrush intro: digital sculpts and render studies."},
+       body:{zh:"以 ZBrush 等数字雕刻工具进行入门训练，完成数字雕塑模型与渲染习作。",
+            en:"ZBrush and related tools; digital sculpture models and render studies."}},
       {type:"work", title:{zh:"《浮沉》 · 木雕作品展", en:"“Floating-Sinking” · Wood Carving Exhibition"},
        meta:{zh:"2021.11–12 · 木雕 · WOOD CARVING", en:"2021.11–12 · Wood carving · WOOD CARVING"},
        cover:IMG.cw[0].s, tag:{zh:"木雕 · WOOD CARVING", en:"WOOD CARVING"},
@@ -1061,12 +1166,17 @@ var DATA = {
        videos:[{src:A+"2021/沉木雕/视频/IMG_8887.mp4", poster:A+"2021/沉木雕/视频/IMG_8887.jpg", title:{zh:"木雕 · 环境 8887", en:"Wood Carving · Surroundings 8887"}},{src:A+"2021/沉木雕/视频/IMG_8891.mp4", poster:A+"2021/沉木雕/视频/IMG_8891.jpg", title:{zh:"木雕 · 环境 8891", en:"Wood Carving · Surroundings 8891"}}]}
     ]},
     {year:"2020", label:{zh:"起点 · 入门", en:"BEGINNING"}, items:[
-      {type:"note", num:"04", title:{zh:"入读广州美术学院 · 实验雕塑方向", en:"Enrolled at GAFA · Experimental Sculpture"}, meta:{zh:"2020.09 · 教育 · EDUCATION", en:"2020.09 · Education · EDUCATION"},
+      {type:"note", num:"18", title:{zh:"入读广州美术学院 · 实验雕塑方向", en:"Enrolled at GAFA · Experimental Sculpture"}, meta:{zh:"2020.09 · 教育 · EDUCATION", en:"2020.09 · Education · EDUCATION"},
        brief:{zh:"入读广州美术学院实验雕塑方向，接受素描、泥塑人体等造型基础训练。",
               en:"Entered GAFA's Experimental Sculpture programme; foundation training in drawing and clay figure modelling."},
        body:{zh:"2020 年 9 月入学。系统的造型训练，是之后全部创作的地基。",
              en:"Enrolled September 2020. The systematic grounding in form supported everything made since."}},
-          ]},
+      {type:"note", num:"19", title:{zh:"泥塑基础与素描（泥塑1）", en:"Clay Foundations & Drawing (Claysculpt 1)"}, meta:{zh:"2020 秋 · 造型基础 · FOUNDATION", en:"Autumn 2020 · Foundation · FOUNDATION"},
+       brief:{zh:"入学初期泥塑造型基础训练，完成多件人体／头像泥塑习作，并含素描训练。",
+              en:"Entry-level clay modelling with figure and head studies, alongside drawing."},
+       body:{zh:"入学初期泥塑造型基础训练，完成多件人体／头像泥塑习作，并含素描课程训练，建立泥塑造型的基本语言。",
+            en:"Initial clay foundation — figure and head studies plus drawing — establishing a basic clay vocabulary."}},
+           ]},
   ],
   /* 往期展览总时间线（倒序），ref 指向作品卡/笔记 DOM id */
   exhibitions: [
@@ -1092,10 +1202,52 @@ var DATA = {
     ]},
     {year:"2021", label:{zh:"初露 · 校园展", en:"FIRST SHOWS ON CAMPUS"}, items:[
       {title:{zh:"《浮沉》木雕 · 木雕作品展", en:"“Floating-Sinking” · Wood Carving Exhibition"}, role:{zh:"群展 · GROUP SHOW", en:"GROUP SHOW"}, place:{zh:"广州美术学院", en:"Guangzhou Academy of Fine Arts"},
-       d:{zh:"以整木雕刻完成，参与广美木雕作品展。", en:"Carved from a single trunk; shown in the GAFA wood-carving exhibition."}, ref:"wk-5-1"}
+        d:{zh:"以整木雕刻完成，参与广美木雕作品展。", en:"Carved from a single trunk; shown in the GAFA wood-carving exhibition."}, ref:"wk-5-4"}
     ]}
   ]
 };
+
+/* ============================================================
+   商业案例（横向拖拽画廊）数据与渲染
+   ============================================================ */
+var CASES = [
+  {zh:"台灯定制", en:"Lamps", items:[
+    {t:"2025.12 · 定制落地灯", h:"台灯定制", n:"定制落地灯，从结构到成品交付。", img:"assets/案例/台灯/25-12台灯定制/精选/DSC03489-disp.jpg"},
+    {t:"2026.05 · 品牌合作", h:"麦当劳台灯定制", n:"为品牌定制的主题台灯，地面、灯具整体制作。", img:"assets/案例/台灯/26-5麦当劳台灯定制/精选/DSC03678-disp.jpg"}
+  ]},
+  {zh:"摩托车定制", en:"Motorcycles", items:[
+    {t:"2026.04 · 整车改装", h:"摩托车整车定制", n:"整车改装，造型、结构与机加工全程落地。", img:"assets/案例/机车/26-4摩托车整车定制/精选/Gemini_Generated_Image_948t12948t12948t-disp.jpg"},
+    {t:"2025.10 · 复古定制", h:"摩托车头灯定制", n:"复古头灯定制，兼顾造型与照明功能。", img:"assets/案例/机车/25-10摩托车头灯定制/精选/3c6bc80141fc8b03af80f7f71a44f114-disp.jpg"},
+    {t:"2026.06 · 效果呈现", h:"摩托车定制效果", n:"定制效果呈现与现场拍摄记录。", img:"assets/案例/机车/26-6摩托车定制效果/精选/20260526-DSC03800-disp.jpg"}
+  ]},
+  {zh:"舞台布景道具", en:"Stage Sets & Props", items:[
+    {t:"2025.02 · 假山石景", h:"舞台假山背景", n:"舞台假山石景搭建，模拟自然山体。", img:"assets/案例/舞台布景/25-2舞台假山背景/精选/8e777d664cc52ed7bed5d660629d9cd6-disp.jpg"},
+    {t:"2026.04 · 道具制作", h:"舞台道具制作", n:"为演出制作道具，从图纸到现场置景。", img:"assets/案例/舞台布景/26-4舞台道具制作/精选/IMG_3907-disp.jpg"}
+  ]},
+  {zh:"版画与布展", en:"Print & Installation", items:[
+    {t:"2026.03 · 版画定制", h:"版画定制", n:"定制版画，分版、套色到完成。", img:"assets/案例/版画布展/26-3版画定制/精选/DSC03642-disp.jpg"},
+    {t:"2026.05 · 展览落地", h:"画展展览布展", n:"画展布展，作品悬挂、灯光与现场统筹。", img:"assets/案例/版画布展/26-5画展展览布展/精选/IMG_4191-disp.jpg"}
+  ]}
+];
+function renderCases(){
+  var box=document.getElementById("caseGroups");if(!box)return;
+  var L=YZ.getLang();
+  box.innerHTML=CASES.map(function(g){
+    return "<div class='case-label'><span class='en'>"+((L==="en")?g.en:g.zh.toUpperCase())+"</span><h3>"+((L==="en")?g.zh:g.zh)+"</h3></div>"
+      +"<div class='case-row'>"+g.items.map(function(it){
+        return "<div class='case'><img src='"+it.img+"' alt='"+it.h+" · "+it.t+"' loading='lazy' decoding='async'><div class='c-body'><span class='c-meta'>"+it.t+"</span><h4>"+it.h+"</h4><p>"+it.n+"</p></div></div>";
+      }).join("")+"</div>";
+  }).join("");
+  box.querySelectorAll(".case-row").forEach(bindDrag);
+}
+function bindDrag(row){
+  if(row.dataset.drag)return;row.dataset.drag="1";
+  var down=false,sx=0,sl=0;
+  row.addEventListener("pointerdown",function(e){down=true;sx=e.clientX;sl=row.scrollLeft;row.classList.add("drag");try{row.setPointerCapture(e.pointerId)}catch(_){}});
+  row.addEventListener("pointermove",function(e){if(!down)return;row.scrollLeft=sl-(e.clientX-sx)});
+  function up(){down=false;row.classList.remove("drag")}
+  row.addEventListener("pointerup",up);row.addEventListener("pointercancel",up);row.addEventListener("pointerleave",up);
+}
 
 (function(){
   var tl=document.getElementById("timeline"),exbox=document.getElementById("exhibitTl");
@@ -1327,6 +1479,8 @@ var I18N = {
   "w.head.works":{zh:"作品集",en:"Portfolio"},
   "w.head.ex":{zh:"往期展览时间线",en:"Exhibition Timeline"},
   "w.head.archive":{zh:"全部作品 · 文件夹式管理",en:"All Works · Folder View"},
+  "c.head":{zh:"商业案例",en:"Commercial Cases"},
+  "c.intro":{zh:"把手与材料的能力投向真实需求：空间装置、演出道具、手工机车、定制造物与布展落地。",en:"Turning craft with hand and material to real needs: spatial installation, performance props, hand-built motorcycles, bespoke objects and exhibition installs."},
   "w.footer.note":{zh:"作品集 · 按年份倒叙时间线（2026→2020）· 雕塑 / 装置 / 影像 · 往期展览时间线",en:"Portfolio · reverse-chronological timeline (2026→2020) · Sculpture / Installation / Video · Past exhibitions"},
   "w.backtop":{zh:"返回顶部 ↑ BACK TO TOP",en:"Back to top ↑"},
   "w.backhome":{zh:"返回主页 HOME →",en:"Back to home →"},
@@ -1345,6 +1499,7 @@ function applyLang(){
   });
   /* 重建时间线与展览内容（数据层双语） */
   if(window._renderWorks) window._renderWorks();
+  if(typeof renderCases==="function") renderCases();
   if(window.__io){document.querySelectorAll(".rv:not(.in),.stagger:not(.in)").forEach(function(el){window.__io.observe(el)})}
 }
 /* 初始化：开屏动画最先启动，其余模块独立容错 */
