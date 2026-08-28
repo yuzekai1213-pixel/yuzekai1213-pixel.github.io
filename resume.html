@@ -134,7 +134,6 @@ footer .up:hover{letter-spacing:.3em}
 }
 @media(max-width:640px){
   nav{padding:0 4vw}
-  nav .links{display:none}
   nav .logo small{display:none}
   nav .logo{flex:0 1 auto;min-width:0;white-space:nowrap}
   #fsBtn{display:none}
@@ -186,7 +185,7 @@ footer .up:hover{letter-spacing:.3em}
 <!-- ============ 导航 ============ -->
 <nav id="nav">
   <div class="logo"><i></i>余泽锴 <small>YU ZEKAI</small></div>
-  <div class="links">
+  <div class="links" id="navLinks">
     <a href="index.html" data-i18n="r.nav.home">返回主页 HOME</a>
   </div>
   <div class="tools">
@@ -198,6 +197,7 @@ footer .up:hover{letter-spacing:.3em}
         <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><rect x="4" y="14" width="16" height="6" rx="2"/></svg>
       </span>
     </button>
+    <button class="burger" id="burger" aria-label="菜单" title="菜单 Menu">☰</button>
   </div>
 </nav>
 
@@ -470,6 +470,7 @@ YZ.safe(function(){YZ.bindLang(applyLang)});
 YZ.safe(function(){YZ.bindFontSize()});
 YZ.safe(function(){YZ.initReveal()});
 YZ.safe(function(){YZ.initNav([])});
+YZ.safe(YZ.initBurger);
 YZ.safe(YZ.bindTheme);
 YZ.safe(function(){document.getElementById("printBtn").addEventListener("click",function(){window.print()})});
 </script>

@@ -88,8 +88,8 @@
 .hero-inner.entered h1 .cn{transition-delay:.55s}
 .hero-inner.entered .bio{transition-delay:.68s}
 .hero-inner.entered .cta{transition-delay:.82s}
-.hero .side-tags{position:absolute;right:34px;bottom:120px;z-index:4;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
-.hero .side-tags span{writing-mode:vertical-rl;font-size:12px;letter-spacing:.42em;color:var(--ink3);border:1px solid var(--line);padding:12px 8px;border-radius:20px;opacity:0;transform:translateY(-90px);transition:border-color .3s,color .3s}
+.hero .side-tags{position:absolute;right:34px;bottom:120px;z-index:4;display:flex;flex-direction:column;gap:14px;align-items:flex-end}
+.hero .side-tags span{writing-mode:vertical-rl;font-size:11px;letter-spacing:.38em;color:var(--ink3);border:1px solid var(--line);padding:14px 9px;border-radius:22px;opacity:0;transform:translateY(-90px);transition:border-color .3s,color .3s}
 /* caldera 式掉落入场：从上方依次坠落，带过冲回弹；backwards 保证延迟期间保持隐藏 */
 .hero:has(.hero-inner.entered) .side-tags span{opacity:1;transform:none;animation:tagDrop .85s cubic-bezier(.3,1.5,.42,1) backwards}
 .hero .side-tags span:nth-child(1){animation-delay:.55s}
@@ -195,6 +195,8 @@ section{max-width:1200px;margin:0 auto;padding:110px 6vw}
 @media(max-width:900px){
   .services{padding:90px 6vw}
   .wf-steps{grid-template-columns:1fr}
+  /* 移动端保留 hero 右侧竖排英文标签，收窄更贴合 */
+  .hero .side-tags{display:flex;right:4vw;bottom:96px;gap:10px}
 }
 
 </style>
