@@ -182,7 +182,23 @@ section{max-width:1200px;margin:0 auto;padding:110px 6vw}
 .wf-step .n{font-size:12px;letter-spacing:.3em;color:var(--accent)}
 .wf-step h4{font-size:16px;letter-spacing:.05em;margin:14px 0 8px}
 .wf-step p{font-size:14.5px;line-height:1.85;color:var(--ink2)}
-.wf-to-contact{margin-top:44px}
+.wf-to-contact{margin-top:44px;text-align:center}
+.contact-invite{
+  position:relative;display:inline-flex;align-items:center;gap:10px;
+  padding:14px 28px;border-radius:40px;border:1px solid var(--line2);
+  color:var(--accent2);font-size:12.5px;letter-spacing:.2em;white-space:nowrap;
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  text-decoration:none;transition:border-color .35s var(--ease),background .35s var(--ease),transform .35s var(--ease);
+  overflow:hidden;
+}
+.contact-invite::before{content:"";position:absolute;inset:0;background:var(--accent-dim);opacity:0;transition:opacity .35s var(--ease)}
+.contact-invite>*{position:relative;z-index:1}
+.contact-invite:hover{border-color:rgba(217,164,65,.6);transform:translateY(-2px)}
+.contact-invite:hover::before{opacity:1}
+.contact-invite:hover .ci-text{color:var(--ink)}
+.contact-invite .ci-ic{display:inline-flex;align-items:center;justify-content:center;transition:transform .4s var(--ease)}
+.contact-invite:hover .ci-ic{transform:translateY(3px)}
+@media(max-width:640px){.contact-invite{letter-spacing:.08em;padding:14px 22px;font-size:12px}}
 
 /* ============ 商业案例（导引 + 跳转；画廊样式见 works.html） ============ */
 .case-intro{margin:14px 0 18px;max-width:760px;font-size:14.5px;line-height:1.9;color:var(--ink2);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
@@ -312,7 +328,14 @@ section{max-width:1200px;margin:0 auto;padding:110px 6vw}
           <div class="wf-step"><span class="n">03</span><h4 data-i18n="wf3.t">制作与空间交付</h4><p data-i18n="wf3.d">制作、安装与现场调试，配合落地交付</p></div>
         </div>
       </div>
-      <div class="wf-to-contact rv"><a class="btn" href="#contact" data-i18n="wf.toContact">跳到底部联系我 · CONTACT ↓</a></div>
+      <div class="wf-to-contact rv">
+        <a class="contact-invite" href="#contact">
+          <span class="ci-text" data-i18n="wf.toContact">想了解更多？我们聊聊</span>
+          <span class="ci-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7 11l5 5 5-5"/></svg>
+          </span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -483,7 +506,7 @@ var I18N = {
   "wf2.d":{zh:"材料、结构与工艺打样，确认可行性",en:"Prototype materials, structure and craft, confirm feasibility"},
   "wf3.t":{zh:"制作与空间交付",en:"Production &amp; On-Site Delivery"},
    "wf3.d":{zh:"制作、安装与现场调试，配合落地交付",en:"Fabricate, install and tune on site, deliver the finished piece"},
-   "wf.toContact":{zh:"跳到底部联系我 · CONTACT ↓",en:"Jump to contact · CONTACT ↓"},
+   "wf.toContact":{zh:"想了解更多？我们聊聊",en:"Curious to know more? Let's talk"},
   "exp.head":{zh:"工作经验",en:"Experience"},
   "ct.head":{zh:"联系我",en:"Contact"},
   "back.top":{zh:"返回顶部 ↑ BACK TO TOP",en:"Back to top ↑"},
